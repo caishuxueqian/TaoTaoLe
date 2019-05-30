@@ -7,7 +7,7 @@ import android.view.View;
 
 import orc.com.taotaole.R;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,8 +17,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void intUI() {
-        findViewById(R.id.tv_register);
-        findViewById(R.id.tv_forget);
+        findViewById(R.id.tv_register).setOnClickListener(this);
+        findViewById(R.id.tv_forget).setOnClickListener(this);
     }
 
     public void onClick(View v) {
