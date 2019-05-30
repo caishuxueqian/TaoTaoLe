@@ -1,8 +1,8 @@
-package orc.com.taotaole.Activity;
+package orc.com.taotaole.main.Activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import orc.com.taotaole.R;
@@ -25,10 +25,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Intent intent = new Intent();
         switch (v.getId()){
             case R.id.tv_register:
-                intent.setClass(getApplicationContext(),RegisterActivity.class);
+                intent.setClass(getApplicationContext(), RegisterActivity.class);
                 break;
             case R.id.tv_forget:
-                intent.setClass(getApplicationContext(),ForgetActivity.class);
+                intent.setClass(getApplicationContext(), ForgetActivity.class);
                 break;
         }
         startActivity(intent);
