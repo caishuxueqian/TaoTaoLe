@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.RegisterActivity">
+    tools:context=".main.Activity.RegisterActivity">
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -44,6 +44,34 @@
                 android:text="账号：" />
 
             <EditText
+                android:id="@+id/et_account"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="4"
+                android:background="@android:color/transparent"
+                android:hint="请输入用户名"
+                android:textColor="@android:color/black"
+                android:textColorHint="#ccc"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="30dp"
+            android:paddingTop="30dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="15dp">
+
+            <TextView
+                android:layout_width="8dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="手机号：" />
+
+            <EditText
                 android:id="@+id/account"
                 android:layout_width="0dp"
                 android:layout_height="34dp"
@@ -54,12 +82,6 @@
                 android:textColorHint="#ccc"
                 android:textSize="16sp" />
         </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="#3000" />
-
         <LinearLayout
             android:layout_width="320dp"
             android:layout_height="wrap_content"
@@ -120,8 +142,37 @@
                 android:textSize="16sp" />
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="30dp"
+            android:paddingTop="30dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="15dp">
 
+            <EditText
+                android:id="@+id/code"
+                android:layout_width="190dp"
+                android:layout_height="34dp"
+                android:layout_weight="4"
+                android:background="@android:color/transparent"
+                android:hint="请输入验证码"
+                android:textColor="@android:color/black"
+                android:textColorHint="#ccc"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="34dp"
+                android:text="获取验证码"
+                android:textSize="16sp"
+                android:textAlignment="viewEnd"
+                android:layout_gravity="end" />
+        </LinearLayout>
         <Button
+            android:id="@+id/btn_register"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_shape"

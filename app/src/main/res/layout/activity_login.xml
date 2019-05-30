@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.LoginActivity">
+    tools:context=".main.Activity.LoginActivity">
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -52,10 +52,11 @@
                 android:layout_weight="1"
                 android:drawableLeft="@drawable/ic_account"
                 android:gravity="center"
-                android:text="账号：" />
+                android:text="账号："
+                android:textColor="#100E0E" />
 
             <EditText
-                android:id="@+id/account"
+                android:id="@+id/et_account"
                 android:layout_width="0dp"
                 android:layout_height="34dp"
                 android:layout_weight="4"
@@ -87,10 +88,11 @@
                 android:layout_weight="1"
                 android:drawableLeft="@drawable/ic_password"
                 android:gravity="center"
-                android:text="密码：" />
+                android:text="密码："
+                android:textColor="#1A1717" />
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/et_password"
                 android:layout_width="0dp"
                 android:layout_height="34dp"
                 android:layout_weight="4"
@@ -101,6 +103,17 @@
                 android:textSize="16sp" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="270dp"
+            android:layout_height="30dp">
+
+            <CheckBox
+                android:id="@+id/cb_auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="自动登录"
+                android:textColor="#81615F" />
+        </LinearLayout>
         <Button
             android:layout_width="270dp"
             android:layout_height="wrap_content"

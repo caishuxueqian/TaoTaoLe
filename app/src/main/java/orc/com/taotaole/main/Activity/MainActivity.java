@@ -1,7 +1,7 @@
-package orc.com.taotaole.Activity;
+package orc.com.taotaole.main.Activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import orc.com.taotaole.R;
 
