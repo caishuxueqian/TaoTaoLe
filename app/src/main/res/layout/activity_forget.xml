@@ -18,7 +18,7 @@
 
         <TextView
             android:layout_width="420dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:background="#FF8800"
             android:gravity="center"
             android:text="@string/app_forget"
@@ -37,7 +37,7 @@
 
             <TextView
                 android:layout_width="8dp"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:text="手机号：" />
@@ -45,7 +45,7 @@
             <EditText
                 android:id="@+id/et_phone"
                 android:layout_width="0dp"
-                android:layout_height="34dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="4"
                 android:background="@android:color/transparent"
                 android:hint="请输入用户名"
@@ -65,7 +65,7 @@
 
             <TextView
                 android:layout_width="8dp"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:text="密码：" />
@@ -73,10 +73,11 @@
             <EditText
                 android:id="@+id/et_password_reset"
                 android:layout_width="0dp"
-                android:layout_height="34dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="4"
                 android:background="@android:color/transparent"
                 android:hint="请重设密码"
+                android:inputType="textPassword"
                 android:textColor="@android:color/black"
                 android:textColorHint="#ccc"
                 android:textSize="16sp" />
@@ -95,7 +96,7 @@
             <EditText
                 android:id="@+id/et_code"
                 android:layout_width="190dp"
-                android:layout_height="34dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="4"
                 android:background="@android:color/transparent"
                 android:hint="请输入验证码"
@@ -106,11 +107,11 @@
             <TextView
                 android:id="@+id/tv_getCode"
                 android:layout_width="80dp"
-                android:layout_height="34dp"
-                android:text="获取验证码"
-                android:textSize="16sp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
                 android:gravity="center_vertical"
-                android:layout_gravity="end" />
+                android:text="获取验证码"
+                android:textSize="16sp" />
         </LinearLayout>
         <Button
             android:id="@+id/btn_yes"

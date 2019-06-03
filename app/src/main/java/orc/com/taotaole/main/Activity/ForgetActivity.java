@@ -45,7 +45,7 @@ public class ForgetActivity extends AppCompatActivity {
             Map<String, ?> allConent = mSharedPrefrences.getAll();
             String userName;
             if (phone.equals("") || passWord_Reset.equals("") || code.equals("")) {
-                Toast.makeText(this, "信息不完整", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "信息填写不完整", Toast.LENGTH_SHORT).show();
             } else if (true) {
                 for (Map.Entry<String, ?> entry : allConent.entrySet()) {
                     if (phone.equals(entry.getValue())) {
@@ -58,12 +58,10 @@ public class ForgetActivity extends AppCompatActivity {
                         Toast.makeText(this, "密码更改成功！", Toast.LENGTH_SHORT).show();
                         break;
                     } else {
-                        Toast.makeText(this, "手机号不存在!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "该手机号不存在!", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
-
-
     }
 }

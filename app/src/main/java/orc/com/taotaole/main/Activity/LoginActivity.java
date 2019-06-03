@@ -22,8 +22,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        user_name = (EditText) findViewById(R.id.et_account);
-        pass_word = (EditText) findViewById(R.id.et_password);
+        user_name = findViewById(R.id.et_account);
+        pass_word = findViewById(R.id.et_password);
 
         mSharedPrefrences = getSharedPreferences("userinfo", MODE_PRIVATE);
         findViewById(R.id.tv_register).setOnClickListener(e -> {
@@ -37,14 +37,10 @@ public class LoginActivity extends AppCompatActivity {
             passWord = pass_word.getText().toString();
             if (userName.equals(mSharedPrefrences.getString(userName, "")) && passWord.equals(mSharedPrefrences.getString((userName + "_PassWord"), ""))) {
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
-
+                Toast.makeText(this, "登录成功！", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, "用户名或者密码错误！", Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
-
-
 }

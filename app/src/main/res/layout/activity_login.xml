@@ -18,7 +18,7 @@
 
         <TextView
             android:layout_width="420dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:background="#FF8800"
             android:gravity="center"
             android:text="@string/app_message"
@@ -48,7 +48,7 @@
 
             <TextView
                 android:layout_width="8dp"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawableLeft="@drawable/ic_account"
                 android:gravity="center"
@@ -58,7 +58,7 @@
             <EditText
                 android:id="@+id/et_account"
                 android:layout_width="0dp"
-                android:layout_height="34dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="4"
                 android:background="@android:color/transparent"
                 android:hint="请输入用户名"
@@ -84,7 +84,7 @@
 
             <TextView
                 android:layout_width="8dp"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawableLeft="@drawable/ic_password"
                 android:gravity="center"
@@ -94,27 +94,17 @@
             <EditText
                 android:id="@+id/et_password"
                 android:layout_width="0dp"
-                android:layout_height="34dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="4"
                 android:background="@android:color/transparent"
                 android:hint="请输入密码"
+                android:inputType="textPassword"
                 android:textColor="@android:color/black"
                 android:textColorHint="#ccc"
                 android:textSize="16sp" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="270dp"
-            android:layout_height="30dp">
-
-            <CheckBox
-                android:id="@+id/cb_auto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="自动登录"
-                android:textColor="#81615F" />
-        </LinearLayout>
         <Button
             android:id="@+id/btn_login"
             android:layout_width="270dp"
@@ -126,7 +116,7 @@
     <TextView
         android:id="@+id/tv_register"
         android:layout_width="60dp"
-        android:layout_height="16dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -143,7 +133,7 @@
     <TextView
         android:id="@+id/tv_forget"
         android:layout_width="60dp"
-        android:layout_height="16dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
