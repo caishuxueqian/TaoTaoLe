@@ -7,4 +7,14 @@
     <string name="btn_register">注册</string>
     <string name="app_forget">忘记密码</string>
     <string name="btn_forget">确定</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_setting">Settings</string>
+
+
+    <string name="tab_menu_alert">首页</string>
+    <string name="tab_menu_profile">分类</string>
+    <string name="tab_menu_pay">购物车</string>
+    <string name="tab_menu_setting">我的</string>
+
 </resources>
