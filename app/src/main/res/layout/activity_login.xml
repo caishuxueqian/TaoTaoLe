@@ -101,6 +101,7 @@
                 android:textColor="@android:color/black"
                 android:textColorHint="#ccc"
                 android:textSize="16sp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -115,6 +116,7 @@
                 android:textColor="#81615F" />
         </LinearLayout>
         <Button
+            android:id="@+id/btn_login"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_shape"
