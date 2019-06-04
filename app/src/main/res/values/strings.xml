@@ -16,5 +16,18 @@
     <string name="tab_menu_profile">分类</string>
     <string name="tab_menu_pay">购物车</string>
     <string name="tab_menu_setting">我的</string>
+    <string name="title_activity_draw">DrawActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">淘淘乐</string>
+    <string name="nav_header_subtitle">看啥呢，小老弟！</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">退出登录</string>
 
 </resources>

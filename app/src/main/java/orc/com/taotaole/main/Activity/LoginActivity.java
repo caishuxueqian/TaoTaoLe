@@ -13,8 +13,8 @@ import orc.com.taotaole.R;
 public class LoginActivity extends AppCompatActivity {
     private EditText user_name;
     private EditText pass_word;
-    private String userName;
-    private String passWord;
+    private String userName="";
+    private String passWord="";
     private SharedPreferences mSharedPrefrences;
     private SharedPreferences.Editor mEditor;
 
@@ -26,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         pass_word = findViewById(R.id.et_password);
 
         mSharedPrefrences = getSharedPreferences("userinfo", MODE_PRIVATE);
+        mEditor=mSharedPrefrences.edit();
         findViewById(R.id.tv_register).setOnClickListener(e -> {
             startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
         });
@@ -35,10 +36,21 @@ public class LoginActivity extends AppCompatActivity {
         findViewById(R.id.btn_login).setOnClickListener(e -> {
             userName = user_name.getText().toString();
             passWord = pass_word.getText().toString();
-            if (userName.equals(mSharedPrefrences.getString(userName, "")) && passWord.equals(mSharedPrefrences.getString((userName + "_PassWord"), ""))) {
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            if (!userName.equals("")&&!passWord.equals("")&&userName.equals(mSharedPrefrences.getString(userName, "")) && passWord.equals(mSharedPrefrences.getString((userName + "_PassWord"), ""))) {
+                startActivity(new Intent(LoginActivity.this, DrawActivity.class));
                 Toast.makeText(this, "登录成功！", Toast.LENGTH_SHORT).show();
-            } else {
+
+            }
+//            //测试使用//测试使用//测试使用//测试使用//测试使用,账号输入“1”即可登录
+            else if(userName.equals("1")){
+                mEditor.putString("current_UserName",userName);
+                mEditor.commit();
+                startActivity(new Intent(LoginActivity.this, DrawActivity.class));
+                Toast.makeText(this, "登录成功！", Toast.LENGTH_SHORT).show();
+
+            }
+            //测试使用//测试使用//测试使用//测试使用//测试使用
+            else {
                 Toast.makeText(this, "用户名或者密码错误！", Toast.LENGTH_SHORT).show();
             }
         });

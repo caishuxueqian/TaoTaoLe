@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--改这个，全部颜色统一修改-->
+    <color name="main_color">#00BBFF</color>
+    <!--改这个，全部颜色统一修改-->
+
+    <color name="orange_normal">@color/main_color</color>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="orange_normal">#FF8800</color>
-    <color name="orange_light">#FFAA33</color>
-
+    <color name="blue_normal">#00BBFF</color>
+    <color name="blue_light">#00CCFF</color>
+    <color name="orange_light">@color/main_color</color>
     <color name="bg_black">#000000</color>
     <color name="bg_white">#FFFFFF</color>
     <color name="bg_topbar">#FCFCFC</color>
@@ -14,7 +20,7 @@
 
     <color name="text_gray">#8D7A71</color>
     <color name="text_white">#FFFFFF</color>
-    <color name="text_yellow">#FFC800</color>
+    <color name="text_yellow">@color/main_color</color>
     <color name="text_topbar">#694E42</color>
     <color name="div_white">#E5E5E5</color>
 </resources>
