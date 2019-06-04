@@ -20,7 +20,7 @@ public class MyFragment4 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fg_content,container,false);
         TextView txt_content = (TextView) view.findViewById(R.id.txt_content);
-        txt_content.setText("第四个Fragment");
+        txt_content.setText("我的设置");
         Log.e("HEHE", "4日狗");
         return view;
     }
