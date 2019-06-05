@@ -10,23 +10,6 @@
         android:layout_height="0dp"
         android:background="@color/bg_topbar">
 
-        <!--<TextView-->
-            <!--android:id="@+id/txt_topbar"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_centerInParent="true"-->
-            <!--android:gravity="center"-->
-            <!--android:background="#FF8800"-->
-            <!--android:text="淘淘乐"-->
-            <!--android:textColor="@color/text_topbar"-->
-            <!--android:textSize="18sp" />-->
-
-        <!--<View-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="2px"-->
-            <!--android:layout_alignParentBottom="true"-->
-            <!--android:background="@color/div_white" />-->
-
     </RelativeLayout>
 
 
@@ -41,25 +24,25 @@
         <RadioButton
             android:id="@+id/rb_channel"
             style="@style/tab_menu_item"
-            android:drawableTop="@drawable/tab_menu_channel"
+            android:drawableTop="@drawable/tab_menu_home"
             android:text="@string/tab_menu_alert" />
 
         <RadioButton
             android:id="@+id/rb_message"
             style="@style/tab_menu_item"
-            android:drawableTop="@drawable/tab_menu_message"
+            android:drawableTop="@drawable/tab_menu_classify"
             android:text="@string/tab_menu_profile" />
 
         <RadioButton
             android:id="@+id/rb_better"
             style="@style/tab_menu_item"
-            android:drawableTop="@drawable/tab_menu_better"
+            android:drawableTop="@drawable/tab_menu_shopping"
             android:text="@string/tab_menu_pay" />
 
         <RadioButton
             android:id="@+id/rb_setting"
             style="@style/tab_menu_item"
-            android:drawableTop="@drawable/tab_menu_setting"
+            android:drawableTop="@drawable/tab_menu_mine"
             android:text="@string/tab_menu_setting" />
 
     </RadioGroup>
