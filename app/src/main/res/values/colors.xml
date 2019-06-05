@@ -20,7 +20,7 @@
 
     <color name="text_gray">#8D7A71</color>
     <color name="text_white">#FFFFFF</color>
-    <color name="text_yellow">@color/main_color</color>
+    <color name="text_blue">@color/main_color</color>
     <color name="text_topbar">#694E42</color>
     <color name="div_white">#E5E5E5</color>
 </resources>
