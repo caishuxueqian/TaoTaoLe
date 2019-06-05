@@ -30,4 +30,18 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">退出登录</string>
 
+    <!--购物车-->
+    <string name="cart_title">购物车</string>
+    <string name="cart_edit">编辑</string>
+    <string name="all_check">全选</string>
+    <string name="total">合计:0.00</string>
+    <string name="buy">结算(0)</string>
+    <string name="btn_reduce"> - </string>
+    <string name="default_edit_text">1</string>
+    <string name="btn_add"> + </string>
+    <string name="item_commodity_name_demo">酒红色纯红色纯羊毛西服套装</string>
+    <string name="item_commodity_info_demo">属性:粉蓝色</string>
+    <string name="item_commodity_price_demo">￥390</string>
+    <string name="item_commodity_number_demo">x1</string>
+
 </resources>
