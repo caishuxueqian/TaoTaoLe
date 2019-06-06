@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/shape"
+    >
+    <ImageView
+        android:id="@+id/iv1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="160dp"
+        android:layout_height="150dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv"
+            android:layout_marginLeft="10dp"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:text="清仓大甩卖，清仓大甩卖，清仓大甩卖"
+            android:textSize="13dp"/>
+        <ImageView
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="5dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/icon_xiaolian"/>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/tv1"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="清仓大甩卖"
+        android:textSize="15dp"
+        android:textColor="#FF0000"/>
+    </LinearLayout>
+
+</LinearLayout>

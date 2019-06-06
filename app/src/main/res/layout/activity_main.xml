@@ -25,25 +25,29 @@
             android:id="@+id/rb_channel"
             style="@style/tab_menu_item"
             android:drawableTop="@drawable/tab_menu_home"
-            android:text="@string/tab_menu_alert" />
+            android:text="@string/tab_menu_alert"
+            android:textSize="15dp"/>
 
         <RadioButton
             android:id="@+id/rb_message"
             style="@style/tab_menu_item"
             android:drawableTop="@drawable/tab_menu_classify"
-            android:text="@string/tab_menu_profile" />
+            android:text="@string/tab_menu_profile"
+            android:textSize="15dp"/>
 
         <RadioButton
             android:id="@+id/rb_better"
             style="@style/tab_menu_item"
             android:drawableTop="@drawable/tab_menu_shopping"
-            android:text="@string/tab_menu_pay" />
+            android:text="@string/tab_menu_pay"
+            android:textSize="15dp"/>
 
         <RadioButton
             android:id="@+id/rb_setting"
             style="@style/tab_menu_item"
             android:drawableTop="@drawable/tab_menu_mine"
-            android:text="@string/tab_menu_setting" />
+            android:text="@string/tab_menu_setting"
+            android:textSize="15dp"/>
 
     </RadioGroup>
 
