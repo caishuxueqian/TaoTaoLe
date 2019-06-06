@@ -2,13 +2,11 @@ package orc.com.taotaole.main.Activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -31,8 +29,8 @@ public class MyFragment2 extends Fragment {
         initDatas();
         initDatas1();
         initDatas2();
-        mGridView = (GridView) view.findViewById(R.id.gv);
-        mListView = (ListView) view.findViewById(R.id.lv);
+        mGridView = view.findViewById(R.id.gv);
+        mListView = view.findViewById(R.id.lv);
         mGoodsAdapterList = new Adapter_list(getActivity(), datas1);
         mGridAdapterGrid = new Adapter_grid(getActivity(), mDatas);
         mListView.setAdapter(mGoodsAdapterList);
