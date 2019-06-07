@@ -3,7 +3,8 @@
     android:id="@+id/rootview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#F1F1F1">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,15 +20,18 @@
                 android:id="@+id/lv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:scrollbars="none" />
+                android:layout_weight="10"
+                android:scrollbars="none"
+               />
 
             <!--右侧商品列表-->
             <GridView
                 android:id="@+id/gv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="3"
+                android:horizontalSpacing="4dp"
+                android:verticalSpacing="4dp"
                android:numColumns="3"
                 />
 
