@@ -56,9 +56,7 @@ public class Adapter_list extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
        viewHolder.goodImage.setImageResource(goodsList.getImgId());
-        Log.d(TAG, "getView上: "+goodsList.getImgId());
         viewHolder.goodDescribe.setText(goodsList.getDescribe());
-        Log.d(TAG, "getView下: "+viewHolder);
         return view;
     }
 

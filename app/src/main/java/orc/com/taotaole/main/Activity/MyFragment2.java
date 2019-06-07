@@ -1,5 +1,6 @@
 package orc.com.taotaole.main.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -35,28 +36,6 @@ public class MyFragment2 extends Fragment {
         mGridAdapterGrid = new Adapter_grid(getActivity(), mDatas);
         mListView.setAdapter(mGoodsAdapterList);
         mGridView.setAdapter(mGridAdapterGrid);
-        mGridView.setOnItemClickListener((parent, v, position, id) -> {
-            switch (position) {
-                case 1:
-                    Toast.makeText(getActivity(), "1", Toast.LENGTH_SHORT).show();
-                    break;
-                case 2:
-                    Toast.makeText(getActivity(), "5", Toast.LENGTH_SHORT).show();
-                    break;
-                case 3:
-                    Toast.makeText(getActivity(), "3", Toast.LENGTH_SHORT).show();
-                    break;
-                case 4:
-                    Toast.makeText(getActivity(), "4", Toast.LENGTH_SHORT).show();
-                    break;
-                case 5:
-                    Toast.makeText(getActivity(), "5", Toast.LENGTH_SHORT).show();
-                    break;
-                default:
-                    Toast.makeText(getActivity(), "啦啦啦", Toast.LENGTH_SHORT).show();
-                    break;
-            }
-        });
         mListView.setOnItemClickListener((a, b, position, d) -> {
             switch (position) {
                 case 0:
@@ -97,7 +76,32 @@ public class MyFragment2 extends Fragment {
                     break;
             }
         });
-
+        mGridView.setOnItemClickListener((parent, v, position, id) -> {
+//            switch (position) {
+//                case 1:
+//                    Toast.makeText(getActivity(), "1", Toast.LENGTH_SHORT).show();
+//                    startActivity(new Intent(getActivity(),GoodsActivity.class));
+//                    break;
+//                case 2:
+//                    Toast.makeText(getActivity(), "5", Toast.LENGTH_SHORT).show();
+//                    startActivity(new Intent(getActivity(),GoodsActivity.class));
+//                    break;
+//                case 3:
+//                    Toast.makeText(getActivity(), "3", Toast.LENGTH_SHORT).show();
+//                    startActivity(new Intent(getActivity(),GoodsActivity.class));
+//                    break;
+//                case 4:
+//                    Toast.makeText(getActivity(), "4", Toast.LENGTH_SHORT).show();
+//                    break;
+//                case 5:
+//                    Toast.makeText(getActivity(), "5", Toast.LENGTH_SHORT).show();
+//                    break;
+//                default:
+//                    Toast.makeText(getActivity(), "啦啦啦", Toast.LENGTH_SHORT).show();
+//                    break;
+//            }
+            startActivity(new Intent(getActivity(),GoodsActivity.class));
+        });
         return view;
     }
     private void initDatas() {

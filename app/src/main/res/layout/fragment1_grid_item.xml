@@ -34,7 +34,7 @@
         android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="清仓大甩卖"
+        android:text="10"
         android:textSize="15dp"
         android:textColor="#FF0000"/>
     </LinearLayout>

@@ -23,6 +23,7 @@
         </activity>
         <activity android:name=".main.Activity.RegisterActivity" />
         <activity android:name=".main.Activity.MainActivity" />
+        <activity android:name=".main.Activity.GoodsActivity" />
     </application>
 
 </manifest>

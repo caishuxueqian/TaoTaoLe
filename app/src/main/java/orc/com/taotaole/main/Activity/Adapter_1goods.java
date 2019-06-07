@@ -14,13 +14,11 @@ import orc.com.taotaole.R;
 
 public class Adapter_1goods extends BaseAdapter {
     private Context context;
-    private List<Model_goods> datas;
-    public Adapter_1goods(Context context, List<Model_goods> datas) {
+    private List<Bean_goods1> datas;
+    public Adapter_1goods(Context context, List<Bean_goods1> datas) {
         this.context = context;
         this.datas = datas;
     }
-
-
     @Override
     public int getCount() {
         return datas.size();
@@ -38,28 +36,34 @@ public class Adapter_1goods extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Model_goods modelgoods = (Model_goods) getItem(position);
+        Bean_goods1 bean_goods1 = (Bean_goods1) getItem(position);
         View view;
         ViewHolder viewHolder;
         if (convertView == null) {
-            view = LayoutInflater.from(context).inflate((R.layout.fragment1_grid_item), null);
+            view = LayoutInflater.from(context).inflate((R.layout.activty_goods_grid_item), null);
             viewHolder = new ViewHolder();
-            viewHolder.animalImage = view.findViewById(R.id.iv1);
-            viewHolder.animalName = view.findViewById(R.id.tv1);
+            viewHolder.GoodsImg = view.findViewById(R.id.goods1_iv);
+            viewHolder.GoodsDescrbe = view.findViewById(R.id.goods1_tv);
+            viewHolder.GoodsMoney = view.findViewById(R.id.goods1_tv1);
+            viewHolder.GoodsPerson = view.findViewById(R.id.goods1_tv2);
             view.setTag(viewHolder);
         } else {
             view = convertView;
             viewHolder = (ViewHolder) view.getTag();
         }
-        viewHolder.animalName.setText(modelgoods.getAnimal());
-        viewHolder.animalImage.setImageResource(modelgoods.getImgId());
+        viewHolder.GoodsImg.setImageResource(bean_goods1.getImgId());
+        viewHolder.GoodsDescrbe.setText(bean_goods1.getDescribe());
+        viewHolder.GoodsMoney.setText(bean_goods1.getMoney());
+        viewHolder.GoodsPerson.setText(bean_goods1.getPerson());
         return view;
 
     }
 
     class ViewHolder {
-        ImageView animalImage;
-        TextView animalName;
+        ImageView GoodsImg;
+        TextView GoodsDescrbe;
+        TextView GoodsMoney;
+        TextView GoodsPerson;
     }
 
 }
