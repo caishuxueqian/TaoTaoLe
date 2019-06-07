@@ -12,10 +12,10 @@ import java.util.List;
 
 import orc.com.taotaole.R;
 
-public class Adapter_goods extends BaseAdapter {
+public class Adapter_2goods extends BaseAdapter {
     private Context context;
     private List<Model_goods> datas;
-    public Adapter_goods(Context context, List<Model_goods> datas) {
+    public Adapter_2goods(Context context, List<Model_goods> datas) {
         this.context = context;
         this.datas = datas;
     }
@@ -42,7 +42,7 @@ public class Adapter_goods extends BaseAdapter {
         View view;
         ViewHolder viewHolder;
         if (convertView == null) {
-            view = LayoutInflater.from(context).inflate((R.layout.fragment1_item_view), null);
+            view = LayoutInflater.from(context).inflate((R.layout.fragment1_grid_item), null);
             viewHolder = new ViewHolder();
             viewHolder.animalImage = view.findViewById(R.id.iv1);
             viewHolder.animalName = view.findViewById(R.id.tv1);

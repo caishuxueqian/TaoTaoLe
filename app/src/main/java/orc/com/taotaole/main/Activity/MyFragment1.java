@@ -16,7 +16,7 @@ import orc.com.taotaole.R;
 
 public class MyFragment1 extends Fragment {
     private GridView mGridView;
-    private Adapter_goods mAdapterGoods;
+    private Adapter_2goods mAdapterGoods;
     private List<Model_goods> mDatas = new ArrayList<Model_goods>();
     private Button button;
 
@@ -25,7 +25,7 @@ public class MyFragment1 extends Fragment {
         View view = inflater.inflate(R.layout.fragment1_layout, container, false);
         mGridView = view.findViewById(R.id.gv);
         initDatas();
-        mAdapterGoods = new Adapter_goods(getActivity(), mDatas);
+        mAdapterGoods = new Adapter_2goods(getActivity(), mDatas);
         mGridView.setAdapter(mAdapterGoods);
 
         mGridView.setOnItemClickListener((parent, v, position, id) -> {

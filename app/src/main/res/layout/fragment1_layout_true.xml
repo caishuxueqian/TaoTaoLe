@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/main_color"
+        android:orientation="horizontal">
+
+        <SearchView
+            android:layout_width="270dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape1"
+            android:gravity="center_horizontal"
+            android:queryHint="搜一下">
+
+        </SearchView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="搜你喜欢"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+</RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/animal_2" />
+
+    <TableLayout
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TableRow
+            android:layout_height="123dp"
+            android:gravity="center">
+
+
+            <ImageView
+                android:id="@+id/t1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="15dp"
+                android:src="@drawable/aa" />
+
+            <ImageView
+                android:id="@+id/t2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="15dp"
+                android:src="@drawable/ab" />
+
+            <ImageView
+                android:id="@+id/t3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="15dp"
+                android:src="@drawable/ac" />
+
+            <ImageView
+                android:id="@+id/t4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="15dp"
+                android:src="@drawable/ad" />
+
+            <ImageView
+                android:id="@+id/t5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="15dp"
+                android:src="@drawable/ba" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_height="123dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/t6"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/bb"
+
+                android:layout_margin="15dp"/>
+
+            <ImageView
+                android:id="@+id/t7"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="15dp"
+                android:src="@drawable/bc" />
+
+            <ImageView
+                android:id="@+id/t8"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="15dp"
+
+                android:src="@drawable/bd" />
+
+            <ImageView
+                android:id="@+id/t9"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="15dp"
+
+                android:src="@drawable/ca" />
+
+            <ImageView
+                android:id="@+id/t10"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="15dp"
+
+                android:src="@drawable/cb" />
+        </TableRow>
+
+
+    </TableLayout>
+    </ScrollView>
+</RelativeLayout>
