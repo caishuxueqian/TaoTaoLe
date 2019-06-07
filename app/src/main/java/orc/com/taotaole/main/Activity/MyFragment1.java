@@ -54,14 +54,14 @@ public class MyFragment1 extends Fragment {
         return view;
     }
     private void initDatas() {
-        Model_goods modelgoods1 = new Model_goods("10元", R.drawable.animal_1);
-        Model_goods modelgoods2 = new Model_goods("10元", R.drawable.animal_2);
-        Model_goods modelgoods3 = new Model_goods("10元", R.drawable.animal_3);
-        Model_goods modelgoods4 = new Model_goods("10元", R.drawable.animal_4);
-        Model_goods modelgoods5 = new Model_goods("10元", R.drawable.animal_1);
-        Model_goods modelgoods6 = new Model_goods("10元", R.drawable.animal_1);
-        Model_goods modelgoods7 = new Model_goods("10元", R.drawable.animal_1);
-        Model_goods modelgoods8 = new Model_goods("10元", R.drawable.animal_1);
+        Model_goods modelgoods1 = new Model_goods("10", R.drawable.animal_1);
+        Model_goods modelgoods2 = new Model_goods("10", R.drawable.animal_2);
+        Model_goods modelgoods3 = new Model_goods("10", R.drawable.animal_3);
+        Model_goods modelgoods4 = new Model_goods("10", R.drawable.animal_4);
+        Model_goods modelgoods5 = new Model_goods("10", R.drawable.animal_1);
+        Model_goods modelgoods6 = new Model_goods("10", R.drawable.animal_1);
+        Model_goods modelgoods7 = new Model_goods("10", R.drawable.animal_1);
+        Model_goods modelgoods8 = new Model_goods("10", R.drawable.animal_1);
 
         mDatas.add(modelgoods1);
         mDatas.add(modelgoods2);

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="@drawable/shape"
+    android:background="@drawable/shape3"
     >
 <ImageView
     android:id="@+id/goods1_iv"
@@ -26,7 +26,7 @@
         android:text="清仓大甩卖，清仓大甩卖清仓大甩卖清仓大甩卖"
         android:textSize="17dp"/>
         <LinearLayout
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="0dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
