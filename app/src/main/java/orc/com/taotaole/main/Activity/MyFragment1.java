@@ -1,5 +1,6 @@
 package orc.com.taotaole.main.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -29,30 +30,32 @@ public class MyFragment1 extends Fragment {
         mGridView.setAdapter(mAdapterGoods);
 
         mGridView.setOnItemClickListener((parent, v, position, id) -> {
-            switch (position) {
-                case 1:
-                    Toast.makeText(getActivity(), "点你马呢？", Toast.LENGTH_SHORT).show();
-                    break;
-                case 2:
-                    Toast.makeText(getActivity(), "别点了", Toast.LENGTH_SHORT).show();
-                    break;
-                case 3:
-                    Toast.makeText(getActivity(), "没用的", Toast.LENGTH_SHORT).show();
-                    break;
-                case 4:
-                    Toast.makeText(getActivity(), "说了没用", Toast.LENGTH_SHORT).show();
-                    break;
-                case 5:
-                    Toast.makeText(getActivity(), "继续点", Toast.LENGTH_SHORT).show();
-                    break;
-                default:
-                    Toast.makeText(getActivity(), "点你马呢？", Toast.LENGTH_SHORT).show();
-                    break;
-            }
-
-        });
+//            switch (position) {
+//                case 1:
+//                    Toast.makeText(getActivity(), "点你马呢？", Toast.LENGTH_SHORT).show();
+//                    break;
+//                case 2:
+//                    Toast.makeText(getActivity(), "别点了", Toast.LENGTH_SHORT).show();
+//                    break;
+//                case 3:
+//                    Toast.makeText(getActivity(), "没用的", Toast.LENGTH_SHORT).show();
+//                    break;
+//                case 4:
+//                    Toast.makeText(getActivity(), "说了没用", Toast.LENGTH_SHORT).show();
+//                    break;
+//                case 5:
+//                    Toast.makeText(getActivity(), "继续点", Toast.LENGTH_SHORT).show();
+//                    break;
+//                default:
+//                    Toast.makeText(getActivity(), "点你马呢？", Toast.LENGTH_SHORT).show();
+//                    break;
+//            }
+                startActivity(new Intent(getActivity(),DetailActivity.class));
+                }
+        );
         return view;
     }
+
     private void initDatas() {
         Model_goods modelgoods1 = new Model_goods("10", R.drawable.animal_1);
         Model_goods modelgoods2 = new Model_goods("10", R.drawable.animal_2);

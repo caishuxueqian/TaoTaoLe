@@ -23,6 +23,9 @@ public class GoodsActivity extends AppCompatActivity {
         mGridView = findViewById(R.id.goods1_gv);
         mAdapterGoods = new Adapter_1goods(this, mDatas);
         mGridView.setAdapter(mAdapterGoods);
+        findViewById(R.id.good1_back).setOnClickListener(e->{
+            finish();
+        });
         mGridView.setOnItemClickListener((parent, v, position, id) -> {
 //            switch (position) {
 //                case 1:

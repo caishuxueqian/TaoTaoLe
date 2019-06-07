@@ -5,55 +5,42 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <!--购物车顶部-->
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/cart_title_layout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
         android:background="@color/main_color">
 
         <!--<ImageView-->
             <!--android:id="@+id/cart_back"-->
             <!--android:layout_width="30dp"-->
             <!--android:layout_height="30dp"-->
-            <!--android:layout_centerVertical="true"-->
             <!--android:layout_gravity="center"-->
-            <!--android:layout_marginStart="10dp"-->
             <!--android:src="@drawable/back"-->
-            <!--tools:ignore="RtlCompat" />-->
+           <!--/>-->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="18dp"
             android:text="购物车"
             android:textSize="20dp"
             android:textStyle="bold"
+            android:layout_marginLeft="50dp"
             android:textColor="@color/white"/>
 
         <TextView
             android:id="@+id/btn_edit"
-            android:layout_marginRight="20dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="250dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="10dp"
             android:text="@string/cart_edit"
+            android:textStyle="bold"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            tools:ignore="RtlCompat" />
-    </RelativeLayout> <!--购物车顶部-->
-
-    <!--商品listView-->
-    <!--<View-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="1dp"-->
-        <!--android:background="@color/gray" />-->
+            android:textSize="18sp" />
+    </LinearLayout>
 
     <ListView
         android:id="@+id/list_shopcart"
@@ -64,12 +51,6 @@
         android:layout_weight="1"
         android:scrollbars="none"
         tools:ignore="RtlCompat" />
-
-    <!--底部操作栏-->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/gray" />
 
     <LinearLayout
         android:id="@+id/rl_bottom"
