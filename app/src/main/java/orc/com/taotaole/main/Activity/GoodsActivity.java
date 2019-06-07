@@ -1,5 +1,6 @@
 package orc.com.taotaole.main.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.GridView;
@@ -23,27 +24,28 @@ public class GoodsActivity extends AppCompatActivity {
         mAdapterGoods = new Adapter_1goods(this, mDatas);
         mGridView.setAdapter(mAdapterGoods);
         mGridView.setOnItemClickListener((parent, v, position, id) -> {
-            switch (position) {
-                case 1:
-                    Toast.makeText(this, "点你马呢？", Toast.LENGTH_SHORT).show();
-                    break;
-                case 2:
-                    Toast.makeText(this, "别点了", Toast.LENGTH_SHORT).show();
-                    break;
-                case 3:
-                    Toast.makeText(this, "没用的", Toast.LENGTH_SHORT).show();
-                    break;
-                case 4:
-                    Toast.makeText(this, "说了没用", Toast.LENGTH_SHORT).show();
-                    break;
-                case 5:
-                    Toast.makeText(this, "继续点", Toast.LENGTH_SHORT).show();
-                    break;
-                default:
-                    Toast.makeText(this, "点你马呢？", Toast.LENGTH_SHORT).show();
-                    break;
-            }
-
+//            switch (position) {
+//                case 1:
+//
+//                    Toast.makeText(this, "点你马呢？", Toast.LENGTH_SHORT).show();
+//                    break;
+//                case 2:
+//                    Toast.makeText(this, "别点了", Toast.LENGTH_SHORT).show();
+//                    break;
+//                case 3:
+//                    Toast.makeText(this, "没用的", Toast.LENGTH_SHORT).show();
+//                    break;
+//                case 4:
+//                    Toast.makeText(this, "说了没用", Toast.LENGTH_SHORT).show();
+//                    break;
+//                case 5:
+//                    Toast.makeText(this, "继续点", Toast.LENGTH_SHORT).show();
+//                    break;
+//                default:
+//                    Toast.makeText(this, "点你马呢？", Toast.LENGTH_SHORT).show();
+//                    break;
+//            }
+            startActivity(new Intent(GoodsActivity.this,DetailActivity.class));
         });
 
     }
