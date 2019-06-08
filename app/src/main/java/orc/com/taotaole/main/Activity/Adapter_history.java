@@ -12,15 +12,13 @@ import java.util.List;
 
 import orc.com.taotaole.R;
 
-public class Adapter_2goods extends BaseAdapter {
+public class Adapter_history extends BaseAdapter {
     private Context context;
-    private List<Model_goods> datas;
-    public Adapter_2goods(Context context, List<Model_goods> datas) {
+    private List<Bean_history> datas;
+    public Adapter_history(Context context, List<Bean_history> datas) {
         this.context = context;
         this.datas = datas;
     }
-
-
     @Override
     public int getCount() {
         return datas.size();
@@ -38,27 +36,31 @@ public class Adapter_2goods extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Model_goods modelgoods = (Model_goods) getItem(position);
+        Bean_history bean_history = (Bean_history) getItem(position);
         View view;
         ViewHolder viewHolder;
         if (convertView == null) {
-            view = LayoutInflater.from(context).inflate((R.layout.fragment1_grid_item), null);
+            view = LayoutInflater.from(context).inflate((R.layout.activity_history_list_item), null);
             viewHolder = new ViewHolder();
-            viewHolder.animalImage = view.findViewById(R.id.iv1);
-            viewHolder.animalName = view.findViewById(R.id.tv1);
+            viewHolder.History = view.findViewById(R.id.history_img);
+            viewHolder.HistoryDescrbe = view.findViewById(R.id.history_describe);
+            viewHolder.HistoryMoney = view.findViewById(R.id.history_money);
             view.setTag(viewHolder);
         } else {
             view = convertView;
             viewHolder = (ViewHolder) view.getTag();
         }
-        viewHolder.animalName.setText(modelgoods.getAnimal());
-        viewHolder.animalImage.setImageResource(modelgoods.getImgId());
+        viewHolder.History.setImageResource(bean_history.getImgId());
+        viewHolder.HistoryDescrbe.setText(bean_history.getDescribe());
+        viewHolder.HistoryMoney.setText(bean_history.getMoney());
         return view;
+
     }
 
     class ViewHolder {
-        ImageView animalImage;
-        TextView animalName;
+        ImageView History;
+        TextView HistoryDescrbe;
+        TextView HistoryMoney;
     }
 
 }

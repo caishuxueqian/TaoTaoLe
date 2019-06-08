@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="240dp"
+    android:src="@drawable/animal_5"/>
+    <TableLayout
+        android:layout_margin="0dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <TableRow
+            android:layout_height="80dp"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/t1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/aa" />
+
+            <ImageView
+                android:id="@+id/t2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ab" />
+
+            <ImageView
+                android:id="@+id/t3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ac" />
+
+            <ImageView
+                android:id="@+id/t4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ad" />
+
+            <ImageView
+                android:id="@+id/t5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ba" />
+
+        </TableRow>
+        <TableRow
+            android:layout_height="123dp"
+            android:gravity="center">
+            <TextView
+                android:paddingLeft="6dp"
+                android:text="充值"
+                android:id="@+id/t6"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:paddingLeft="6dp"
+                android:text="充值"
+                android:id="@+id/t7"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:paddingLeft="6dp"
+                android:text="充值"
+                android:id="@+id/t8"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:text="充值"
+                android:id="@+id/t9"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:paddingLeft="7dp"
+                android:text="充值"
+                android:id="@+id/t10"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textStyle="bold"/>
+        </TableRow>
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="150dp"
+            android:background="@drawable/button_shape"
+            android:padding="1dp"
+            android:text="                       今日推荐"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+    </TableLayout>
+
+</LinearLayout>

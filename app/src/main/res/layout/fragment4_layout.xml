@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#D8D8D8">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,43 +22,43 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/fragment4_order"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="200dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/button_shape"
+        android:background="@drawable/shape"
         android:gravity="center"
-        android:text="我的订单"
-        android:textColor="@color/white"
+        android:text="购买记录"
         android:textSize="17dp"
         android:textStyle="bold"/>
 
     <TextView
+        android:id="@+id/fragment4_history"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/button_shape"
+        android:background="@drawable/shape"
         android:gravity="center"
         android:text="我的足迹"
         android:textStyle="bold"
-        android:textColor="@color/white"
         android:textSize="17dp" />
 
     <TextView
+        android:id="@+id/fragment4_person"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/button_shape"
+        android:background="@drawable/shape"
         android:gravity="center"
         android:text="个人中心"
         android:textStyle="bold"
-        android:textColor="@color/white"
         android:textSize="17dp" />
 
 </LinearLayout>

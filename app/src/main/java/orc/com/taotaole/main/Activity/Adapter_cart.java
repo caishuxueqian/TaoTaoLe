@@ -12,15 +12,13 @@ import java.util.List;
 
 import orc.com.taotaole.R;
 
-public class Adapter_2goods extends BaseAdapter {
+public class Adapter_cart extends BaseAdapter {
     private Context context;
-    private List<Model_goods> datas;
-    public Adapter_2goods(Context context, List<Model_goods> datas) {
+    private List<Bean_cart> datas;
+    public Adapter_cart(Context context, List<Bean_cart> datas) {
         this.context = context;
         this.datas = datas;
     }
-
-
     @Override
     public int getCount() {
         return datas.size();
@@ -38,27 +36,31 @@ public class Adapter_2goods extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Model_goods modelgoods = (Model_goods) getItem(position);
+        Bean_cart bean_cart = (Bean_cart) getItem(position);
         View view;
         ViewHolder viewHolder;
         if (convertView == null) {
-            view = LayoutInflater.from(context).inflate((R.layout.fragment1_grid_item), null);
+            view = LayoutInflater.from(context).inflate((R.layout.fragment3_list_item), null);
             viewHolder = new ViewHolder();
-            viewHolder.animalImage = view.findViewById(R.id.iv1);
-            viewHolder.animalName = view.findViewById(R.id.tv1);
+            viewHolder.CartImg = view.findViewById(R.id.fragment3_img);
+            viewHolder.CartDescrbe = view.findViewById(R.id.fragment3_describe);
+            viewHolder.CartMoney = view.findViewById(R.id.fragment3_money);
             view.setTag(viewHolder);
         } else {
             view = convertView;
             viewHolder = (ViewHolder) view.getTag();
         }
-        viewHolder.animalName.setText(modelgoods.getAnimal());
-        viewHolder.animalImage.setImageResource(modelgoods.getImgId());
+        viewHolder.CartImg.setImageResource(bean_cart.getImgId());
+        viewHolder.CartDescrbe.setText(bean_cart.getDescribe());
+        viewHolder.CartMoney.setText(bean_cart.getMoney());
         return view;
+
     }
 
     class ViewHolder {
-        ImageView animalImage;
-        TextView animalName;
+        ImageView CartImg;
+        TextView CartDescrbe;
+        TextView CartMoney;
     }
 
 }

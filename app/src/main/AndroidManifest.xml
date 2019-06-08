@@ -25,6 +25,8 @@
         <activity android:name=".main.Activity.MainActivity" />
         <activity android:name=".main.Activity.GoodsActivity" />
         <activity android:name=".main.Activity.DetailActivity" />
+        <activity android:name=".main.Activity.HistoryActivity"
+            android:parentActivityName=".main.Activity.MainActivity"/>
     </application>
 
 </manifest>
