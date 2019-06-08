@@ -15,6 +15,10 @@ import orc.com.taotaole.R;
 public class Adapter_cart extends BaseAdapter {
     private Context context;
     private List<Bean_cart> datas;
+    private TextView add;
+    private TextView sub;
+    private TextView sum;
+    private TextView number;
     public Adapter_cart(Context context, List<Bean_cart> datas) {
         this.context = context;
         this.datas = datas;
@@ -53,9 +57,15 @@ public class Adapter_cart extends BaseAdapter {
         viewHolder.CartImg.setImageResource(bean_cart.getImgId());
         viewHolder.CartDescrbe.setText(bean_cart.getDescribe());
         viewHolder.CartMoney.setText(bean_cart.getMoney());
+//        view.findViewById(R.id.fragment3_add).setOnClickListener(e->);
         return view;
 
     }
+    public  void add(){
+
+
+    }
+
 
     class ViewHolder {
         ImageView CartImg;

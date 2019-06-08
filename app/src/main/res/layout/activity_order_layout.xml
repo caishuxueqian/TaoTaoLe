@@ -12,7 +12,7 @@
         android:orientation="horizontal"
         android:background="@color/main_color">
         <ImageView
-            android:id="@+id/good1_back"
+            android:id="@+id/order_back"
             android:layout_width="80dp"
             android:layout_height="30dp"
             android:layout_marginLeft="0dp"
@@ -30,7 +30,7 @@
             android:textColor="@color/white"/>
 
         <TextView
-            android:id="@+id/btn_edit"
+            android:id="@+id/order_edit"
             android:layout_gravity="center"
             android:layout_marginLeft="130dp"
             android:layout_width="wrap_content"
@@ -50,19 +50,28 @@
         tools:ignore="RtlCompat" />
 
     <LinearLayout
-        android:id="@+id/rl_bottom"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/main_color">
         <CheckBox
+            android:id="@+id/order_allselect"
             android:layout_marginLeft="20dp"
-            android:id="@+id/fragment3_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="全选"
             android:textSize="17dp"
             />
+        <TextView
+            android:visibility="gone"
+            android:layout_marginLeft="180dp"
+            android:id="@+id/order_delete"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@color/red"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

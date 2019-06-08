@@ -2,7 +2,9 @@ package orc.com.taotaole.main.Activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -14,7 +16,8 @@ public class HistoryActivity extends AppCompatActivity {
     private ListView mListView;
     private Adapter_history mAdapterhistory;
     private List<Bean_history> mDatas = new ArrayList<Bean_history>();
-
+    private TextView tv_edit;
+    private TextView tv_delete;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history_layout);
@@ -22,33 +25,23 @@ public class HistoryActivity extends AppCompatActivity {
         mListView = findViewById(R.id.history_lv);
         mAdapterhistory = new Adapter_history(this, mDatas);
         mListView.setAdapter(mAdapterhistory);
-
-        mListView.setOnItemClickListener((parent, v, position, id) -> {
-//            switch (position) {
-//                case 1:
-//
-//                    Toast.makeText(this, "点你马呢？", Toast.LENGTH_SHORT).show();
-//                    break;
-//                case 2:
-//                    Toast.makeText(this, "别点了", Toast.LENGTH_SHORT).show();
-//                    break;
-//                case 3:
-//                    Toast.makeText(this, "没用的", Toast.LENGTH_SHORT).show();
-//                    break;
-//                case 4:
-//                    Toast.makeText(this, "说了没用", Toast.LENGTH_SHORT).show();
-//                    break;
-//                case 5:
-//                    Toast.makeText(this, "继续点", Toast.LENGTH_SHORT).show();
-//                    break;
-//                default:
-//                    Toast.makeText(this, "点你马呢？", Toast.LENGTH_SHORT).show();
-//                    break;
-//            }
-            Toast.makeText(this, "点我干嘛", Toast.LENGTH_SHORT).show();
-        });
+        tv_edit =findViewById(R.id.history_edit);
+        tv_delete =findViewById(R.id.history_delete);
+        tv_edit.setOnClickListener(e -> tv_edit());
 
     }
+
+    public void tv_edit() {
+        if ("编辑".equals(tv_edit.getText().toString())) {
+            tv_edit.setText("完成");
+            tv_delete.setVisibility(View.VISIBLE);
+        } else {
+            tv_edit.setText("编辑");
+            tv_delete.setVisibility(View.GONE);
+
+        }
+    }
+
 
     private void initDatas() {
         Bean_history bean_history1 = new Bean_history(R.drawable.animal_1, "跳楼甩卖，桂林小栽种", "10");
