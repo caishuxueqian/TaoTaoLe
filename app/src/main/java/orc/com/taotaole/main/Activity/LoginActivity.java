@@ -41,15 +41,14 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(this, "登录成功！", Toast.LENGTH_SHORT).show();
 
             }
-//            //测试使用//测试使用//测试使用//测试使用//测试使用,账号输入“1”即可登录
-            else if(userName.equals("1")){
+//            //测试使用//测试使用//测试使用//测试使用//测试使用,不输入即可登录
+            else if(userName.equals("")){
                 mEditor.putString("current_UserName",userName);
                 mEditor.commit();
                 startActivity(new Intent(LoginActivity.this, DrawActivity.class));
                 Toast.makeText(this, "登录成功！", Toast.LENGTH_SHORT).show();
 
             }
-            //测试使用//测试使用//测试使用//测试使用//测试使用
             else {
                 Toast.makeText(this, "用户名或者密码错误！", Toast.LENGTH_SHORT).show();
             }

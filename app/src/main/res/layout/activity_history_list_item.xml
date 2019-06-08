@@ -6,15 +6,15 @@
     android:orientation="horizontal">
 
     <CheckBox
-        android:id="@+id/history_checkbox"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/fragment3_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:button="@drawable/check_box_style"
-        android:scaleX="0.6"
-        android:scaleY="0.6" />
+        />
 
     <ImageView
+        android:layout_marginLeft="20dp"
         android:id="@+id/history_img"
         android:layout_width="100dp"
         android:layout_height="100dp"

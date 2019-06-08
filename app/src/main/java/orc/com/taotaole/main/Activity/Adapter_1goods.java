@@ -55,10 +55,10 @@ public class Adapter_1goods extends BaseAdapter {
         viewHolder.GoodsDescrbe.setText(bean_goods1.getDescribe());
         viewHolder.GoodsMoney.setText(bean_goods1.getMoney());
         viewHolder.GoodsPerson.setText(bean_goods1.getPerson());
-        if(position==0)
-            view.findViewById(R.id.fragment1_top).setVisibility(View.VISIBLE);
-        else
-            view.findViewById(R.id.fragment1_top).setVisibility(View.GONE);
+//        if(position==0)
+//            view.findViewById(R.id.fragment1_top).setVisibility(View.VISIBLE);
+//        else
+//            view.findViewById(R.id.fragment1_top).setVisibility(View.GONE);
         return view;
 
     }

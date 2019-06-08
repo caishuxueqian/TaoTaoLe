@@ -52,20 +52,14 @@
         android:background="@color/white">
 
         <CheckBox
-
-            android:id="@+id/ck_all"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/fragment3_checkbox"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_centerVertical="true"
-            android:button="@drawable/check_box_style"
-
-            android:gravity="center"
-            android:paddingLeft="10dp"
-            android:scaleX="0.6"
-            android:scaleY="0.6"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="全选"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/black" />
+            android:textSize="17dp"
+             />
 
         <TextView
             android:layout_width="0dp"

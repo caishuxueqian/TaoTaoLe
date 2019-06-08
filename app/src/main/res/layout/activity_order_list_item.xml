@@ -11,11 +11,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        />
+     />
 
     <ImageView
         android:layout_marginLeft="20dp"
-        android:id="@+id/fragment3_img"
+        android:id="@+id/order_img"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
@@ -24,11 +24,13 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/fragment3_describe"
+            android:id="@+id/order_describe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="桂林理工大学崽种"
@@ -50,7 +52,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/fragment3_money"
+                android:id="@+id/order_money"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10"
@@ -67,7 +69,7 @@
                 android:textColor="@color/gray" />
 
             <TextView
-                android:id="@+id/fragment3_number"
+                android:id="@+id/order_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -75,40 +77,5 @@
                 android:textColor="@color/gray" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="120dp"
-            android:layout_height="30dp"
-            android:background="@color/light_gray">
-
-            <TextView
-                android:id="@+id/fragment3_sub"
-                android:layout_width="15dp"
-                android:layout_height="match_parent"
-                android:layout_margin="1dp"
-                android:layout_weight="1"
-                android:background="#F8F8F8"
-                android:gravity="center"
-                android:text="-"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="match_parent"
-                android:layout_margin="1dp"
-                android:layout_weight="1"
-                android:background="#F8F8F8"
-                android:gravity="center"
-                android:text="1" />
-
-            <TextView
-                android:id="@+id/fragment3_add"
-                android:layout_width="15dp"
-                android:layout_height="match_parent"
-                android:layout_margin="1dp"
-                android:layout_weight="1"
-                android:background="#F8F8F8"
-                android:gravity="center"
-                android:text="+" />
-        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
