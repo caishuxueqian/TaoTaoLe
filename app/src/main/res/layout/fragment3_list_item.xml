@@ -58,21 +58,7 @@
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/fragment3_x"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="x"
-                android:textColor="@color/gray" />
 
-            <TextView
-                android:id="@+id/fragment3_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="1"
-                android:textColor="@color/gray" />
         </LinearLayout>
 
         <LinearLayout
@@ -92,6 +78,7 @@
                 android:textColor="@color/black" />
 
             <TextView
+                android:id="@+id/fragment3_number"
                 android:layout_width="15dp"
                 android:layout_height="match_parent"
                 android:layout_margin="1dp"

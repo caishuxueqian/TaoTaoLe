@@ -19,10 +19,12 @@ public class Adapter_cart extends BaseAdapter {
     private TextView sub;
     private TextView sum;
     private TextView number;
+
     public Adapter_cart(Context context, List<Bean_cart> datas) {
         this.context = context;
         this.datas = datas;
     }
+
     @Override
     public int getCount() {
         return datas.size();
@@ -57,12 +59,22 @@ public class Adapter_cart extends BaseAdapter {
         viewHolder.CartImg.setImageResource(bean_cart.getImgId());
         viewHolder.CartDescrbe.setText(bean_cart.getDescribe());
         viewHolder.CartMoney.setText(bean_cart.getMoney());
-//        view.findViewById(R.id.fragment3_add).setOnClickListener(e->);
+        view.findViewById(R.id.fragment3_add).setOnClickListener(e -> {
+            number = view.findViewById(R.id.fragment3_number);
+            sum = view.findViewById(R.id.fragment3_sum);
+            number.setText(String.valueOf(Integer.parseInt(number.getText().toString()) + 1));
+//            sum.setText(String.valueOf(Integer.parseInt(sum.getText().toString())));
+
+        });
+        view.findViewById(R.id.fragment3_sub).setOnClickListener(e -> {
+            number = view.findViewById(R.id.fragment3_number);
+            sum = view.findViewById(R.id.fragment3_sum);
+            if (!"1".equals(number.getText().toString())) {
+                number.setText(String.valueOf(Integer.parseInt(number.getText().toString()) - 1));
+//            sum.setText(String.valueOf(Integer.parseInt(sum.getText().toString())));
+            }
+        });
         return view;
-
-    }
-    public  void add(){
-
 
     }
 

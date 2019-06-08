@@ -1,10 +1,10 @@
 package orc.com.taotaole.main.Activity;
 
-public class Model_goods {
+public class Bean_home {
     private String animal;
     private int imgId;
 
-    public Model_goods(String animal, int imgId) {
+    public Bean_home(String animal, int imgId) {
         this.animal = animal;
         this.imgId = imgId;
 

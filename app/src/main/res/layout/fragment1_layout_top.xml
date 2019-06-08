@@ -2,28 +2,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="240dp"
-    android:src="@drawable/animal_5"/>
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:src="@drawable/animal_5" />
+
     <TableLayout
-        android:layout_margin="0dp"
-        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:layout_margin="0dp"
+        android:gravity="center"
+        android:padding="10dp">
+
         <TableRow
             android:layout_height="80dp"
             android:gravity="center">
+
             <ImageView
                 android:id="@+id/t1"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginBottom="10dp"
                 android:src="@drawable/aa" />
 
@@ -32,8 +35,8 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginBottom="10dp"
                 android:src="@drawable/ab" />
 
@@ -42,8 +45,8 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginBottom="10dp"
                 android:src="@drawable/ac" />
 
@@ -52,8 +55,8 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginBottom="10dp"
                 android:src="@drawable/ad" />
 
@@ -62,60 +65,65 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginBottom="10dp"
                 android:src="@drawable/ba" />
 
         </TableRow>
+
         <TableRow
             android:layout_height="123dp"
             android:gravity="center">
+
             <TextView
-                android:paddingLeft="6dp"
-                android:text="充值"
                 android:id="@+id/t6"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:textStyle="bold"
-                />
-            <TextView
                 android:paddingLeft="6dp"
                 android:text="充值"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/t7"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:textStyle="bold"/>
-            <TextView
                 android:paddingLeft="6dp"
                 android:text="充值"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/t8"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:textStyle="bold"/>
-            <TextView
+                android:paddingLeft="6dp"
                 android:text="充值"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/t9"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:textStyle="bold"/>
-            <TextView
-                android:paddingLeft="7dp"
                 android:text="充值"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/t10"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:textStyle="bold"/>
+                android:paddingLeft="7dp"
+                android:text="充值"
+                android:textStyle="bold" />
         </TableRow>
 
         <TextView

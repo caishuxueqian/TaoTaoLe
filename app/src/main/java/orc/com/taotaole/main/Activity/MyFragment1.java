@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +17,7 @@ import orc.com.taotaole.R;
 public class MyFragment1 extends Fragment {
     private GridView mGridView;
     private Adapter_2goods mAdapterGoods;
-    private List<Model_goods> mDatas = new ArrayList<Model_goods>();
+    private List<Bean_home> mDatas = new ArrayList<Bean_home>();
     private Button button;
 
     @Override
@@ -57,14 +56,14 @@ public class MyFragment1 extends Fragment {
     }
 
     private void initDatas() {
-        Model_goods modelgoods1 = new Model_goods("10", R.drawable.animal_1);
-        Model_goods modelgoods2 = new Model_goods("10", R.drawable.animal_2);
-        Model_goods modelgoods3 = new Model_goods("10", R.drawable.animal_3);
-        Model_goods modelgoods4 = new Model_goods("10", R.drawable.animal_4);
-        Model_goods modelgoods5 = new Model_goods("10", R.drawable.animal_1);
-        Model_goods modelgoods6 = new Model_goods("10", R.drawable.animal_1);
-        Model_goods modelgoods7 = new Model_goods("10", R.drawable.animal_1);
-        Model_goods modelgoods8 = new Model_goods("10", R.drawable.animal_1);
+        Bean_home modelgoods1 = new Bean_home("10", R.drawable.animal_1);
+        Bean_home modelgoods2 = new Bean_home("10", R.drawable.animal_2);
+        Bean_home modelgoods3 = new Bean_home("10", R.drawable.animal_3);
+        Bean_home modelgoods4 = new Bean_home("10", R.drawable.animal_4);
+        Bean_home modelgoods5 = new Bean_home("10", R.drawable.animal_1);
+        Bean_home modelgoods6 = new Bean_home("10", R.drawable.animal_1);
+        Bean_home modelgoods7 = new Bean_home("10", R.drawable.animal_1);
+        Bean_home modelgoods8 = new Bean_home("10", R.drawable.animal_1);
 
         mDatas.add(modelgoods1);
         mDatas.add(modelgoods2);

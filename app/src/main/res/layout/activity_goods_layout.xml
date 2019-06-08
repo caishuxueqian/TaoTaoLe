@@ -30,7 +30,11 @@
         android:textSize="20dp"
         android:textColor="@color/white"/>
     </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <GridView
+
         android:id="@+id/goods1_gv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -40,5 +44,16 @@
         android:verticalSpacing="2dp"
 
         />
+        <GridView
+            android:visibility="gone"
+            android:id="@+id/goods2_gv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:horizontalSpacing="5dp"
+            android:numColumns="2"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="2dp"
 
+            />
+    </FrameLayout>
 </LinearLayout>

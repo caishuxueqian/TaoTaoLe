@@ -18,6 +18,7 @@ public class HistoryActivity extends AppCompatActivity {
     private List<Bean_history> mDatas = new ArrayList<Bean_history>();
     private TextView tv_edit;
     private TextView tv_delete;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history_layout);
@@ -25,8 +26,8 @@ public class HistoryActivity extends AppCompatActivity {
         mListView = findViewById(R.id.history_lv);
         mAdapterhistory = new Adapter_history(this, mDatas);
         mListView.setAdapter(mAdapterhistory);
-        tv_edit =findViewById(R.id.history_edit);
-        tv_delete =findViewById(R.id.history_delete);
+        tv_edit = findViewById(R.id.history_edit);
+        tv_delete = findViewById(R.id.history_delete);
         tv_edit.setOnClickListener(e -> tv_edit());
 
     }
@@ -38,7 +39,6 @@ public class HistoryActivity extends AppCompatActivity {
         } else {
             tv_edit.setText("编辑");
             tv_delete.setVisibility(View.GONE);
-
         }
     }
 

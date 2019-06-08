@@ -14,8 +14,8 @@ import orc.com.taotaole.R;
 
 public class Adapter_2goods extends BaseAdapter {
     private Context context;
-    private List<Model_goods> datas;
-    public Adapter_2goods(Context context, List<Model_goods> datas) {
+    private List<Bean_home> datas;
+    public Adapter_2goods(Context context, List<Bean_home> datas) {
         this.context = context;
         this.datas = datas;
     }
@@ -38,7 +38,7 @@ public class Adapter_2goods extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Model_goods modelgoods = (Model_goods) getItem(position);
+        Bean_home modelgoods = (Bean_home) getItem(position);
         View view;
         ViewHolder viewHolder;
         if (convertView == null) {
