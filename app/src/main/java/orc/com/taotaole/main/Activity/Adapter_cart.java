@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,7 +18,6 @@ public class Adapter_cart extends BaseAdapter {
     private List<Bean_cart> datas;
     private TextView add;
     private TextView sub;
-    private TextView sum;
     private TextView number;
 
     public Adapter_cart(Context context, List<Bean_cart> datas) {
@@ -51,6 +51,7 @@ public class Adapter_cart extends BaseAdapter {
             viewHolder.CartImg = view.findViewById(R.id.fragment3_img);
             viewHolder.CartDescrbe = view.findViewById(R.id.fragment3_describe);
             viewHolder.CartMoney = view.findViewById(R.id.fragment3_money);
+            viewHolder.CartCheckBox = view.findViewById(R.id.fragment3_checkbox);
             view.setTag(viewHolder);
         } else {
             view = convertView;
@@ -59,21 +60,19 @@ public class Adapter_cart extends BaseAdapter {
         viewHolder.CartImg.setImageResource(bean_cart.getImgId());
         viewHolder.CartDescrbe.setText(bean_cart.getDescribe());
         viewHolder.CartMoney.setText(bean_cart.getMoney());
+        viewHolder.CartCheckBox.setChecked(bean_cart.isCheckBox());
         view.findViewById(R.id.fragment3_add).setOnClickListener(e -> {
             number = view.findViewById(R.id.fragment3_number);
-            sum = view.findViewById(R.id.fragment3_sum);
             number.setText(String.valueOf(Integer.parseInt(number.getText().toString()) + 1));
-//            sum.setText(String.valueOf(Integer.parseInt(sum.getText().toString())));
 
         });
         view.findViewById(R.id.fragment3_sub).setOnClickListener(e -> {
             number = view.findViewById(R.id.fragment3_number);
-            sum = view.findViewById(R.id.fragment3_sum);
             if (!"1".equals(number.getText().toString())) {
                 number.setText(String.valueOf(Integer.parseInt(number.getText().toString()) - 1));
-//            sum.setText(String.valueOf(Integer.parseInt(sum.getText().toString())));
             }
         });
+
         return view;
 
     }
@@ -83,6 +82,7 @@ public class Adapter_cart extends BaseAdapter {
         ImageView CartImg;
         TextView CartDescrbe;
         TextView CartMoney;
+        CheckBox CartCheckBox;
     }
 
 }

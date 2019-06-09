@@ -4,11 +4,13 @@ public class Bean_cart {
     private int imgId;
     private String describe;
     private String money;
+    private boolean checkBox;
 
-    public Bean_cart(int imgId, String describe, String money) {
+    public Bean_cart(int imgId, String describe, String money, boolean checkBox) {
         this.imgId = imgId;
         this.describe = describe;
         this.money = money;
+        this.checkBox = checkBox;
     }
 
     public int getImgId() {
@@ -33,5 +35,13 @@ public class Bean_cart {
 
     public void setMoney(String money) {
         this.money = money;
+    }
+
+    public boolean isCheckBox() {
+        return checkBox;
+    }
+
+    public void setCheckBox(boolean checkBox) {
+        this.checkBox = checkBox;
     }
 }

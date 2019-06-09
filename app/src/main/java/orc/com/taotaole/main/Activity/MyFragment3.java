@@ -1,8 +1,12 @@
 package orc.com.taotaole.main.Activity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import orc.com.taotaole.R;
+
+import static android.support.constraint.Constraints.TAG;
 
 public class MyFragment3 extends Fragment {
     private ListView mListView;
@@ -41,12 +47,22 @@ public class MyFragment3 extends Fragment {
         tv_sum = view.findViewById(R.id.fragment3_sum);
         tv_buy = view.findViewById(R.id.fragment3_buy);
         tv_edit.setOnClickListener(e -> tv_edit());
+        cb_allseclet.setOnClickListener(e -> cb_allseclet());
+        tv_delete.setOnClickListener(e -> tv_delete());
+        mListView.setOnItemClickListener((a, b, c, d) -> {
+            Toast.makeText(getActivity(), "ss", Toast.LENGTH_SHORT).show();
+
+        });
         return view;
     }
 
-    //public void onclick(){
-//        tv_edit.setOnClickListener(e->tv_edit());
-//}
+    public void tv_delete() {
+        Dialog dialog = new AlertDialog.Builder(getActivity()).setTitle("测试弹窗").setMessage("确定删除？").setPositiveButton("确定", (dialog12, which) -> Toast.makeText(getActivity(), "删不了", Toast.LENGTH_SHORT).show()).setNegativeButton("取消", (dialog1, which) -> {
+        }).create();
+        dialog.show();
+    }
+
+
     public void tv_edit() {
         if ("编辑".equals(tv_edit.getText().toString())) {
             tv_edit.setText("完成");
@@ -58,15 +74,35 @@ public class MyFragment3 extends Fragment {
             tv_buy.setVisibility(View.VISIBLE);
             tv_delete.setVisibility(View.GONE);
             tv_sum.setVisibility(View.VISIBLE);
-
         }
+    }
+
+    public void cb_allseclet() {
+        if (cb_allseclet.isChecked())
+            for (int i = 0; i < mDatas.size(); i++)
+                mDatas.get(i).setCheckBox(true);
+        else
+            for (int i = 0; i < mDatas.size(); i++)
+                mDatas.get(i).setCheckBox(false);
+        mdapter_cart.notifyDataSetChanged();
+    }
+
+    public void change_Allseclet() {
+        for (int i = 0; i < mDatas.size(); i++)
+            if (!mDatas.get(i).isCheckBox()) {
+                cb_allseclet.setChecked(false);
+                break;
+            } else
+                cb_allseclet.setChecked(true);
+        mdapter_cart.notifyDataSetChanged();
+
     }
 
 
     private void initDatas() {
-        Bean_cart bean_cart1 = new Bean_cart(R.drawable.animal_1, "跳楼甩卖，桂林小栽种", "10");
-        Bean_cart bean_cart2 = new Bean_cart(R.drawable.animal_5, "跳楼甩卖，桂林小栽种", "10");
-        Bean_cart bean_cart3 = new Bean_cart(R.drawable.animal_4, "跳楼甩卖，桂林小栽种", "10");
+        Bean_cart bean_cart1 = new Bean_cart(R.drawable.animal_1, "跳楼甩卖，桂林小栽种", "1", false);
+        Bean_cart bean_cart2 = new Bean_cart(R.drawable.animal_5, "跳楼甩卖，桂林小栽种", "2", false);
+        Bean_cart bean_cart3 = new Bean_cart(R.drawable.animal_4, "跳楼甩卖，桂林小栽种", "3", false);
         mDatas.add(bean_cart1);
         mDatas.add(bean_cart2);
         mDatas.add(bean_cart3);

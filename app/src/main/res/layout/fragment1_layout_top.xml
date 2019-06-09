@@ -130,7 +130,7 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="150dp"
-            android:background="@drawable/button_shape"
+            android:background="@drawable/shape_blue"
             android:padding="1dp"
             android:text="                       今日推荐"
             android:textColor="@color/white"

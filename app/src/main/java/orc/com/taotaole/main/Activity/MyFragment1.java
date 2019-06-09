@@ -27,7 +27,6 @@ public class MyFragment1 extends Fragment {
         initDatas();
         mAdapterGoods = new Adapter_2goods(getActivity(), mDatas);
         mGridView.setAdapter(mAdapterGoods);
-
         mGridView.setOnItemClickListener((parent, v, position, id) -> {
 //            switch (position) {
 //                case 1:
@@ -56,14 +55,14 @@ public class MyFragment1 extends Fragment {
     }
 
     private void initDatas() {
-        Bean_home modelgoods1 = new Bean_home("10", R.drawable.animal_1);
-        Bean_home modelgoods2 = new Bean_home("10", R.drawable.animal_2);
-        Bean_home modelgoods3 = new Bean_home("10", R.drawable.animal_3);
-        Bean_home modelgoods4 = new Bean_home("10", R.drawable.animal_4);
-        Bean_home modelgoods5 = new Bean_home("10", R.drawable.animal_1);
-        Bean_home modelgoods6 = new Bean_home("10", R.drawable.animal_1);
-        Bean_home modelgoods7 = new Bean_home("10", R.drawable.animal_1);
-        Bean_home modelgoods8 = new Bean_home("10", R.drawable.animal_1);
+        Bean_home modelgoods1 = new Bean_home("2", R.drawable.animal_1);
+        Bean_home modelgoods2 = new Bean_home("1", R.drawable.animal_2);
+        Bean_home modelgoods3 = new Bean_home("3", R.drawable.animal_3);
+        Bean_home modelgoods4 = new Bean_home("4", R.drawable.animal_4);
+        Bean_home modelgoods5 = new Bean_home("6", R.drawable.animal_1);
+        Bean_home modelgoods6 = new Bean_home("100", R.drawable.animal_1);
+        Bean_home modelgoods7 = new Bean_home("12", R.drawable.animal_1);
+        Bean_home modelgoods8 = new Bean_home("5", R.drawable.animal_1);
 
         mDatas.add(modelgoods1);
         mDatas.add(modelgoods2);

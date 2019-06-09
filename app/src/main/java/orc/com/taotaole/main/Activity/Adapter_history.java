@@ -15,10 +15,12 @@ import orc.com.taotaole.R;
 public class Adapter_history extends BaseAdapter {
     private Context context;
     private List<Bean_history> datas;
+
     public Adapter_history(Context context, List<Bean_history> datas) {
         this.context = context;
         this.datas = datas;
     }
+
     @Override
     public int getCount() {
         return datas.size();

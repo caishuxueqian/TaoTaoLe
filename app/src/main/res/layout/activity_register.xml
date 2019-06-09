@@ -180,7 +180,7 @@
             android:id="@+id/btn_register"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_shape"
+            android:background="@drawable/shape_blue"
             android:text="@string/btn_register" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

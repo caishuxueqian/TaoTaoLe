@@ -1,8 +1,12 @@
 package orc.com.taotaole.main.Activity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +22,7 @@ public class HistoryActivity extends AppCompatActivity {
     private List<Bean_history> mDatas = new ArrayList<Bean_history>();
     private TextView tv_edit;
     private TextView tv_delete;
+    private ImageView iv_back;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +33,16 @@ public class HistoryActivity extends AppCompatActivity {
         mListView.setAdapter(mAdapterhistory);
         tv_edit = findViewById(R.id.history_edit);
         tv_delete = findViewById(R.id.history_delete);
+        iv_back = findViewById(R.id.history_back);
         tv_edit.setOnClickListener(e -> tv_edit());
+        tv_delete.setOnClickListener(e -> tv_delete());
+        iv_back.setOnClickListener(e -> finish());
 
+    }
+
+    public void tv_delete() {
+        new AlertDialog.Builder(this).setTitle("测试弹窗").setMessage("确定删除？").setPositiveButton("确定", (dialog12, which) -> Toast.makeText(HistoryActivity.this, "删不了", Toast.LENGTH_SHORT).show()).setNegativeButton("取消", (dialog1, which) -> {
+        }).create().show();
     }
 
     public void tv_edit() {

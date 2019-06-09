@@ -36,7 +36,7 @@ public class MyFragment2 extends Fragment {
         mListView.setAdapter(mGoodsAdapterList);
         mGridView.setAdapter(mGridAdapterGrid);
         mListView.setOnItemClickListener((a, b, position, d) -> {
-                    Collections.reverse(Data_grid);
+                    Collections.shuffle(Data_grid);
                     mGridView.setAdapter(new Adapter_grid(getActivity(),Data_grid));
 //            switch (position) {
 //                case 0:

@@ -48,14 +48,14 @@ public class Adapter_list extends BaseAdapter {
         if (convertView == null) {
             view = LayoutInflater.from(context).inflate(R.layout.fragment2_list_item, null);
             viewHolder = new ViewHolder();
-            viewHolder.goodImage =  view.findViewById(R.id.lv);
-            viewHolder.goodDescribe =  view.findViewById(R.id.tv);
+            viewHolder.goodImage = view.findViewById(R.id.lv);
+            viewHolder.goodDescribe = view.findViewById(R.id.tv);
             view.setTag(viewHolder);
         } else {
             view = convertView;
             viewHolder = (ViewHolder) view.getTag();
         }
-       viewHolder.goodImage.setImageResource(goodsList.getImgId());
+        viewHolder.goodImage.setImageResource(goodsList.getImgId());
         viewHolder.goodDescribe.setText(goodsList.getDescribe());
         return view;
     }

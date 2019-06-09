@@ -16,11 +16,14 @@ public class MyFragment4 extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment4_layout,container,false);
-        view.findViewById(R.id.fragment4_order).setOnClickListener(e->startActivity(new Intent(getActivity(),OrderActivity.class)));
-//        view.findViewById(R.id.fragment4_history).setOnClickListener(e-> Toast.makeText(getActivity(), "点足迹干嘛", Toast.LENGTH_SHORT).show());
-        view.findViewById(R.id.fragment4_history).setOnClickListener(e->startActivity(new Intent(getActivity(),HistoryActivity.class)) );
-        view.findViewById(R.id.fragment4_person).setOnClickListener(e->startActivity(new Intent(getActivity(),UserActivity.class))) ;
+        View view = inflater.inflate(R.layout.fragment4_layout, container, false);
+        view.findViewById(R.id.fragment4_order).setOnClickListener(e -> {
+            startActivity(new Intent(getActivity(), OrderActivity.class));
+
+        });
+//
+        view.findViewById(R.id.fragment4_history).setOnClickListener(e -> startActivity(new Intent(getActivity(), HistoryActivity.class)));
+        view.findViewById(R.id.fragment4_person).setOnClickListener(e -> startActivity(new Intent(getActivity(), UserActivity.class)));
         return view;
 
 
