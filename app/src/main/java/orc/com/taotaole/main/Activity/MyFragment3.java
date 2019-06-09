@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,7 +33,10 @@ public class MyFragment3 extends Fragment {
     private CheckBox cb_allseclet;
     private TextView tv_sum;
     private TextView tv_buy;
-
+    private CheckBox cb_checkBox;
+    private ImageView img;
+    private TextView describe;
+    private  Double tv_sum_double;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -46,11 +50,40 @@ public class MyFragment3 extends Fragment {
         cb_allseclet = view.findViewById(R.id.fragment3_allselect);
         tv_sum = view.findViewById(R.id.fragment3_sum);
         tv_buy = view.findViewById(R.id.fragment3_buy);
+        tv_buy.setOnClickListener(e -> tv_buy());
         tv_edit.setOnClickListener(e -> tv_edit());
         cb_allseclet.setOnClickListener(e -> cb_allseclet());
         tv_delete.setOnClickListener(e -> tv_delete());
         mListView.setOnItemClickListener((a, b, c, d) -> {
-            Toast.makeText(getActivity(), "ss", Toast.LENGTH_SHORT).show();
+            describe = b.findViewById(R.id.fragment3_describe);
+            describe.setOnClickListener(e -> startActivity(new Intent(getActivity(), DetailActivity.class)));
+            img = b.findViewById(R.id.fragment3_img);
+            img.setOnClickListener(e -> startActivity(new Intent(getActivity(), DetailActivity.class)));
+            cb_checkBox = b.findViewById(R.id.fragment3_checkbox);
+            if (cb_checkBox.isChecked()) {
+                mDatas.get(c).setCheckBox(false);
+            } else {
+                mDatas.get(c).setCheckBox(true);
+            }
+            for (int i = 0; i < mDatas.size(); i++) {
+                if (!mDatas.get(i).isCheckBox()) {
+                    cb_allseclet.setChecked(false);
+                    break;
+                } else {
+                    cb_allseclet.setChecked(true);
+                }
+
+            }
+//            tv_sum=mListView.findViewById(R.id.fragment3_money);
+//            for(int i=0;i<mDatas.size();i++){
+//                if(mDatas.get(i).isCheckBox())
+//                    Log.d(TAG, "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"+mDatas.get(i)+"zzzzz"+mDatas.get(i).getItem_sum());
+//                    tv_sum_double+=mDatas.get(i).getItem_sum();
+//                Log.d(TAG, "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"+mDatas.get(i)+"zzzzz"+mDatas.get(i).getItem_sum());
+//
+//                tv_sum.setText(String.valueOf(tv_sum_double));
+//            }
+            mdapter_cart.notifyDataSetChanged();
 
         });
         return view;
@@ -62,6 +95,12 @@ public class MyFragment3 extends Fragment {
         dialog.show();
     }
 
+    public void tv_buy() {
+        Dialog dialog = new AlertDialog.Builder(getActivity()).setTitle("测试弹窗").setMessage("确认支付？").setPositiveButton("确定", (dialog12, which) -> Toast.makeText(getActivity(), "买不了", Toast.LENGTH_SHORT).show()).setNegativeButton("取消", (dialog1, which) -> {
+        }).create();
+        dialog.show();
+
+    }
 
     public void tv_edit() {
         if ("编辑".equals(tv_edit.getText().toString())) {
@@ -99,25 +138,15 @@ public class MyFragment3 extends Fragment {
     }
 
 
+
     private void initDatas() {
-        Bean_cart bean_cart1 = new Bean_cart(R.drawable.animal_1, "跳楼甩卖，桂林小栽种", "1", false);
-        Bean_cart bean_cart2 = new Bean_cart(R.drawable.animal_5, "跳楼甩卖，桂林小栽种", "2", false);
-        Bean_cart bean_cart3 = new Bean_cart(R.drawable.animal_4, "跳楼甩卖，桂林小栽种", "3", false);
+        Bean_cart bean_cart1 = new Bean_cart(R.drawable.animal_1, "跳楼甩卖，桂林小栽种", "1", false, 0);
+        Bean_cart bean_cart2 = new Bean_cart(R.drawable.animal_5, "跳楼甩卖，桂林小栽种", "2", false, 0);
+        Bean_cart bean_cart3 = new Bean_cart(R.drawable.animal_4, "跳楼甩卖，桂林小栽种", "3", false, 0);
         mDatas.add(bean_cart1);
         mDatas.add(bean_cart2);
         mDatas.add(bean_cart3);
-        mDatas.add(bean_cart1);
-        mDatas.add(bean_cart2);
-        mDatas.add(bean_cart3);
-        mDatas.add(bean_cart1);
-        mDatas.add(bean_cart2);
-        mDatas.add(bean_cart3);
-        mDatas.add(bean_cart1);
-        mDatas.add(bean_cart2);
-        mDatas.add(bean_cart3);
-        mDatas.add(bean_cart1);
-        mDatas.add(bean_cart2);
-        mDatas.add(bean_cart3);
+
 
     }
 }

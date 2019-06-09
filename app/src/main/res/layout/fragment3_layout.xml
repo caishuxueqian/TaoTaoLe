@@ -43,7 +43,6 @@
         tools:ignore="RtlCompat" />
 
     <LinearLayout
-        android:id="@+id/rl_bottom"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/white">
@@ -58,13 +57,26 @@
             android:textSize="17dp" />
 
         <TextView
-            android:id="@+id/fragment3_sum"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
-            android:padding="5dp"
-            android:text="合计：0.00"
+            android:layout_gravity="center"
+            android:text="合计："
+            android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/fragment3_sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:text="0.00"
+            android:textColor="@color/black" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="             "
             android:textColor="@color/black" />
 
         <FrameLayout

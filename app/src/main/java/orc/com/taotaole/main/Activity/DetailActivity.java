@@ -45,7 +45,7 @@ public class DetailActivity extends AppCompatActivity {
         builder.setView(buyView);
         buyView.findViewById(R.id.dialog_no).setOnClickListener(e -> dialog.dismiss());
         buyView.findViewById(R.id.dialog_yes).setOnClickListener(e -> {
-            Toast.makeText(this, "收藏不了", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "车不了", Toast.LENGTH_SHORT).show();
             dialog.dismiss();
         });
         dialog = builder.create();
