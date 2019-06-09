@@ -71,7 +71,7 @@
             android:id="@+id/history_delete"
             android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:background="@color/red"
+            android:background="@drawable/shape_red"
             android:gravity="center"
             android:text="删除"
             android:textColor="@color/white" />
