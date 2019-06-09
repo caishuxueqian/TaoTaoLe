@@ -20,7 +20,7 @@ public class Adapter_cart extends BaseAdapter {
     private TextView sub;
     private TextView number;
     private double sum;
-    private  TextView money;
+    private TextView money;
 
     public Adapter_cart(Context context, List<Bean_cart> datas) {
         this.context = context;
@@ -63,22 +63,6 @@ public class Adapter_cart extends BaseAdapter {
         viewHolder.CartDescrbe.setText(bean_cart.getDescribe());
         viewHolder.CartMoney.setText(bean_cart.getMoney());
         viewHolder.CartCheckBox.setChecked(bean_cart.isCheckBox());
-        view.findViewById(R.id.fragment3_add).setOnClickListener(e -> {
-            number = view.findViewById(R.id.fragment3_number);
-            number.setText(String.valueOf(Integer.parseInt(number.getText().toString()) + 1));
-            money = view.findViewById(R.id.fragment3_money);
-            sum = Double.parseDouble(money.getText().toString()) * Double.parseDouble(money.getText().toString());
-            datas.get(position).setItem_sum(sum);
-        });
-        view.findViewById(R.id.fragment3_sub).setOnClickListener(e -> {
-            number = view.findViewById(R.id.fragment3_number);
-            if (!"1".equals(number.getText().toString())) {
-                number.setText(String.valueOf(Integer.parseInt(number.getText().toString()) - 1));
-            }
-            money = view.findViewById(R.id.fragment3_money);
-            sum = Double.parseDouble(money.getText().toString()) * Double.parseDouble(money.getText().toString());
-            datas.get(position).setItem_sum(sum);
-        });
 
 
         return view;

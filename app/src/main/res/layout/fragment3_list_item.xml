@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="110dp"
+    android:layout_height="140dp"
     android:background="@drawable/shape"
     android:orientation="horizontal">
 
@@ -16,7 +16,7 @@
         />
 
     <ImageView
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="10dp"
         android:id="@+id/fragment3_img"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -64,13 +64,13 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="120dp"
-            android:layout_height="30dp"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
             android:background="@color/light_gray">
 
             <TextView
                 android:id="@+id/fragment3_sub"
-                android:layout_width="15dp"
+                android:layout_width="20dp"
                 android:layout_height="match_parent"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
@@ -81,7 +81,7 @@
 
             <TextView
                 android:id="@+id/fragment3_number"
-                android:layout_width="15dp"
+                android:layout_width="20dp"
                 android:layout_height="match_parent"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
@@ -91,7 +91,7 @@
 
             <TextView
                 android:id="@+id/fragment3_add"
-                android:layout_width="15dp"
+                android:layout_width="20dp"
                 android:layout_height="match_parent"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
