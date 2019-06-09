@@ -2,6 +2,7 @@ package orc.com.taotaole.main.Activity;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -16,9 +17,8 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        findViewById(R.id.detail_bt_back).setOnClickListener(e -> {
-            finish();
-        });
+        findViewById(R.id.detail_iv).setOnClickListener(e -> startActivity(new Intent(this, ShowImageActivity.class)));
+        findViewById(R.id.detail_bt_back).setOnClickListener(e -> { finish(); });
         findViewById(R.id.detail_bt_cart).setOnClickListener(e -> Toast.makeText(this, "点购物车干嘛", Toast.LENGTH_SHORT).show());
         findViewById(R.id.detail_bt_buy).setOnClickListener(e -> buy());
         findViewById(R.id.detail_bt_cart).setOnClickListener(e -> cart());

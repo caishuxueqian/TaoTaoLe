@@ -33,7 +33,8 @@
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="blue">#419DE4</color>
-    <color name="red">#ff0000</color>
+    <color name="red">#EE0000</color>
+    <color name="light_red">#FF0000</color>
     <color name="orange">#ffc107</color>
     <color name="light_orange">#ffc920</color>
     <color name="gray">#808080</color>

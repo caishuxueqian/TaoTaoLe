@@ -75,7 +75,7 @@
                 android:id="@+id/fragment3_buy"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:background="@color/main_color"
+                android:background="@drawable/shape_blue"
                 android:gravity="center"
                 android:text="结算"
                 android:textColor="@color/white" />
@@ -85,7 +85,7 @@
                 android:id="@+id/fragment3_delete"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:background="@color/red"
+                android:background="@drawable/shape_red"
                 android:gravity="center"
                 android:text="删除"
                 android:textColor="@color/white" />
