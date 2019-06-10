@@ -4,7 +4,9 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,8 +19,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import orc.com.taotaole.R;
 
@@ -42,6 +48,7 @@ public class MyFragment3 extends Fragment {
     private TextView number;
     private double sum;
     private TextView money;
+    private TextView text_sum;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -65,18 +72,19 @@ public class MyFragment3 extends Fragment {
 //        item点击事件
         mListView.setOnItemClickListener((parent, v, postion, id) -> {
 //            初始化item控件
-            initViews_item( v);
-            tv_sum_double=0.0;
+            initViews_item(v);
+            tv_sum_double = 0.0;
 //            点击描述跳转
             describe.setOnClickListener(e -> startActivity(new Intent(getActivity(), DetailActivity.class)));
 //            点击图片跳转
             img.setOnClickListener(e -> startActivity(new Intent(getActivity(), DetailActivity.class)));
 //            点击数量
-            number.setOnClickListener(e->{});
+            number.setOnClickListener(e -> {
+            });
 //        加号
             add.setOnClickListener(e -> {
-                initViews_item( v);
-                tv_sum_double=0.0;
+                initViews_item(v);
+                tv_sum_double = 0.0;
                 number.setText(String.valueOf(Integer.parseInt(number.getText().toString()) + 1));
 //            计算item里面的总金额
                 sum = Double.parseDouble(number.getText().toString()) * Double.parseDouble(money.getText().toString());
@@ -92,8 +100,8 @@ public class MyFragment3 extends Fragment {
             });
             //        减号
             sub.setOnClickListener(e -> {
-                initViews_item( v);
-                tv_sum_double=0.0;
+                initViews_item(v);
+                tv_sum_double = 0.0;
                 if (!"1".equals(number.getText().toString())) {
                     number.setText(String.valueOf(Integer.parseInt(number.getText().toString()) - 1));
                 }
@@ -115,25 +123,15 @@ public class MyFragment3 extends Fragment {
             } else {
                 mDatas.get(postion).setCheckBox(true);
             }
+//            size=0改变全选框
+//            if (mDatas.size() == 0) {
+//                cb_allseclet.setChecked(false);
+//            }
 //            改变全选框
-            for (int i = 0; i < mDatas.size(); i++) {
-                if (!mDatas.get(i).isCheckBox()) {
-                    cb_allseclet.setChecked(false);
-                    break;
-                } else {
-                    cb_allseclet.setChecked(true);
-                }
-
-            }
-
-//      修改总金额
-            tv_sum_double=0.0;
-            for (int i = 0;i < mDatas.size(); i++) {
-                if (mDatas.get(i).isCheckBox())
-                tv_sum_double += mDatas.get(i).getItem_sum();
-            }
-            tv_sum.setText(String.valueOf(tv_sum_double));
-
+            change_Allseclet();
+//           修改总金额
+            changeTextSum();
+//          刷新显示
             mdapter_cart.notifyDataSetChanged();
 
         });
@@ -142,7 +140,18 @@ public class MyFragment3 extends Fragment {
 
     //****************************************方法区**************************************************
 //    ****************************************************************************************
-//初始化view_item
+//修改显示的总价
+    public void changeTextSum() {
+        tv_sum_double = 0.0;
+        for (int i = 0; i < mDatas.size(); i++) {
+            if (mDatas.get(i).isCheckBox())
+                tv_sum_double += mDatas.get(i).getItem_sum();
+        }
+        tv_sum.setText(String.valueOf(tv_sum_double));
+        mdapter_cart.notifyDataSetChanged();
+    }
+
+    //初始化view_item
     public void initViews_item(View v) {
         describe = v.findViewById(R.id.fragment3_describe);
         sub = v.findViewById(R.id.fragment3_sub);
@@ -162,19 +171,35 @@ public class MyFragment3 extends Fragment {
         cb_allseclet = view.findViewById(R.id.fragment3_allselect);
         tv_sum = view.findViewById(R.id.fragment3_sum);
         tv_buy = view.findViewById(R.id.fragment3_buy);
+        text_sum = view.findViewById(R.id.fragment3_text_sum);
 
     }
 
     //删除键
     public void tv_delete() {
-        Dialog dialog = new AlertDialog.Builder(getActivity()).setTitle("测试弹窗").setMessage("确定删除？").setPositiveButton("确定", (dialog12, which) -> Toast.makeText(getActivity(), "删不了", Toast.LENGTH_SHORT).show()).setNegativeButton("取消", (dialog1, which) -> {
+        Dialog dialog = new AlertDialog.Builder(getActivity()).setTitle(" ").setMessage("确定删除？").setPositiveButton("确定", (dialog12, which) -> {
+            List<Bean_cart> noCheckBoxs = new ArrayList<>();
+            for (int i = 0; i < mDatas.size(); i++)
+                if (mDatas.get(i).isCheckBox())
+                    noCheckBoxs.add(mDatas.get(i));
+            for (Bean_cart cb : noCheckBoxs)
+                mDatas.remove(cb);
+
+//            如果数据为空，全选框置为false
+            if (mDatas.size() == 0) {
+                cb_allseclet.setChecked(false);
+            }
+            changeTextSum();
+            mdapter_cart.notifyDataSetChanged();
+            Toast.makeText(getActivity(), "删除成功！", Toast.LENGTH_SHORT).show();
+        }).setNegativeButton("取消", (dialog1, which) -> {
         }).create();
         dialog.show();
     }
 
     //结算键
     public void tv_buy() {
-        Dialog dialog = new AlertDialog.Builder(getActivity()).setTitle("测试弹窗").setMessage("确认支付？").setPositiveButton("确定", (dialog12, which) -> Toast.makeText(getActivity(), "买不了", Toast.LENGTH_SHORT).show()).setNegativeButton("取消", (dialog1, which) -> {
+        Dialog dialog = new AlertDialog.Builder(getActivity()).setTitle(" ").setMessage("确认支付？").setPositiveButton("确定", (dialog12, which) -> Toast.makeText(getActivity(), "买不了", Toast.LENGTH_SHORT).show()).setNegativeButton("取消", (dialog1, which) -> {
         }).create();
         dialog.show();
 
@@ -186,35 +211,42 @@ public class MyFragment3 extends Fragment {
             tv_edit.setText("完成");
             tv_buy.setVisibility(View.GONE);
             tv_delete.setVisibility(View.VISIBLE);
-            tv_sum.setVisibility(View.INVISIBLE);
+//            tv_sum.setVisibility(View.INVISIBLE);
+//            text_sum.setVisibility(View.INVISIBLE);
         } else {
             tv_edit.setText("编辑");
             tv_buy.setVisibility(View.VISIBLE);
             tv_delete.setVisibility(View.GONE);
-            tv_sum.setVisibility(View.VISIBLE);
+//            tv_sum.setVisibility(View.VISIBLE);
+//            text_sum.setVisibility(View.VISIBLE);
         }
     }
 
     //全选键
     public void cb_allseclet() {
+        tv_sum_double = 0.0;
         if (cb_allseclet.isChecked())
             for (int i = 0; i < mDatas.size(); i++)
                 mDatas.get(i).setCheckBox(true);
         else
             for (int i = 0; i < mDatas.size(); i++)
                 mDatas.get(i).setCheckBox(false);
-        mdapter_cart.notifyDataSetChanged();
+//                显示总金额
+        changeTextSum();
+
     }
 
     //全选键改变
     public void change_Allseclet() {
-        for (int i = 0; i < mDatas.size(); i++)
+        for (int i = 0; i < mDatas.size(); i++) {
             if (!mDatas.get(i).isCheckBox()) {
                 cb_allseclet.setChecked(false);
                 break;
-            } else
+            } else {
                 cb_allseclet.setChecked(true);
-        mdapter_cart.notifyDataSetChanged();
+            }
+
+        }
 
     }
 
@@ -224,9 +256,15 @@ public class MyFragment3 extends Fragment {
         Bean_cart bean_cart1 = new Bean_cart(R.drawable.animal_1, "跳楼甩卖，桂林小栽种", "1", false, 1);
         Bean_cart bean_cart2 = new Bean_cart(R.drawable.animal_5, "跳楼甩卖，桂林小栽种", "2", false, 2);
         Bean_cart bean_cart3 = new Bean_cart(R.drawable.animal_4, "跳楼甩卖，桂林小栽种", "3", false, 3);
+        Bean_cart bean_cart4 = new Bean_cart(R.drawable.animal_3, "跳楼甩卖，桂林小栽种", "4", false, 4);
+        Bean_cart bean_cart5 = new Bean_cart(R.drawable.animal_7, "跳楼甩卖，桂林小栽种", "5", false, 5);
+        Bean_cart bean_cart6 = new Bean_cart(R.drawable.animal_2, "跳楼甩卖，桂林小栽种", "6", false, 6);
         mDatas.add(bean_cart1);
         mDatas.add(bean_cart2);
         mDatas.add(bean_cart3);
+        mDatas.add(bean_cart4);
+        mDatas.add(bean_cart5);
+        mDatas.add(bean_cart6);
 
 
     }
