@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import orc.com.taotaole.R;
@@ -25,10 +26,23 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     public void buy() {
+        TextView add;
+        TextView sub;
+        TextView acount;
         LayoutInflater inflater = LayoutInflater.from(this);
         final View buyView = inflater.inflate(R.layout.dialog_buy_cart, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setView(buyView);
+        add=buyView.findViewById(R.id.dialog_add);
+        sub=buyView.findViewById(R.id.dialog_sub);
+        acount=buyView.findViewById(R.id.dialog_acount);
+        add.setOnClickListener(e->{
+            acount.setText(String.valueOf(Integer.parseInt(acount.getText().toString())+1));
+        });
+        sub.setOnClickListener(e->{
+            if(!(Integer.parseInt(acount.getText().toString())==1))
+                acount.setText(String.valueOf(Integer.parseInt(acount.getText().toString())-1));
+        });
         buyView.findViewById(R.id.dialog_no).setOnClickListener(e -> dialog.dismiss());
         buyView.findViewById(R.id.dialog_yes).setOnClickListener(e -> {
             Toast.makeText(this, "买不了", Toast.LENGTH_SHORT).show();
@@ -39,10 +53,23 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     public void cart() {
+        TextView add;
+        TextView sub;
+        TextView acount;
         LayoutInflater inflater = LayoutInflater.from(this);
         final View buyView = inflater.inflate(R.layout.dialog_buy_cart, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setView(buyView);
+        add=buyView.findViewById(R.id.dialog_add);
+        sub=buyView.findViewById(R.id.dialog_sub);
+        acount=buyView.findViewById(R.id.dialog_acount);
+        add.setOnClickListener(e->{
+            acount.setText(String.valueOf(Integer.parseInt(acount.getText().toString())+1));
+        });
+        sub.setOnClickListener(e->{
+            if(!(Integer.parseInt(acount.getText().toString())==1))
+            acount.setText(String.valueOf(Integer.parseInt(acount.getText().toString())-1));
+        });
         buyView.findViewById(R.id.dialog_no).setOnClickListener(e -> dialog.dismiss());
         buyView.findViewById(R.id.dialog_yes).setOnClickListener(e -> {
             Toast.makeText(this, "车不了", Toast.LENGTH_SHORT).show();

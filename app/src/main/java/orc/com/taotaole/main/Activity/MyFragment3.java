@@ -190,7 +190,22 @@ public class MyFragment3 extends Fragment {
 
     //结算键
     public void tv_buy() {
-        Dialog dialog = new AlertDialog.Builder(getActivity()).setTitle(" ").setMessage("确认支付？").setPositiveButton("确定", (dialog12, which) -> Toast.makeText(getActivity(), "买不了", Toast.LENGTH_SHORT).show()).setNegativeButton("取消", (dialog1, which) -> {
+        Dialog dialog = new AlertDialog.Builder(getActivity()).setTitle(" ").setMessage("确认支付？").setPositiveButton("确定", (dialog12, which) ->{
+            Toast.makeText(getActivity(), "购买成功！消费:"+tv_sum.getText().toString()+"元", Toast.LENGTH_SHORT).show();
+            List<Bean_cart> noCheckBoxs = new ArrayList<>();
+            for (int i = 0; i < mDatas.size(); i++)
+                if (mDatas.get(i).isCheckBox())
+                    noCheckBoxs.add(mDatas.get(i));
+            for (Bean_cart cb : noCheckBoxs)
+                mDatas.remove(cb);
+
+//            如果数据为空，全选框置为false
+            if (mDatas.size() == 0) {
+                cb_allseclet.setChecked(false);
+            }
+            changeTextSum();
+            mdapter_cart.notifyDataSetChanged();
+        }).setNegativeButton("取消", (dialog1, which) -> {
         }).create();
         dialog.show();
 
