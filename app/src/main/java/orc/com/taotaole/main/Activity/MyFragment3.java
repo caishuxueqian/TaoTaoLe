@@ -57,7 +57,7 @@ public class MyFragment3 extends Fragment {
         initViews(view);
         mdapter_cart = new Adapter_cart(getActivity(), mDatas);
         mListView.setAdapter(mdapter_cart);
-//        总净额点击测试
+//        总金额点击测试
         tv_sum.setOnClickListener(e -> Toast.makeText(getActivity(), "shabi", Toast.LENGTH_SHORT).show());
 //      结算键
         tv_buy.setOnClickListener(e -> tv_buy());
@@ -79,8 +79,6 @@ public class MyFragment3 extends Fragment {
 //            点击图片跳转
             img.setOnClickListener(e -> startActivity(new Intent(getActivity(), DetailActivity.class)));
 //            点击数量
-            number.setOnClickListener(e -> {
-            });
 //        加号
             add.setOnClickListener(e -> {
                 initViews_item(v);
@@ -118,15 +116,7 @@ public class MyFragment3 extends Fragment {
                 mdapter_cart.notifyDataSetChanged();
             });
 //            复选框
-            if (cb_checkBox.isChecked()) {
-                mDatas.get(postion).setCheckBox(false);
-            } else {
-                mDatas.get(postion).setCheckBox(true);
-            }
-//            size=0改变全选框
-//            if (mDatas.size() == 0) {
-//                cb_allseclet.setChecked(false);
-//            }
+            setCb_checkBox(postion);
 //            改变全选框
             change_Allseclet();
 //           修改总金额
@@ -140,6 +130,7 @@ public class MyFragment3 extends Fragment {
 
     //****************************************方法区**************************************************
 //    ****************************************************************************************
+
 //修改显示的总价
     public void changeTextSum() {
         tv_sum_double = 0.0;
@@ -220,6 +211,15 @@ public class MyFragment3 extends Fragment {
 //            tv_sum.setVisibility(View.VISIBLE);
 //            text_sum.setVisibility(View.VISIBLE);
         }
+    }
+    //    复选框
+    public void setCb_checkBox(int postion){
+        if (cb_checkBox.isChecked()) {
+            mDatas.get(postion).setCheckBox(false);
+        } else {
+            mDatas.get(postion).setCheckBox(true);
+        }
+
     }
 
     //全选键

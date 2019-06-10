@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.List;
@@ -44,10 +45,11 @@ public class Adapter_order extends BaseAdapter {
         if (convertView == null) {
             view = LayoutInflater.from(context).inflate(R.layout.activity_order_list_item, null);
             viewHolder = new ViewHolder();
-            viewHolder.orderImage =  view.findViewById(R.id.order_img);
-            viewHolder.orderDescribe=  view.findViewById(R.id.order_describe);
-            viewHolder.orderMoney =  view.findViewById(R.id.order_money);
-            viewHolder.orderNumber =  view.findViewById(R.id.order_number);
+            viewHolder.orderImage =  view.findViewById(R.id.order_item_img);
+            viewHolder.orderDescribe=  view.findViewById(R.id.order_item_describe);
+            viewHolder.orderMoney =  view.findViewById(R.id.order_item_money);
+            viewHolder.orderNumber =  view.findViewById(R.id.order_item_number);
+            viewHolder.orderCheckBox=view.findViewById(R.id.order_item_checkbox);
             view.setTag(viewHolder);
         } else {
             view = convertView;
@@ -57,6 +59,7 @@ public class Adapter_order extends BaseAdapter {
         viewHolder.orderDescribe.setText(bean_order.getDescribe());
         viewHolder.orderMoney.setText(bean_order.getMoney());
         viewHolder.orderNumber.setText(bean_order.getNumber());
+        viewHolder.orderCheckBox.setChecked(bean_order.getCheckBox());
         return view;
     }
 
@@ -65,5 +68,6 @@ public class Adapter_order extends BaseAdapter {
         TextView orderDescribe;
         TextView orderMoney;
         TextView orderNumber;
+        CheckBox orderCheckBox;
     }
 }

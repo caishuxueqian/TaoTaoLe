@@ -7,15 +7,17 @@
 
     <CheckBox
         android:layout_marginLeft="20dp"
-        android:id="@+id/fragment3_checkbox"
+        android:id="@+id/history_item_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:clickable="false"
+        android:focusable="false"
         />
 
     <ImageView
         android:layout_marginLeft="20dp"
-        android:id="@+id/history_img"
+        android:id="@+id/history_item_img"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
@@ -30,7 +32,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/history_describe"
+            android:id="@+id/history_item_describe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="桂林理工大学崽种"
@@ -50,7 +52,7 @@
                 android:textSize="15dp"
                 android:textStyle="bold" />
             <TextView
-                android:id="@+id/history_money"
+                android:id="@+id/history_item_money"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10"

@@ -6,7 +6,6 @@
     android:orientation="vertical">
     <!--购物车顶部-->
     <LinearLayout
-        android:id="@+id/cart_title_layout"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:orientation="horizontal"

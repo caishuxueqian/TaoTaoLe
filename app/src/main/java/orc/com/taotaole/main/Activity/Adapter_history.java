@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -44,25 +45,28 @@ public class Adapter_history extends BaseAdapter {
         if (convertView == null) {
             view = LayoutInflater.from(context).inflate((R.layout.activity_history_list_item), null);
             viewHolder = new ViewHolder();
-            viewHolder.History = view.findViewById(R.id.history_img);
-            viewHolder.HistoryDescrbe = view.findViewById(R.id.history_describe);
-            viewHolder.HistoryMoney = view.findViewById(R.id.history_money);
+            viewHolder.HistoryImg = view.findViewById(R.id.history_item_img);
+            viewHolder.HistoryDescrbe = view.findViewById(R.id.history_item_describe);
+            viewHolder.HistoryMoney = view.findViewById(R.id.history_item_money);
+            viewHolder.HistoryCheckBox=view.findViewById(R.id.history_item_checkbox);
             view.setTag(viewHolder);
         } else {
             view = convertView;
             viewHolder = (ViewHolder) view.getTag();
         }
-        viewHolder.History.setImageResource(bean_history.getImgId());
+        viewHolder.HistoryImg.setImageResource(bean_history.getImgId());
         viewHolder.HistoryDescrbe.setText(bean_history.getDescribe());
         viewHolder.HistoryMoney.setText(bean_history.getMoney());
+        viewHolder.HistoryCheckBox.setChecked(bean_history.getCheckBox());
         return view;
 
     }
 
     class ViewHolder {
-        ImageView History;
+        ImageView HistoryImg;
         TextView HistoryDescrbe;
         TextView HistoryMoney;
+        CheckBox HistoryCheckBox;
     }
 
 }

@@ -7,7 +7,7 @@
 
     <CheckBox
         android:layout_marginLeft="20dp"
-        android:id="@+id/fragment3_checkbox"
+        android:id="@+id/order_item_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -15,7 +15,7 @@
 
     <ImageView
         android:layout_marginLeft="20dp"
-        android:id="@+id/order_img"
+        android:id="@+id/order_item_img"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
@@ -30,7 +30,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/order_describe"
+            android:id="@+id/order_item_describe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="桂林理工大学崽种"
@@ -52,7 +52,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/order_money"
+                android:id="@+id/order_item_money"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10"
@@ -61,7 +61,6 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_commodity_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -69,7 +68,7 @@
                 android:textColor="@color/gray" />
 
             <TextView
-                android:id="@+id/order_number"
+                android:id="@+id/order_item_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"

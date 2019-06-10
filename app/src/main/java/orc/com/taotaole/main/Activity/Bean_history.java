@@ -4,11 +4,13 @@ public class Bean_history {
     private int imgId;
     private String describe;
     private String money;
+    private Boolean checkBox;
 
-    public Bean_history(int imgId, String describe, String money) {
+    public Bean_history(int imgId, String describe, String money, Boolean checkBox) {
         this.imgId = imgId;
         this.describe = describe;
         this.money = money;
+        this.checkBox = checkBox;
     }
 
     public int getImgId() {
@@ -33,5 +35,13 @@ public class Bean_history {
 
     public void setMoney(String money) {
         this.money = money;
+    }
+
+    public Boolean getCheckBox() {
+        return checkBox;
+    }
+
+    public void setCheckBox(Boolean checkBox) {
+        this.checkBox = checkBox;
     }
 }
