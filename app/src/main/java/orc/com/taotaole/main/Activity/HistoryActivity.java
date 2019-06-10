@@ -43,8 +43,8 @@ public class HistoryActivity extends AppCompatActivity {
         tv_edit.setOnClickListener(e -> tv_edit());
         tv_delete.setOnClickListener(e -> tv_delete());
         iv_back.setOnClickListener(e -> finish());
-        allSelect.setOnClickListener(e->allseclet());
-        tv_delete.setOnClickListener(e->tv_delete());
+        allSelect.setOnClickListener(e -> allseclet());
+        tv_delete.setOnClickListener(e -> tv_delete());
         mListView.setOnItemClickListener((a, b, c, d) -> {
             initiView_item(b);
             checkBox(c);
@@ -116,24 +116,34 @@ public class HistoryActivity extends AppCompatActivity {
 
 
     public void tv_delete() {
-        Dialog dialog = new AlertDialog.Builder(this).setTitle(" ").setMessage("确定删除？").setPositiveButton("确定", (dialog12, which) -> {
-            List<Bean_history> noCheckBoxs = new ArrayList<>();
+        if (!(mDatas.size() == 0)) {
+            int checkedLength = 0;
             for (int i = 0; i < mDatas.size(); i++)
                 if (mDatas.get(i).getCheckBox())
-                    noCheckBoxs.add(mDatas.get(i));
-            for (Bean_history cb : noCheckBoxs)
-                mDatas.remove(cb);
+                    checkedLength++;
+            if (checkedLength != 0) {
+                Dialog dialog = new AlertDialog.Builder(this).setTitle(" ").setMessage("确定删除？").setPositiveButton("确定", (dialog12, which) -> {
+                    List<Bean_history> noCheckBoxs = new ArrayList<>();
+                    for (int i = 0; i < mDatas.size(); i++)
+                        if (mDatas.get(i).getCheckBox())
+                            noCheckBoxs.add(mDatas.get(i));
+                    for (Bean_history cb : noCheckBoxs)
+                        mDatas.remove(cb);
 
 //            如果数据为空，全选框置为false
-            if (mDatas.size() == 0) {
-                allSelect.setChecked(false);
-            }
+                    if (mDatas.size() == 0) {
+                        allSelect.setChecked(false);
+                    }
 
-            mAdapterhistory.notifyDataSetChanged();
-            Toast.makeText(this, "删除成功！", Toast.LENGTH_SHORT).show();
-        }).setNegativeButton("取消", (dialog1, which) -> {
-        }).create();
-        dialog.show();
+                    mAdapterhistory.notifyDataSetChanged();
+                    Toast.makeText(this, "删除成功！", Toast.LENGTH_SHORT).show();
+                }).setNegativeButton("取消", (dialog1, which) -> {
+                }).create();
+                dialog.show();
+            } else
+                Toast.makeText(this, "请选择", Toast.LENGTH_SHORT).show();
+        } else
+            Toast.makeText(this, "尚无数据", Toast.LENGTH_SHORT).show();
     }
 
     public void tv_edit() {

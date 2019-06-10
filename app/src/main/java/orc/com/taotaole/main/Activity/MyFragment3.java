@@ -131,7 +131,7 @@ public class MyFragment3 extends Fragment {
     //****************************************方法区**************************************************
 //    ****************************************************************************************
 
-//修改显示的总价
+    //修改显示的总价
     public void changeTextSum() {
         tv_sum_double = 0.0;
         for (int i = 0; i < mDatas.size(); i++) {
@@ -168,46 +168,67 @@ public class MyFragment3 extends Fragment {
 
     //删除键
     public void tv_delete() {
-        Dialog dialog = new AlertDialog.Builder(getActivity()).setTitle(" ").setMessage("确定删除？").setPositiveButton("确定", (dialog12, which) -> {
-            List<Bean_cart> noCheckBoxs = new ArrayList<>();
-            for (int i = 0; i < mDatas.size(); i++)
-                if (mDatas.get(i).isCheckBox())
-                    noCheckBoxs.add(mDatas.get(i));
-            for (Bean_cart cb : noCheckBoxs)
-                mDatas.remove(cb);
+        if (!(mDatas.size() == 0)) {
+        int checkedLength = 0;
+        for (int i = 0; i < mDatas.size(); i++)
+            if (mDatas.get(i).isCheckBox())
+                checkedLength++;
+        if (checkedLength != 0) {
+            Dialog dialog = new AlertDialog.Builder(getActivity()).setTitle(" ").setMessage("确定删除？").setPositiveButton("确定", (dialog12, which) -> {
+                List<Bean_cart> noCheckBoxs = new ArrayList<>();
+                for (int i = 0; i < mDatas.size(); i++)
+                    if (mDatas.get(i).isCheckBox())
+                        noCheckBoxs.add(mDatas.get(i));
+                for (Bean_cart cb : noCheckBoxs)
+                    mDatas.remove(cb);
 
 //            如果数据为空，全选框置为false
-            if (mDatas.size() == 0) {
-                cb_allseclet.setChecked(false);
-            }
-            changeTextSum();
-            mdapter_cart.notifyDataSetChanged();
-            Toast.makeText(getActivity(), "删除成功！", Toast.LENGTH_SHORT).show();
-        }).setNegativeButton("取消", (dialog1, which) -> {
-        }).create();
-        dialog.show();
+                if (mDatas.size() == 0) {
+                    cb_allseclet.setChecked(false);
+                }
+                changeTextSum();
+                mdapter_cart.notifyDataSetChanged();
+                Toast.makeText(getActivity(), "删除成功！", Toast.LENGTH_SHORT).show();
+            }).setNegativeButton("取消", (dialog1, which) -> {
+            }).create();
+            dialog.show();
+
+        } else
+            Toast.makeText(getActivity(), "请选择", Toast.LENGTH_SHORT).show();
+        } else
+            Toast.makeText(getActivity(), "尚无数据", Toast.LENGTH_SHORT).show();
     }
 
     //结算键
     public void tv_buy() {
-        Dialog dialog = new AlertDialog.Builder(getActivity()).setTitle(" ").setMessage("确认支付？").setPositiveButton("确定", (dialog12, which) ->{
-            Toast.makeText(getActivity(), "购买成功！消费:"+tv_sum.getText().toString()+"元", Toast.LENGTH_SHORT).show();
-            List<Bean_cart> noCheckBoxs = new ArrayList<>();
+        if (!(mDatas.size() == 0)) {
+            int checkedLength = 0;
             for (int i = 0; i < mDatas.size(); i++)
                 if (mDatas.get(i).isCheckBox())
-                    noCheckBoxs.add(mDatas.get(i));
-            for (Bean_cart cb : noCheckBoxs)
-                mDatas.remove(cb);
+                    checkedLength++;
+            if (checkedLength != 0) {
+                Dialog dialog = new AlertDialog.Builder(getActivity()).setTitle(" ").setMessage("确认支付？").setPositiveButton("确定", (dialog12, which) -> {
+                    Toast.makeText(getActivity(), "购买成功！消费:" + tv_sum.getText().toString() + "元", Toast.LENGTH_SHORT).show();
+                    List<Bean_cart> noCheckBoxs = new ArrayList<>();
+                    for (int i = 0; i < mDatas.size(); i++)
+                        if (mDatas.get(i).isCheckBox())
+                            noCheckBoxs.add(mDatas.get(i));
+                    for (Bean_cart cb : noCheckBoxs)
+                        mDatas.remove(cb);
 
 //            如果数据为空，全选框置为false
-            if (mDatas.size() == 0) {
-                cb_allseclet.setChecked(false);
-            }
-            changeTextSum();
-            mdapter_cart.notifyDataSetChanged();
-        }).setNegativeButton("取消", (dialog1, which) -> {
-        }).create();
-        dialog.show();
+                    if (mDatas.size() == 0) {
+                        cb_allseclet.setChecked(false);
+                    }
+                    changeTextSum();
+                    mdapter_cart.notifyDataSetChanged();
+                }).setNegativeButton("取消", (dialog1, which) -> {
+                }).create();
+                dialog.show();
+            } else
+                Toast.makeText(getActivity(), "请选择", Toast.LENGTH_SHORT).show();
+        } else
+            Toast.makeText(getActivity(), "尚无数据", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -227,8 +248,9 @@ public class MyFragment3 extends Fragment {
 //            text_sum.setVisibility(View.VISIBLE);
         }
     }
+
     //    复选框
-    public void setCb_checkBox(int postion){
+    public void setCb_checkBox(int postion) {
         if (cb_checkBox.isChecked()) {
             mDatas.get(postion).setCheckBox(false);
         } else {

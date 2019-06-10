@@ -39,7 +39,7 @@ public class OrderActivity extends AppCompatActivity {
         tv_edit.setOnClickListener(e -> tv_edit());
         tv_delete.setOnClickListener(e -> tv_delete());
         iv_back.setOnClickListener(e -> finish());
-        allSelect.setOnClickListener(e->allseclet());
+        allSelect.setOnClickListener(e -> allseclet());
         mListView.setOnItemClickListener((a, b, c, d) -> {
             initView_item(b);
             checkBox(c);
@@ -64,19 +64,21 @@ public class OrderActivity extends AppCompatActivity {
 
         }
     }
-//初始化父控件
-public void initView(){
-    mListView = findViewById(R.id.order_lv);
-    tv_edit = findViewById(R.id.order_edit);
-    tv_delete = findViewById(R.id.order_delete);
-    iv_back = findViewById(R.id.order_back);
-    allSelect=findViewById(R.id.order_allselect);
-}
-public void initView_item(View v){
-        checkBox=v.findViewById(R.id.order_item_checkbox);
-        describe=v.findViewById(R.id.order_item_describe);
-        goodsImg=v.findViewById(R.id.order_item_img);
-}
+
+    //初始化父控件
+    public void initView() {
+        mListView = findViewById(R.id.order_lv);
+        tv_edit = findViewById(R.id.order_edit);
+        tv_delete = findViewById(R.id.order_delete);
+        iv_back = findViewById(R.id.order_back);
+        allSelect = findViewById(R.id.order_allselect);
+    }
+
+    public void initView_item(View v) {
+        checkBox = v.findViewById(R.id.order_item_checkbox);
+        describe = v.findViewById(R.id.order_item_describe);
+        goodsImg = v.findViewById(R.id.order_item_img);
+    }
 
     //    复选框
     public void checkBox(int postion) {
@@ -88,6 +90,7 @@ public void initView_item(View v){
         mAdapterorder.notifyDataSetChanged();
 
     }
+
     //全选键
     public void allseclet() {
         if (allSelect.isChecked())
@@ -113,35 +116,44 @@ public void initView_item(View v){
         mAdapterorder.notifyDataSetChanged();
 
     }
+
     public void tv_delete() {
-        Dialog dialog = new AlertDialog.Builder(this).setTitle(" ").setMessage("确定删除？").setPositiveButton("确定", (dialog12, which) -> {
-            List<Bean_order> noCheckBoxs = new ArrayList<>();
+        if (!(mDatas.size() == 0)) {
+            int checkedLength = 0;
             for (int i = 0; i < mDatas.size(); i++)
                 if (mDatas.get(i).getCheckBox())
-                    noCheckBoxs.add(mDatas.get(i));
-            for (Bean_order cb : noCheckBoxs)
-                mDatas.remove(cb);
-
+                    checkedLength++;
+            if (checkedLength != 0) {
+                Dialog dialog = new AlertDialog.Builder(this).setTitle(" ").setMessage("确定删除？").setPositiveButton("确定", (dialog12, which) -> {
+                    List<Bean_order> noCheckBoxs = new ArrayList<>();
+                    for (int i = 0; i < mDatas.size(); i++)
+                        if (mDatas.get(i).getCheckBox())
+                            noCheckBoxs.add(mDatas.get(i));
+                    for (Bean_order cb : noCheckBoxs)
+                        mDatas.remove(cb);
 //            如果数据为空，全选框置为false
-            if (mDatas.size() == 0) {
-                allSelect.setChecked(false);
-            }
-
-            mAdapterorder.notifyDataSetChanged();
-            Toast.makeText(this, "删除成功！", Toast.LENGTH_SHORT).show();
-        }).setNegativeButton("取消", (dialog1, which) -> {
-        }).create();
-        dialog.show();
+                    if (mDatas.size() == 0) {
+                        allSelect.setChecked(false);
+                    }
+                    mAdapterorder.notifyDataSetChanged();
+                    Toast.makeText(this, "删除成功！", Toast.LENGTH_SHORT).show();
+                }).setNegativeButton("取消", (dialog1, which) -> {
+                }).create();
+                dialog.show();
+            } else
+                Toast.makeText(this, "请选择", Toast.LENGTH_SHORT).show();
+        } else
+            Toast.makeText(this, "尚无数据", Toast.LENGTH_SHORT).show();
     }
 
 
     private void initDatas() {
-        Bean_order bean_order1 = new Bean_order(R.drawable.animal_1, "跳楼甩卖，桂林小栽种", "1", "1",false);
-        Bean_order bean_order2 = new Bean_order(R.drawable.animal_5, "跳楼甩卖，桂林小栽种", "2", "2",false);
-        Bean_order bean_order3 = new Bean_order(R.drawable.animal_4, "跳楼甩卖，桂林小栽种", "3", "1",false);
-        Bean_order bean_order4 = new Bean_order(R.drawable.animal_6, "跳楼甩卖，桂林小栽种", "4", "1",false);
-        Bean_order bean_order5 = new Bean_order(R.drawable.animal_2, "跳楼甩卖，桂林小栽种", "5", "2",false);
-        Bean_order bean_order6= new Bean_order(R.drawable.animal_3, "跳楼甩卖，桂林小栽种", "6", "1",false);
+        Bean_order bean_order1 = new Bean_order(R.drawable.animal_1, "跳楼甩卖，桂林小栽种", "1", "1", false);
+        Bean_order bean_order2 = new Bean_order(R.drawable.animal_5, "跳楼甩卖，桂林小栽种", "2", "2", false);
+        Bean_order bean_order3 = new Bean_order(R.drawable.animal_4, "跳楼甩卖，桂林小栽种", "3", "1", false);
+        Bean_order bean_order4 = new Bean_order(R.drawable.animal_6, "跳楼甩卖，桂林小栽种", "4", "1", false);
+        Bean_order bean_order5 = new Bean_order(R.drawable.animal_2, "跳楼甩卖，桂林小栽种", "5", "2", false);
+        Bean_order bean_order6 = new Bean_order(R.drawable.animal_3, "跳楼甩卖，桂林小栽种", "6", "1", false);
         mDatas.add(bean_order1);
         mDatas.add(bean_order2);
         mDatas.add(bean_order3);

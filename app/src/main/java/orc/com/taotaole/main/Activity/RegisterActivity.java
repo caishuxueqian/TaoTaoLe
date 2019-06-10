@@ -35,7 +35,11 @@ public class RegisterActivity extends AppCompatActivity {
         mSharedPrefrences = getSharedPreferences("userinfo", MODE_PRIVATE);
         mEditor = mSharedPrefrences.edit();
         findViewById(R.id.tv_getCode).setOnClickListener(e -> {
-            Toast.makeText(this, "正在获取验证码", Toast.LENGTH_SHORT).show();
+            String user_Code;
+            user_Code = String.valueOf((int) (Math.random() * 8000) + 1000);
+            mEditor.putString("user_Code", user_Code);
+            mEditor.commit();
+            Toast.makeText(this, "验证码："+user_Code, Toast.LENGTH_SHORT).show();
         });
         findViewById(R.id.btn_register).setOnClickListener(e -> {
             userName = user_Name.getText().toString();
@@ -45,6 +49,8 @@ public class RegisterActivity extends AppCompatActivity {
             Code = user_Code.getText().toString();
             if (userName.equals("") || phone.equals("") || passWord.equals("") || passWord_Againt.equals("") || Code.equals("")) {
                 Toast.makeText(this, "信息填写不完整!", Toast.LENGTH_SHORT).show();
+            } else if (!mSharedPrefrences.getString("user_Code","").equals(Code)) {
+                Toast.makeText(this, "验证码输入错误！", Toast.LENGTH_SHORT).show();
             } else if (!passWord.equals(passWord_Againt)) {
                 Toast.makeText(this, "两次密码不一致!", Toast.LENGTH_SHORT).show();
 
