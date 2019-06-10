@@ -18,8 +18,8 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:layout_width="420dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:background="@color/main_color"
             android:gravity="center"
             android:text="@string/app_register"
@@ -42,7 +42,7 @@
                 android:layout_weight="1"
                 android:drawableLeft="@drawable/ic_account"
                 android:gravity="center"
-                android:text="账号：" />
+                android:text="账号:" />
 
             <EditText
                 android:id="@+id/et_account"
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
                 android:background="@android:color/transparent"
-                android:hint="请输入用户名"
+                android:hint="请输入账号"
                 android:textColor="@android:color/black"
                 android:textColorHint="#ccc"
                 android:textSize="16sp" />
@@ -69,9 +69,9 @@
                 android:layout_width="8dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:drawableLeft="@drawable/ic_account"
-                android:gravity="center_vertical"
-                android:text="电话：" />
+                android:drawableLeft="@drawable/ic_phone"
+                android:gravity="center"
+                android:text="电话:" />
 
             <EditText
                 android:id="@+id/et_phone"
@@ -100,7 +100,7 @@
                 android:layout_weight="1"
                 android:drawableLeft="@drawable/ic_password"
                 android:gravity="center"
-                android:text="密码：" />
+                android:text="密码:" />
 
             <EditText
                 android:id="@+id/et_password"

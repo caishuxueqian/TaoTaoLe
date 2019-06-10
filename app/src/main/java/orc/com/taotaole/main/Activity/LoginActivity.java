@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -39,16 +38,19 @@ public class LoginActivity extends AppCompatActivity {
             if (!userName.equals("") && !passWord.equals("") && userName.equals(mSharedPrefrences.getString(userName, "")) && passWord.equals(mSharedPrefrences.getString((userName + "_PassWord"), ""))) {
                 startActivity(new Intent(LoginActivity.this, DrawActivity.class));
                 Toast.makeText(this, "登录成功！", Toast.LENGTH_SHORT).show();
-
             }
-//            //测试使用//测试使用//测试使用//测试使用//测试使用,不输入即可登录
-            else if (userName.equals("")) {
-                mEditor.putString("current_UserName", userName);
-                mEditor.commit();
-                startActivity(new Intent(LoginActivity.this, DrawActivity.class));
-                Toast.makeText(this, "登录成功！", Toast.LENGTH_SHORT).show();
-
-            } else {
+            else if (userName.equals("") && !passWord.equals("")){
+                Toast.makeText(this, "用户名不能为空！", Toast.LENGTH_SHORT).show();
+            }else if (passWord.equals("") && !userName.equals("")){
+                Toast.makeText(this, "密码不能为空！", Toast.LENGTH_SHORT).show();
+            }
+               //测试使用//测试使用//测试使用//测试使用//测试使用,不输入即可登录
+             else if (userName.equals("")) {
+               mEditor.putString("current_UserName", userName);
+               mEditor.commit();
+               startActivity(new Intent(LoginActivity.this, DrawActivity.class));
+               Toast.makeText(this, "登录成功！", Toast.LENGTH_SHORT).show();
+              } else {
                 Toast.makeText(this, "用户名或者密码错误！", Toast.LENGTH_SHORT).show();
             }
         });

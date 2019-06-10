@@ -35,7 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
         mSharedPrefrences = getSharedPreferences("userinfo", MODE_PRIVATE);
         mEditor = mSharedPrefrences.edit();
         findViewById(R.id.tv_getCode).setOnClickListener(e -> {
-            Toast.makeText(this, "正在获取验证码", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "验证码:1314", Toast.LENGTH_SHORT).show();
         });
         findViewById(R.id.btn_register).setOnClickListener(e -> {
             userName = user_Name.getText().toString();
@@ -47,7 +47,12 @@ public class RegisterActivity extends AppCompatActivity {
                 Toast.makeText(this, "信息填写不完整!", Toast.LENGTH_SHORT).show();
             } else if (!passWord.equals(passWord_Againt)) {
                 Toast.makeText(this, "两次密码不一致!", Toast.LENGTH_SHORT).show();
-
+            } else  if(user_Name.length()<1 || user_Name.length()>6){
+                Toast.makeText(this, "用户名长度应为1到6位!", Toast.LENGTH_SHORT).show();
+            } else if (phone.length()!=11){
+                Toast.makeText(this, "手机号不符合11位标准!", Toast.LENGTH_SHORT).show();
+            } else if (user_PassWord.length()<6){
+                Toast.makeText(this, "密码长度应该6位及以上!", Toast.LENGTH_SHORT).show();
             } else if (!mSharedPrefrences.getString(userName, "").isEmpty()) {
                 Toast.makeText(this, "该用户已存在!", Toast.LENGTH_SHORT).show();
             } else {

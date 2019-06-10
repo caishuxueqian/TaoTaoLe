@@ -19,8 +19,8 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:layout_width="420dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:background="@color/main_color"
             android:gravity="center"
             android:text="@string/app_forget"
@@ -41,8 +41,9 @@
                 android:layout_width="8dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="电话：" />
+                android:drawableLeft="@drawable/ic_phone"
+                android:gravity="center"
+                android:text="电话:" />
 
             <EditText
                 android:id="@+id/et_phone"
@@ -70,8 +71,9 @@
                 android:layout_width="8dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="密码：" />
+                android:drawableLeft="@drawable/ic_password"
+                android:gravity="center"
+                android:text="密码:" />
 
             <EditText
                 android:id="@+id/et_password_reset"

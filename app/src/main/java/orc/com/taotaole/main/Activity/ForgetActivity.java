@@ -35,18 +35,22 @@ public class ForgetActivity extends AppCompatActivity {
         mSharedPrefrences = getSharedPreferences("userinfo", MODE_PRIVATE);
         mEditor = mSharedPrefrences.edit();
         findViewById(R.id.tv_getCode).setOnClickListener(e -> {
-            Toast.makeText(this, "正在获取验证码", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "验证码:1314", Toast.LENGTH_SHORT).show();
         });
         findViewById(R.id.btn_yes).setOnClickListener(e -> {
             phone = user_Phone.getText().toString();
             passWord_Reset = user_PassWord_Reset.getText().toString();
             code = user_Code.getText().toString();
-//            遍历map
+            //遍历map
             Map<String, ?> allConent = mSharedPrefrences.getAll();
             String userName;
             if (phone.equals("") || passWord_Reset.equals("") || code.equals("")) {
                 Toast.makeText(this, "信息填写不完整", Toast.LENGTH_SHORT).show();
-            } else if (true) {
+            } else if (phone.length()!=11){
+                Toast.makeText(this, "手机号不符合11位标准!", Toast.LENGTH_SHORT).show();
+            } else if (passWord_Reset.length()<6){
+                Toast.makeText(this, "密码长度应该6位及以上!", Toast.LENGTH_SHORT).show();
+            }else if (true) {
                 for (Map.Entry<String, ?> entry : allConent.entrySet()) {
                     if (phone.equals(entry.getValue())) {
 //                        通过手机号获取账号名
