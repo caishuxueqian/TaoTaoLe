@@ -12,24 +12,22 @@
         android:orientation="horizontal">
 
         <SearchView
-            android:layout_width="270dp"
+            android:layout_width="340dp"
             android:layout_height="40dp"
             android:layout_margin="10dp"
             android:background="@drawable/shape1"
             android:gravity="center_horizontal"
             android:iconifiedByDefault="false"
-            android:queryHint="搜一下">
+            android:queryHint="搜一搜">
 
         </SearchView>
 
-        <TextView
+        <ImageView
+            android:id="@+id/saoyisao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:text="搜你想要"
-            android:textColor="@color/white"
-            android:textSize="15dp"
-            android:textStyle="bold" />
+            android:background="@drawable/saoyisao"
+            android:layout_gravity="center_vertical" />
     </LinearLayout>
 
     <GridView

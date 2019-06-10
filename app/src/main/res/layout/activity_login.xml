@@ -20,7 +20,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:background="@color/main_color"
             android:gravity="center"
             android:text="@string/app_message"
@@ -36,10 +36,10 @@
             android:layout_marginBottom="20dp"
 
             android:baselineAligned="false"
-            android:src="@mipmap/tx" />
+            android:src="@drawable/default_head" />
 
         <LinearLayout
-            android:layout_width="320dp"
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:orientation="horizontal"
@@ -54,7 +54,7 @@
                 android:layout_weight="1"
                 android:drawableLeft="@drawable/ic_account"
                 android:gravity="center"
-                android:text="账号："
+                android:text="账号:"
                 android:textColor="#100E0E" />
 
             <EditText
@@ -70,7 +70,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="320dp"
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:orientation="horizontal"
@@ -85,7 +85,7 @@
                 android:layout_weight="1"
                 android:drawableLeft="@drawable/ic_password"
                 android:gravity="center"
-                android:text="密码："
+                android:text="密码:"
                 android:textColor="#1A1717" />
 
             <EditText
@@ -104,7 +104,7 @@
 
         <Button
             android:id="@+id/btn_login"
-            android:layout_width="270dp"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_blue"
             android:text="@string/btn_login" />
@@ -122,7 +122,7 @@
         android:text="注册账号"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintHorizontal_bias="0.176"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.0" />
@@ -139,7 +139,7 @@
         android:text="忘记密码"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.668"
+        app:layout_constraintHorizontal_bias="0.721"
         app:layout_constraintStart_toEndOf="@+id/tv_register"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.0" />
