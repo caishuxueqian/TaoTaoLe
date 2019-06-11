@@ -41,7 +41,7 @@
         android:horizontalSpacing="5dp"
         android:numColumns="1"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="2dp"
+        android:verticalSpacing="4dp"
 
         />
         <GridView
