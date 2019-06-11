@@ -23,6 +23,8 @@ public class ForgetActivity extends AppCompatActivity {
     private String code;
     private SharedPreferences mSharedPrefrences;
     private SharedPreferences.Editor mEditor;
+    private String right_phone;
+    private String right_passWord;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,8 @@ public class ForgetActivity extends AppCompatActivity {
         user_Code = (EditText) findViewById(R.id.et_code);
         mSharedPrefrences = getSharedPreferences("userinfo", MODE_PRIVATE);
         mEditor = mSharedPrefrences.edit();
+        right_phone="^((13[0-9])|(14[579])|(15([0-3,5-9]))|(16[6])|(17[0135678])|(18[0-9]|19[89]))\\d{8}$";
+        right_passWord="^([0-9]|[a-z]|[A-Z]){6}$";
         findViewById(R.id.tv_getCode).setOnClickListener(e -> {
             String user_Code;
             user_Code = String.valueOf((int) (Math.random() * 8000) + 1000);
@@ -50,6 +54,12 @@ public class ForgetActivity extends AppCompatActivity {
             String userName;
             if (phone.equals("") || passWord_Reset.equals("") || code.equals("")) {
                 Toast.makeText(this, "信息填写不完整", Toast.LENGTH_SHORT).show();
+            }  else if(!phone.matches(right_phone)){
+                Toast.makeText(this, "请输入正确的手机号!", Toast.LENGTH_SHORT).show();
+            }
+            else if(!passWord_Reset.matches(right_passWord)) {
+                Toast.makeText(this, "请输入正确的密码!", Toast.LENGTH_SHORT).show();
+
             } else if (!mSharedPrefrences.getString("user_Code", "").equals(code)) {
                 Toast.makeText(this, "验证码输入错误！", Toast.LENGTH_SHORT).show();
             } else if (true) {

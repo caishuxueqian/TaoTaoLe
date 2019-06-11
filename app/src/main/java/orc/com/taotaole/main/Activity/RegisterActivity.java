@@ -22,6 +22,9 @@ public class RegisterActivity extends AppCompatActivity {
     private String Code;
     private SharedPreferences mSharedPrefrences;
     private SharedPreferences.Editor mEditor;
+    private String right_phone;
+    private String right_passWord;
+    private String right_userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,9 @@ public class RegisterActivity extends AppCompatActivity {
         user_Code = findViewById(R.id.et_code);
         mSharedPrefrences = getSharedPreferences("userinfo", MODE_PRIVATE);
         mEditor = mSharedPrefrences.edit();
+        right_phone="^((13[0-9])|(14[579])|(15([0-3,5-9]))|(16[6])|(17[0135678])|(18[0-9]|19[89]))\\d{8}$";
+        right_passWord="^([0-9]|[a-z]|[A-Z]){6}$";
+        right_userName="^([0-9]|[a-z]|[A-Z]){4}$";
         findViewById(R.id.tv_getCode).setOnClickListener(e -> {
             String user_Code;
             user_Code = String.valueOf((int) (Math.random() * 8000) + 1000);
@@ -49,16 +55,26 @@ public class RegisterActivity extends AppCompatActivity {
             Code = user_Code.getText().toString();
             if (userName.equals("") || phone.equals("") || passWord.equals("") || passWord_Againt.equals("") || Code.equals("")) {
                 Toast.makeText(this, "信息填写不完整!", Toast.LENGTH_SHORT).show();
-            } else if (!mSharedPrefrences.getString("user_Code","").equals(Code)) {
-                Toast.makeText(this, "验证码输入错误！", Toast.LENGTH_SHORT).show();
-            } else if (!passWord.equals(passWord_Againt)) {
-                Toast.makeText(this, "两次密码不一致!", Toast.LENGTH_SHORT).show();
-
-            } else if (!mSharedPrefrences.getString(userName, "").isEmpty()) {
+            }  else if(!userName.matches(right_userName)){
+                Toast.makeText(this, "请输入正确的账号!", Toast.LENGTH_SHORT).show();
+            }
+            else if(!phone.matches(right_phone)){
+                Toast.makeText(this, "请输入正确的手机号!", Toast.LENGTH_SHORT).show();
+            }
+            else if(!passWord.matches(right_passWord)){
+                Toast.makeText(this, "请输入正确的密码!", Toast.LENGTH_SHORT).show();
+            }
+            else if (!mSharedPrefrences.getString(userName, "").isEmpty()) {
                 Toast.makeText(this, "该用户已存在!", Toast.LENGTH_SHORT).show();
-            } else {
+            }else if (!mSharedPrefrences.getString(userName + "_Phone", "").isEmpty()) {
+                Toast.makeText(this, "此手机号已绑定其他账号!", Toast.LENGTH_SHORT).show();
+            }else if (!passWord.equals(passWord_Againt)) {
+                Toast.makeText(this, "两次密码不一致!", Toast.LENGTH_SHORT).show();
+            }  else if (!mSharedPrefrences.getString("user_Code","").equals(Code)) {
+                Toast.makeText(this, "验证码输入错误！", Toast.LENGTH_SHORT).show();
+            }else {
                 mEditor.putString(userName, userName);
-                mEditor.putString(userName + "_PassWord", passWord);
+                mEditor.putString(userName + "_PassWord",passWord);
                 mEditor.putString(userName + "_Phone", phone);
                 mEditor.commit();
 

@@ -16,6 +16,8 @@ public class LoginActivity extends AppCompatActivity {
     private String passWord = "";
     private SharedPreferences mSharedPrefrences;
     private SharedPreferences.Editor mEditor;
+    private String right_passWord;
+    private String right_userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +25,10 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         user_name = findViewById(R.id.et_account);
         pass_word = findViewById(R.id.et_password);
-
         mSharedPrefrences = getSharedPreferences("userinfo", MODE_PRIVATE);
         mEditor = mSharedPrefrences.edit();
+        right_passWord="^([0-9]|[a-z]|[A-Z]){6}$";
+        right_userName="^([0-9]|[a-z]|[A-Z]){4}$";
         findViewById(R.id.tv_register).setOnClickListener(e -> {
             startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
         });
@@ -43,9 +46,14 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(this, "用户名不能为空！", Toast.LENGTH_SHORT).show();
             }else if (passWord.equals("") && !userName.equals("")){
                 Toast.makeText(this, "密码不能为空！", Toast.LENGTH_SHORT).show();
+            }else if(!userName.matches(right_userName)){
+                Toast.makeText(this, "请输入正确的用户名!", Toast.LENGTH_SHORT).show();
+            }
+            else if(!passWord.matches(right_passWord)){
+                Toast.makeText(this, "请输入正确的密码!", Toast.LENGTH_SHORT).show();
             }
                //测试使用//测试使用//测试使用//测试使用//测试使用,不输入即可登录
-             else if (userName.equals("")) {
+              if (userName.equals("")) {
                mEditor.putString("current_UserName", userName);
                mEditor.commit();
                startActivity(new Intent(LoginActivity.this, DrawActivity.class));
