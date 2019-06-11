@@ -5,11 +5,11 @@
     android:background="@drawable/shape_white"
     android:orientation="vertical">
 
-    <!--<include-->
-        <!--android:id="@+id/fragment1_top"-->
-        <!--layout="@layout/fragment1_layout_top"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" />-->
+    <include
+        android:id="@+id/fragment1_top"
+        layout="@layout/fragment1_layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -40,7 +40,7 @@ public class Adapter_1goods extends BaseAdapter {
         View view;
         ViewHolder viewHolder;
         if (convertView == null) {
-            view = LayoutInflater.from(context).inflate((R.layout.activty_goods_grid_item), null);
+            view = LayoutInflater.from(context).inflate((R.layout.fragement1_grid_item), null);
             viewHolder = new ViewHolder();
             viewHolder.GoodsImg = view.findViewById(R.id.goods1_iv);
             viewHolder.GoodsDescrbe = view.findViewById(R.id.goods1_tv);
@@ -55,10 +55,10 @@ public class Adapter_1goods extends BaseAdapter {
         viewHolder.GoodsDescrbe.setText(bean_goods1.getDescribe());
         viewHolder.GoodsMoney.setText(bean_goods1.getMoney());
         viewHolder.GoodsPerson.setText(bean_goods1.getPerson());
-//        if(position==0)
-//            view.findViewById(R.id.fragment1_top).setVisibility(View.VISIBLE);
-//        else
-//            view.findViewById(R.id.fragment1_top).setVisibility(View.GONE);
+        if(position==0)
+            view.findViewById(R.id.fragment1_top).setVisibility(View.VISIBLE);
+        else
+            view.findViewById(R.id.fragment1_top).setVisibility(View.GONE);
         return view;
 
     }

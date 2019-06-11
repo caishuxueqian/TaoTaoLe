@@ -3,9 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D9D9D9"
-    android:orientation="vertical"
-    >
-
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -19,41 +17,28 @@
             android:layout_marginLeft="0dp"
             android:layout_gravity="center"
             android:src="@drawable/back"
-         />
-    <TextView
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="20dp"
-        android:text="商品列表"
-        android:textSize="20dp"
-        android:textColor="@color/white"/>
+            />
+        <TextView
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:text="商品列表"
+            android:textSize="20dp"
+            android:textColor="@color/white"/>
     </LinearLayout>
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <GridView
 
-        android:id="@+id/goods1_gv"
+
+    <GridView
+        android:id="@+id/gv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:horizontalSpacing="5dp"
-        android:numColumns="1"
+        android:numColumns="2"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="2dp"
+        android:verticalSpacing="10dp"
 
         />
-        <GridView
-            android:visibility="gone"
-            android:id="@+id/goods2_gv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:horizontalSpacing="5dp"
-            android:numColumns="2"
-            android:stretchMode="columnWidth"
-            android:verticalSpacing="2dp"
 
-            />
-    </FrameLayout>
 </LinearLayout>

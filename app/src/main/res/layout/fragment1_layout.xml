@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D9D9D9"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,16 +30,30 @@
             android:background="@drawable/animal_3"
             android:layout_gravity="center_vertical" />
     </LinearLayout>
-
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <GridView
-        android:id="@+id/gv"
+
+        android:id="@+id/goods1_gv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:horizontalSpacing="5dp"
-        android:numColumns="2"
+        android:numColumns="1"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="10dp"
+        android:verticalSpacing="2dp"
 
         />
+        <GridView
+            android:visibility="gone"
+            android:id="@+id/goods2_gv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:horizontalSpacing="5dp"
+            android:numColumns="2"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="2dp"
 
+            />
+    </FrameLayout>
 </LinearLayout>
