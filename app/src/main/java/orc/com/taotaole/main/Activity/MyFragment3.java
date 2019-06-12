@@ -57,8 +57,6 @@ public class MyFragment3 extends Fragment {
         initViews(view);
         mdapter_cart = new Adapter_cart(getActivity(), mDatas);
         mListView.setAdapter(mdapter_cart);
-//        总金额点击测试
-        tv_sum.setOnClickListener(e -> Toast.makeText(getActivity(), "shabi", Toast.LENGTH_SHORT).show());
 //      结算键
         tv_buy.setOnClickListener(e -> tv_buy());
 //        编辑键

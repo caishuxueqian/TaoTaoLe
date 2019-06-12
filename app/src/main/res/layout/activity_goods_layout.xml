@@ -123,7 +123,7 @@
             android:horizontalSpacing="5dp"
             android:numColumns="2"
             android:stretchMode="columnWidth"
-            android:verticalSpacing="10dp" />
+            android:verticalSpacing="5dp" />
 
         <GridView
             android:id="@+id/goods1_gv"

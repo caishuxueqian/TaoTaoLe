@@ -34,7 +34,6 @@ public class LoginActivity extends AppCompatActivity {
         findViewById(R.id.login_back).setOnClickListener(e -> {
             mEditor.putString("login_Sign", "false");
             mEditor.commit();
-            Toast.makeText(this, "" + mSharedPrefrences.getString("login_Sign", ""), Toast.LENGTH_SHORT).show();
              finish();
             startActivity(new Intent(this,DrawActivity.class));
         });
