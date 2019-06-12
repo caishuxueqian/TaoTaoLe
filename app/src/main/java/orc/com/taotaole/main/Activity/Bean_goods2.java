@@ -16,31 +16,24 @@ public class Bean_goods2 {
     public int getImgId() {
         return imgId;
     }
-
     public void setImgId(int imgId) {
         this.imgId = imgId;
     }
-
     public String getDescribe() {
         return describe;
     }
-
     public void setDescribe(String describe) {
         this.describe = describe;
     }
-
     public String getMoney() {
         return money;
     }
-
     public void setMoney(String money) {
         this.money = money;
     }
-
     public String getPerson() {
         return person;
     }
-
     public void setPerson(String person) {
         this.person = person;
     }

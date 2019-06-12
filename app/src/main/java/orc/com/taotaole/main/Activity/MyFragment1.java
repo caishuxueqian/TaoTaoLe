@@ -35,14 +35,29 @@ public class MyFragment1 extends Fragment  {
         mGridView1.setAdapter(mAdapterGoods1);
 
         mGridView.setOnItemClickListener((parent, v, position, id) -> {
-
-            startActivity(new Intent(getActivity(), DetailActivity.class));
+//           // todo
+            view.findViewById(R.id.top_iv).setOnClickListener(e->{});
+            view.findViewById(R.id.t1).setOnClickListener(e->{});
+            view.findViewById(R.id.t2).setOnClickListener(e->{});
+            view.findViewById(R.id.t3).setOnClickListener(e->{});
+            view.findViewById(R.id.t4).setOnClickListener(e->{});
+            view.findViewById(R.id.t5).setOnClickListener(e->{});
+            view.findViewById(R.id.t6).setOnClickListener(e->{});
+            view.findViewById(R.id.t7).setOnClickListener(e->{});
+            view.findViewById(R.id.t8).setOnClickListener(e->{});
+            view.findViewById(R.id.t9).setOnClickListener(e->{});
+            view.findViewById(R.id.t10).setOnClickListener(e->{});
+            view.findViewById(R.id.goods1_iv).setOnClickListener(e->{});
+            view.findViewById(R.id.goods1_tv).setOnClickListener(e->{});
+            view.findViewById(R.id.goods1_tv1).setOnClickListener(e->{});
+            view.findViewById(R.id.goods1_tv2).setOnClickListener(e->{});
+            view.findViewById(R.id.goods1_tv3).setOnClickListener(e->{});
+            view.findViewById(R.id.top_tuijian).setOnClickListener(e->{});
         });
 return  view;
     }
 
     private void initDatas() {
-
         Bean_goods1 bean_goods1 = new Bean_goods1(R.drawable.animal_1, "跳楼甩卖，桂林小栽种", "10", "2");
         Bean_goods1 bean_goods2 = new Bean_goods1(R.drawable.animal_5, "跳楼甩卖，桂林小栽种", "10", "2");
         Bean_goods1 bean_goods3 = new Bean_goods1(R.drawable.animal_4, "跳楼甩卖，桂林小栽种", "10", "2");
