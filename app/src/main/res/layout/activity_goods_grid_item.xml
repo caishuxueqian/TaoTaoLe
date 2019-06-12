@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/iv1"
+        android:id="@+id/goods2_img"
         android:layout_width="160dp"
         android:layout_height="140dp"
         android:layout_marginLeft="10dp"
@@ -19,7 +19,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tv"
+            android:id="@+id/goods2_describe"
             android:layout_width="100dp"
             android:layout_height="60dp"
             android:layout_marginLeft="12dp"
@@ -46,7 +46,7 @@
                     android:textSize="12dp" />
 
                 <TextView
-                    android:id="@+id/tv1"
+                    android:id="@+id/goods2_money"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
@@ -62,7 +62,7 @@
                 android:orientation="horizontal">
             <TextView
                 android:layout_marginLeft="5dp"
-                android:id="@+id/tv2"
+                android:id="@+id/goods2_person"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"

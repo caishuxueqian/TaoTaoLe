@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:background="#D9D9D9"
     android:orientation="vertical"
+    android:id="@+id/fragment1_layout"
     >
 
     <LinearLayout
@@ -27,7 +28,7 @@
             android:id="@+id/saoyisao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/animal_3"
+            android:background="@drawable/saoyisao"
             android:layout_gravity="center_vertical" />
     </LinearLayout>
     <FrameLayout

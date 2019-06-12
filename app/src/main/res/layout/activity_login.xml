@@ -17,16 +17,27 @@
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/main_color"
-            android:gravity="center"
-            android:text="@string/app_message"
-            android:textColor="#FFFFFF"
-            android:textSize="25sp" />
-
+            android:background="@color/main_color">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:text="@string/app_message"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp" />
+            <ImageView
+                android:id="@+id/login_back"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="0dp"
+                android:src="@drawable/back"
+                />
+        </FrameLayout>
         <ImageView
             android:id="@+id/ico"
             android:layout_width="100dp"

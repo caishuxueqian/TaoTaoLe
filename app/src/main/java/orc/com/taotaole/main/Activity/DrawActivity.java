@@ -38,7 +38,7 @@ import static java.lang.Class.forName;
 public class DrawActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, RadioGroup.OnCheckedChangeListener,
         ViewPager.OnPageChangeListener {
-//    MainActivity
+    //    MainActivity
 //    private TextView txt_topbar;
     private RadioGroup rg_tab_bar;
     private RadioButton rb_channel;
@@ -47,6 +47,7 @@ public class DrawActivity extends AppCompatActivity
     private RadioButton rb_setting;
     private ViewPager vpager;
     private MyFragmentPagerAdapter mAdapter;
+    private String login_Sign;
 
     //几个代表页面的常量
     public static final int PAGE_ONE = 0;
@@ -55,10 +56,10 @@ public class DrawActivity extends AppCompatActivity
     public static final int PAGE_FOUR = 3;
 //    MainActivity
 
-//    获取当前用户名
+    //    获取当前用户名
     private SharedPreferences mSharedPrefrences;
     private SharedPreferences.Editor mEditor;
-    private String current_UserName="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 //        requestWindowFeature(getWindow().FEATURE_NO_TITLE);
@@ -70,13 +71,10 @@ public class DrawActivity extends AppCompatActivity
         mAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
         bindViews();
         rb_channel.setChecked(true);
-//        获取当前用户名，并设置到个人信息
-//        mSharedPrefrences = getSharedPreferences("userinfo", MODE_PRIVATE);
-//        mEditor=mSharedPrefrences.edit();
-//        current_UserName=mSharedPrefrences.getString("current_UserName","");
-//        findViewById(R.id.tv_userName).setText(current_UserName);
-//        退出登录
- ;
+//        获取当前登录标志，并设置到个人信息
+        mSharedPrefrences = getSharedPreferences("userinfo", MODE_PRIVATE);
+        mEditor = mSharedPrefrences.edit();
+        login_Sign = mSharedPrefrences.getString("login_Sign", "false");
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -99,7 +97,7 @@ public class DrawActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 //        跳转到个人中心
-        findViewById(R.id.draw_img).setOnClickListener(e->startActivity(new Intent(this,UserActivity.class)));
+        findViewById(R.id.draw_img).setOnClickListener(e -> startActivity(new Intent(this, UserActivity.class)));
         getMenuInflater().inflate(R.menu.draw, menu);
         return true;
     }
@@ -134,7 +132,7 @@ public class DrawActivity extends AppCompatActivity
 //        }else if (id == R.id.nav_tools)  {
 
         } else if (id == R.id.nav_send) {
-           showDialog();
+            showDialog();
 
         }
 
@@ -142,21 +140,19 @@ public class DrawActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-public void showDialog(){
-    Dialog dialog=new AlertDialog.Builder(this).setTitle(" ")
-            .setMessage("               确定退出登录？").setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    finish();
-                }
-            }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
 
-                }
-            }).create();
-    dialog.show();
-}
+    public void showDialog() {
+        Dialog dialog = new AlertDialog.Builder(this).setTitle(" ")
+                .setMessage("               确定退出登录？").setPositiveButton("确定", (dialog1, which) -> {
+                    mEditor.putString("login_Sign", "false");
+                    mEditor.commit();
+                    Toast.makeText(this, "" + mSharedPrefrences.getString("login_Sign", ""), Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(this, LoginActivity.class));
+                }).setNegativeButton("取消", (dialog12, which) -> {
+
+                }).create();
+        dialog.show();
+    }
 
     //    ---------------------------------------------------------------------------------
     //    MainActivity
@@ -180,18 +176,36 @@ public void showDialog(){
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
+
         switch (checkedId) {
             case R.id.rb_channel:
                 vpager.setCurrentItem(PAGE_ONE);
                 break;
-            case R.id.rb_message:
+            case R.id.rb_message: {
                 vpager.setCurrentItem(PAGE_TWO);
-                break;
+
+            }
+            break;
             case R.id.rb_better:
-                vpager.setCurrentItem(PAGE_THREE);
+                if ("false".equals(mSharedPrefrences.getString("login_Sign",""))) {
+
+                    startActivity(new Intent(this, LoginActivity.class));
+
+                } else {
+                    Toast.makeText(this, "2" + mSharedPrefrences.getString("login_Sign", ""), Toast.LENGTH_SHORT).show();
+                    vpager.setCurrentItem(PAGE_THREE);
+                }
+
                 break;
             case R.id.rb_setting:
-                vpager.setCurrentItem(PAGE_FOUR);
+                if ("false".equals(mSharedPrefrences.getString("login_Sign",""))) {
+                    startActivity(new Intent(this, LoginActivity.class));
+                    Toast.makeText(this, "1" + mSharedPrefrences.getString("login_Sign", ""), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "2" + mSharedPrefrences.getString("login_Sign", ""), Toast.LENGTH_SHORT).show();
+                    vpager.setCurrentItem(PAGE_FOUR);
+                }
+
                 break;
         }
     }

@@ -12,15 +12,13 @@ import java.util.List;
 
 import orc.com.taotaole.R;
 
-public class Adapter_2goods extends BaseAdapter {
+public class Adapter_2_1goods extends BaseAdapter {
     private Context context;
-    private List<Bean_goods2> datas;
-    public Adapter_2goods(Context context, List<Bean_goods2> datas) {
+    private List<Bean_goods1> datas;
+    public Adapter_2_1goods(Context context, List<Bean_goods1> datas) {
         this.context = context;
         this.datas = datas;
     }
-
-
     @Override
     public int getCount() {
         return datas.size();
@@ -38,27 +36,26 @@ public class Adapter_2goods extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Bean_goods2 bean_goods2 = (Bean_goods2) getItem(position);
+        Bean_goods1 bean_goods1 = (Bean_goods1) getItem(position);
         View view;
         ViewHolder viewHolder;
         if (convertView == null) {
-            view = LayoutInflater.from(context).inflate((R.layout.activity_goods_grid_item), null);
+            view = LayoutInflater.from(context).inflate((R.layout.fragement1_grid_item), null);
             viewHolder = new ViewHolder();
-            viewHolder = new Adapter_2goods.ViewHolder();
-            viewHolder.GoodsImg = view.findViewById(R.id.goods2_img);
-            viewHolder.GoodsDescrbe = view.findViewById(R.id.goods2_describe);
-            viewHolder.GoodsMoney = view.findViewById(R.id.goods2_money);
-            viewHolder.GoodsPerson = view.findViewById(R.id.goods2_person);
+            viewHolder.GoodsImg = view.findViewById(R.id.goods1_iv);
+            viewHolder.GoodsDescrbe = view.findViewById(R.id.goods1_tv);
+            viewHolder.GoodsMoney = view.findViewById(R.id.goods1_tv1);
+            viewHolder.GoodsPerson = view.findViewById(R.id.goods1_tv2);
             view.setTag(viewHolder);
         } else {
             view = convertView;
-            viewHolder = (Adapter_2goods.ViewHolder) view.getTag();
+            viewHolder = (ViewHolder) view.getTag();
         }
-        viewHolder.GoodsImg.setImageResource(bean_goods2.getImgId());
-        viewHolder.GoodsDescrbe.setText(bean_goods2.getDescribe());
-        viewHolder.GoodsMoney.setText(bean_goods2.getMoney());
-        viewHolder.GoodsPerson.setText(bean_goods2.getPerson());
-
+        viewHolder.GoodsImg.setImageResource(bean_goods1.getImgId());
+        viewHolder.GoodsDescrbe.setText(bean_goods1.getDescribe());
+        viewHolder.GoodsMoney.setText(bean_goods1.getMoney());
+        viewHolder.GoodsPerson.setText(bean_goods1.getPerson());
+            view.findViewById(R.id.fragment1_top).setVisibility(View.GONE);
         return view;
 
     }

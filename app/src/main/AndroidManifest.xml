@@ -9,25 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".main.Activity.LoginActivity">
+
+        </activity>
         <activity
             android:name=".main.Activity.DrawActivity"
             android:label="@string/title_activity_draw"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".main.Activity.ForgetActivity" />
-        <activity android:name=".main.Activity.LoginActivity">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".main.Activity.ForgetActivity" />
         <activity android:name=".main.Activity.RegisterActivity" />
         <activity android:name=".main.Activity.MainActivity" />
         <activity android:name=".main.Activity.GoodsActivity" />
         <activity android:name=".main.Activity.DetailActivity" />
-        <activity
-            android:name=".main.Activity.HistoryActivity"
-            android:parentActivityName=".main.Activity.MainActivity" />
+        <activity android:name=".main.Activity.HistoryActivity" />
         <activity android:name=".main.Activity.OrderActivity" />
         <activity android:name=".main.Activity.UserActivity" />
         <activity android:name=".main.Activity.ShowImageActivity" />
