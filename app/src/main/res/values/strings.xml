@@ -20,7 +20,8 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">淘淘乐</string>
-    <string name="nav_header_subtitle">看啥呢，小老弟！</string>
+    <!--签名-->
+    <string name="nav_header_subtitle"></string>
     <string name="nav_header_desc">Navigation header</string>
 
     <string name="menu_home">Home</string>

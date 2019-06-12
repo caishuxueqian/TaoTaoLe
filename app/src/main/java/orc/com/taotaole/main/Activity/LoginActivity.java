@@ -18,7 +18,6 @@ public class LoginActivity extends AppCompatActivity {
     private SharedPreferences.Editor mEditor;
     private String right_passWord;
 
-
     private String right_userName;
     private MyFragmentPagerAdapter mAdapter;
     @Override
@@ -37,8 +36,7 @@ public class LoginActivity extends AppCompatActivity {
             mEditor.commit();
             Toast.makeText(this, "" + mSharedPrefrences.getString("login_Sign", ""), Toast.LENGTH_SHORT).show();
              finish();
-             mAdapter.notifyDataSetChanged();
-            Toast.makeText(this, "刷新了没", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this,DrawActivity.class));
         });
         findViewById(R.id.tv_register).setOnClickListener(e -> {
             startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
@@ -72,12 +70,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-    @Override
-    protected void onDestroy() {
-        startActivity(new Intent(this,DrawActivity.class));
-        super.onDestroy();
 
-    }
 
 
 }

@@ -12,7 +12,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/good1_back"
+            android:id="@+id/goods_back"
             android:layout_width="80dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
@@ -33,64 +33,87 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:gravity="center"
         android:layout_gravity="center"
         android:background="@color/main_color"
+        android:gravity="center"
         android:orientation="horizontal">
-        <FrameLayout
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        <ImageView
-            android:visibility="gone"
-            android:id="@+id/rise"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/rise"/>
-        <ImageView
-            android:id="@+id/down"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/down"/>
-        </FrameLayout>
-        <ImageView
-            android:scaleY="0.7"
-            android:scaleX="0.7"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/sales"/>
 
         <FrameLayout
-            android:layout_weight="1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
             <ImageView
-                android:scaleY="0.7"
+                android:id="@+id/rise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rise"
+                android:visibility="gone" />
+
+            <ImageView
+
+                android:id="@+id/down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/down" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/sales"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:scaleX="0.7"
+                android:scaleY="0.7"
+                android:src="@drawable/sales" />
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/sales1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
+                android:src="@drawable/sales1" />
+        </FrameLayout>
+
+        <FrameLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
                 android:id="@+id/one"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
                 android:src="@drawable/one" />
 
             <ImageView
-                android:scaleY="0.7"
-                android:scaleX="0.7"
                 android:id="@+id/two"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
                 android:src="@drawable/two"
                 android:visibility="gone" />
         </FrameLayout>
     </LinearLayout>
 
     <FrameLayout
-        android:layout_marginTop="2dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dp">
 
         <GridView
 

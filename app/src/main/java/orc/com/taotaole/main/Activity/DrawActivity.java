@@ -2,6 +2,7 @@ package orc.com.taotaole.main.Activity;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.ClipData;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -59,6 +60,7 @@ public class DrawActivity extends AppCompatActivity
     //    获取当前用户名
     private SharedPreferences mSharedPrefrences;
     private SharedPreferences.Editor mEditor;
+    private MenuItem send;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +84,8 @@ public class DrawActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+
     }
 
     @Override
@@ -98,7 +102,8 @@ public class DrawActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
 //        跳转到个人中心
         findViewById(R.id.draw_img).setOnClickListener(e -> startActivity(new Intent(this, UserActivity.class)));
-        getMenuInflater().inflate(R.menu.draw, menu);
+            getMenuInflater().inflate(R.menu.draw, menu);
+
         return true;
     }
 
@@ -132,6 +137,9 @@ public class DrawActivity extends AppCompatActivity
 //        }else if (id == R.id.nav_tools)  {
 
         } else if (id == R.id.nav_send) {
+            if("false".equals(mSharedPrefrences.getString("login_Sign","")))
+                startActivity(new Intent(this,LoginActivity.class));
+            else
             showDialog();
 
         }
@@ -146,8 +154,7 @@ public class DrawActivity extends AppCompatActivity
                 .setMessage("               确定退出登录？").setPositiveButton("确定", (dialog1, which) -> {
                     mEditor.putString("login_Sign", "false");
                     mEditor.commit();
-                    Toast.makeText(this, "" + mSharedPrefrences.getString("login_Sign", ""), Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(this, LoginActivity.class));
+                    startActivity(new Intent(this, DrawActivity.class));
                 }).setNegativeButton("取消", (dialog12, which) -> {
 
                 }).create();
@@ -188,11 +195,8 @@ public class DrawActivity extends AppCompatActivity
             break;
             case R.id.rb_better:
                 if ("false".equals(mSharedPrefrences.getString("login_Sign",""))) {
-
                     startActivity(new Intent(this, LoginActivity.class));
-
                 } else {
-                    Toast.makeText(this, "2" + mSharedPrefrences.getString("login_Sign", ""), Toast.LENGTH_SHORT).show();
                     vpager.setCurrentItem(PAGE_THREE);
                 }
 
@@ -200,9 +204,7 @@ public class DrawActivity extends AppCompatActivity
             case R.id.rb_setting:
                 if ("false".equals(mSharedPrefrences.getString("login_Sign",""))) {
                     startActivity(new Intent(this, LoginActivity.class));
-                    Toast.makeText(this, "1" + mSharedPrefrences.getString("login_Sign", ""), Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(this, "2" + mSharedPrefrences.getString("login_Sign", ""), Toast.LENGTH_SHORT).show();
                     vpager.setCurrentItem(PAGE_FOUR);
                 }
 
