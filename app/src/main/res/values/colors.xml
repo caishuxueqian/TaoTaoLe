@@ -25,6 +25,7 @@
     <color name="div_white">#E5E5E5</color>
     <!--购物车颜色-->
     <color name="certainblue">#ff387ef5</color>
+    <color name="bg_color">#f1f1f1</color>
 
     <!--基础颜色表-->
     <color name="light_blue">#03a9f4</color>
@@ -41,4 +42,5 @@
     <color name="light_gray">#E0E0E0</color>
     <color name="light_light_gray">#F0F0F0</color>
     <color name="light_light_light_gray">#F5F5F5</color>
+    <color name="gainsboro">#dcdcdc</color>
 </resources>

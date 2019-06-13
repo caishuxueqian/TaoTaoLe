@@ -20,6 +20,15 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="line">
+        <item name="android:background">@color/bg_color</item>
+    </style>
+
+    <style name="line_vertical" parent="line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

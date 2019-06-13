@@ -9,15 +9,42 @@
         android:layout_height="270dp"
         android:src="@drawable/animal_3"
        />
-    <TextView
-        android:padding="5dp"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="淘淘乐淘淘"
-        android:gravity="center"
-        android:layout_margin="50dp"
-        android:textSize="20dp"
-        android:textColor="@color/white"
-        android:background="@drawable/shape_blue"/>
+        >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_list_item"
+            android:drawableLeft="@drawable/zt"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:padding="@dimen/largePadding"
+            android:text="个性主题"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+        <View style="@style/line_vertical"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_list_item"
+            android:drawableLeft="@drawable/sc"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:padding="@dimen/largePadding"
+            android:text="我的收藏"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+        <View style="@style/line_vertical"/>
+    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
