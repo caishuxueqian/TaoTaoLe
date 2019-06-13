@@ -23,7 +23,8 @@ public class MyFragment2 extends Fragment {
     private List<Bean_grid> Data_grid3= new ArrayList<Bean_grid>();
     private List<Bean_grid> Data_grid4= new ArrayList<Bean_grid>();
     private List<Bean_grid> Data_grid5= new ArrayList<Bean_grid>();
-
+    private static int p;
+    private int next_Sign;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment2_layout,container,false);
@@ -43,51 +44,67 @@ public class MyFragment2 extends Fragment {
         mListView.setOnItemClickListener((a, b, position, d) -> {
                     switch(position){
                         case 0:
+                            p=position;
                             mGridView.setAdapter(new Adapter_grid(getActivity(),Data_grid0));
                             break;
                         case 1:
+                            p=position;
                             mGridView.setAdapter(new Adapter_grid(getActivity(),Data_grid1));
                             break;
                         case 2:
+                            p=position;
                             mGridView.setAdapter(new Adapter_grid(getActivity(),Data_grid2));
                             break;
                         case 3:
+                            p=position;
                             mGridView.setAdapter(new Adapter_grid(getActivity(),Data_grid3));
                             break;
                         case 4:
+                            p=position;
                             mGridView.setAdapter(new Adapter_grid(getActivity(),Data_grid4));
                             break;
                         case 5:
+                            p=position;
                             mGridView.setAdapter(new Adapter_grid(getActivity(),Data_grid1));
                             break;
                         case 6:
+                            p=position;
                             mGridView.setAdapter(new Adapter_grid(getActivity(),Data_grid1));
                             break;
                         case 7:
+                            p=position;
                             mGridView.setAdapter(new Adapter_grid(getActivity(),Data_grid2));
                             break;
                         case 8:
+                            p=position;
                             mGridView.setAdapter(new Adapter_grid(getActivity(),Data_grid3));
                             break;
                         case 9:
+                            p=position;
                             mGridView.setAdapter(new Adapter_grid(getActivity(),Data_grid4));
                             break;
                         case 10:
+                            p=position;
                             mGridView.setAdapter(new Adapter_grid(getActivity(),Data_grid1));
                             break;
                         case 11:
+                            p=position;
                             mGridView.setAdapter(new Adapter_grid(getActivity(),Data_grid1));
                             break;
                         case 12:
+                            p=position;
                             mGridView.setAdapter(new Adapter_grid(getActivity(),Data_grid2));
                             break;
                         case 13:
+                            p=position;
                             mGridView.setAdapter(new Adapter_grid(getActivity(),Data_grid3));
                             break;
                         case 14:
+                            p=position;
                             mGridView.setAdapter(new Adapter_grid(getActivity(),Data_grid4));
                             break;
                         case 15:
+                            p=position;
                             mGridView.setAdapter(new Adapter_grid(getActivity(),Data_grid1));
                             break;
                         default: mGridView.setAdapter(new Adapter_grid(getActivity(),Data_grid0));
@@ -96,7 +113,44 @@ public class MyFragment2 extends Fragment {
      }
       );
         mGridView.setOnItemClickListener((parent, v, position, id) -> {
-            startActivity(new Intent(getActivity(),GoodsActivity.class));
+            switch(position){
+                case 0:
+                {
+                    switch (p){
+                        case 0:
+                            next_Sign=0;
+                            Bundle data=new Bundle();
+                            data.putSerializable("next_Sign",next_Sign);
+                            Intent intent=new Intent(getActivity(),GoodsActivity.class);
+                            intent.putExtras(data);
+                            startActivity(intent);
+
+                            break;
+                        case 1:
+                            next_Sign=1;
+                            Bundle data1=new Bundle();
+                            data1.putSerializable("next_Sign",next_Sign);
+                            Intent intent1=new Intent(getActivity(),GoodsActivity.class);
+                            intent1.putExtras(data1);
+                            startActivity(intent1);
+                            break;
+                        case 2:
+                            next_Sign=2;
+                            Bundle data2=new Bundle();
+                            data2.putSerializable("next_Sign",next_Sign);
+                            Intent intent2=new Intent(getActivity(),GoodsActivity.class);
+                            intent2.putExtras(data2);
+                            startActivity(intent2);
+                            break;
+                            default:;
+                                break;
+                    }
+                }
+                    break;
+
+                default: ;
+                    break;
+            }
         });
         return view;
     }
@@ -260,14 +314,14 @@ public class MyFragment2 extends Fragment {
         Data_grid2.add(goodsGrid21);
     }
     private void initDatas1() {
-        Bean_grid goodsGrid1 = new Bean_grid( R.drawable.dianqi1,"烟灶配件");
+        Bean_grid goodsGrid1 = new Bean_grid( R.drawable.dianqi8,"电饭煲");
         Bean_grid goodsGrid2 = new Bean_grid( R.drawable.dianqi2,"吸尘器");
         Bean_grid goodsGrid3 = new Bean_grid( R.drawable.dianqi3,"换气扇");
         Bean_grid goodsGrid4 = new Bean_grid( R.drawable.dianqi4,"空气净化器");
         Bean_grid goodsGrid5 = new Bean_grid( R.drawable.dianqi5,"对讲机");
         Bean_grid goodsGrid6 = new Bean_grid( R.drawable.dianqi6,"取暖器");
         Bean_grid goodsGrid7 = new Bean_grid( R.drawable.dianqi7,"净水器");
-        Bean_grid goodsGrid8 = new Bean_grid( R.drawable.dianqi8,"电饭煲");
+        Bean_grid goodsGrid8 = new Bean_grid( R.drawable.dianqi1,"烟灶配件");
         Bean_grid goodsGrid9 = new Bean_grid( R.drawable.dianqi9,"料理机");
         Bean_grid goodsGrid10 = new Bean_grid( R.drawable.dianqi10,"厨房小电器");
         Bean_grid goodsGrid11 = new Bean_grid( R.drawable.dianqi11,"家用小电器");
