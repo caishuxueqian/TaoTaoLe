@@ -181,11 +181,11 @@ public void initView(){
     }
 
     private void initDatas1_0() {
-        Bean_goods1 bean_goods1 = new Bean_goods1(R.drawable.nai1, "跳楼甩卖，桂林小栽种", "10", "2");
-        Bean_goods1 bean_goods2 = new Bean_goods1(R.drawable.nai2, "跳楼甩卖，桂林小栽种", "10", "2");
-        Bean_goods1 bean_goods3 = new Bean_goods1(R.drawable.nai3, "跳楼甩卖，桂林小栽种", "10", "2");
-        Bean_goods1 bean_goods4 = new Bean_goods1(R.drawable.nai4, "跳楼甩卖，桂林小栽种", "10", "2");
-        Bean_goods1 bean_goods5 = new Bean_goods1(R.drawable.nai5, "跳楼甩卖，桂林小栽种", "10", "2");
+        Bean_goods1 bean_goods1 = new Bean_goods1(R.drawable.nai1, "12月豆本豆原味豆奶250ml*12瓶 早餐营养奶制品19年9月到期", "19.8", "3");
+        Bean_goods1 bean_goods2 = new Bean_goods1(R.drawable.nai2, "蒙牛未来星儿童成长牛奶整箱营养佳智型12盒装早餐学生乳制品礼盒", "59", "50");
+        Bean_goods1 bean_goods3 = new Bean_goods1(R.drawable.nai3, "安慕希黄桃燕麦酸奶草莓口味风味乳酸菌牛奶 乳制品整箱希腊风味", "109", "12");
+        Bean_goods1 bean_goods4 = new Bean_goods1(R.drawable.nai4, "蒙牛特仑苏低脂牛奶整箱营养成人儿童学生早餐调制乳制品食品", "74", "43");
+        Bean_goods1 bean_goods5 = new Bean_goods1(R.drawable.nai5, "蒙牛早餐奶核桃奶味250ml*16盒 牛奶整箱装成人学生儿童营养乳制品", "52", "7");
         mDatas1_0.add(bean_goods1);
         mDatas1_0.add(bean_goods2);
         mDatas1_0.add(bean_goods3);
@@ -204,11 +204,11 @@ public void initView(){
 
     }
     private void initDatas1_1() {
-        Bean_goods1 bean_goods1 = new Bean_goods1(R.drawable.dianfanbao1, "跳楼甩卖，桂林小栽种", "10", "2");
-        Bean_goods1 bean_goods2 = new Bean_goods1(R.drawable.dianfanbao2, "跳楼甩卖，桂林小栽种", "10", "2");
-        Bean_goods1 bean_goods3 = new Bean_goods1(R.drawable.dianfanbao3, "跳楼甩卖，桂林小栽种", "10", "2");
-        Bean_goods1 bean_goods4 = new Bean_goods1(R.drawable.dianfanbao4, "跳楼甩卖，桂林小栽种", "10", "2");
-        Bean_goods1 bean_goods5 = new Bean_goods1(R.drawable.dianfanbao5, "跳楼甩卖，桂林小栽种", "10", "2");
+        Bean_goods1 bean_goods1 = new Bean_goods1(R.drawable.dianfanbao1, "电饭煲家用迷你小型2L3L学生宿舍老式电饭煲 蒸煮多功能1-2-3-4人", "89", "30");
+        Bean_goods1 bean_goods2 = new Bean_goods1(R.drawable.dianfanbao2, "电饭煲家用迷你小型电饭煲 1-2-3-4人学生宿舍普通老式蒸煮多功能", "108", "34");
+        Bean_goods1 bean_goods3 = new Bean_goods1(R.drawable.dianfanbao3, "新飞宿舍多功能小型迷你电饭煲家用老式电饭锅2-3-4人全自动蒸米", "50", "12");
+        Bean_goods1 bean_goods4 = new Bean_goods1(R.drawable.dianfanbao4, "半球型普通老式小型蒸米饭电饭锅3-4迷你电饭煲1-2人宿舍家用5L", "78", "6");
+        Bean_goods1 bean_goods5 = new Bean_goods1(R.drawable.dianfanbao5, "华强迷你电饭煲1人-2人家用小型电饭锅小宿舍普通老式正品煮饭锅", "119", "36");
         mDatas1_1.add(bean_goods1);
         mDatas1_1.add(bean_goods2);
         mDatas1_1.add(bean_goods3);
@@ -226,11 +226,11 @@ public void initView(){
         mDatas1_1.add(bean_goods5);
     }
     private void initDatas1_2() {
-        Bean_goods1 bean_goods1 = new Bean_goods1(R.drawable.txu1, "跳楼甩卖，桂林小栽种", "10", "2");
-        Bean_goods1 bean_goods2 = new Bean_goods1(R.drawable.txu2, "跳楼甩卖，桂林小栽种", "10", "2");
-        Bean_goods1 bean_goods3 = new Bean_goods1(R.drawable.txu3, "跳楼甩卖，桂林小栽种", "10", "2");
-        Bean_goods1 bean_goods4 = new Bean_goods1(R.drawable.txu4, "跳楼甩卖，桂林小栽种", "10", "2");
-        Bean_goods1 bean_goods5 = new Bean_goods1(R.drawable.txu5, "跳楼甩卖，桂林小栽种", "10", "2");
+        Bean_goods1 bean_goods1 = new Bean_goods1(R.drawable.txu1, "南极人短袖T恤男潮流潮牌半袖加肥加大宽松大码男士夏季胖子衣服", "92", "36");
+        Bean_goods1 bean_goods2 = new Bean_goods1(R.drawable.txu2, "短袖男夏装韩版潮流纯棉2019新款潮牌宽松青少年男孩初中生T恤", "98", "13");
+        Bean_goods1 bean_goods3 = new Bean_goods1(R.drawable.txu3, "T恤男短袖宽松嘻哈加肥加大半袖夏季胖子男士潮流纯棉T恤衣服", "112", "45");
+        Bean_goods1 bean_goods4 = new Bean_goods1(R.drawable.txu4, "（3件）男士短袖T恤潮流大码半袖T恤纯棉宽松运动夏季男装国潮T恤", "138", "5");
+        Bean_goods1 bean_goods5 = new Bean_goods1(R.drawable.txu5, "骆驼男装 短袖T恤男夏季新款圆领打底衫半袖衣服潮流T恤印花上衣", "78", "4");
         mDatas1_2.add(bean_goods1);
         mDatas1_2.add(bean_goods2);
         mDatas1_2.add(bean_goods3);
