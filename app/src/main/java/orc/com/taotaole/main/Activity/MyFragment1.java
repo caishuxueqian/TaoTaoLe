@@ -37,7 +37,6 @@ public class MyFragment1 extends Fragment {
         mGridView1.setAdapter(mAdapterGoods1);
 
         mGridView.setOnItemClickListener((parent, v, position, id) -> {
-//           // todo
             view.findViewById(R.id.top_iv).setOnClickListener(e -> {
             });
             view.findViewById(R.id.t1).setOnClickListener(e -> {
@@ -69,10 +68,28 @@ public class MyFragment1 extends Fragment {
             view.findViewById(R.id.t5).setOnClickListener(e -> {
             });
             view.findViewById(R.id.t6).setOnClickListener(e -> {
+                next_Sign = 1;
+                Bundle data1 = new Bundle();
+                data1.putSerializable("next_Sign", next_Sign);
+                Intent intent1 = new Intent(getActivity(), TopIconActivity.class);
+                intent1.putExtras(data1);
+                startActivity(intent1);
             });
             view.findViewById(R.id.t7).setOnClickListener(e -> {
+                next_Sign = 1;
+                Bundle data1 = new Bundle();
+                data1.putSerializable("next_Sign", next_Sign);
+                Intent intent1 = new Intent(getActivity(), TopIconActivity.class);
+                intent1.putExtras(data1);
+                startActivity(intent1);
             });
             view.findViewById(R.id.t8).setOnClickListener(e -> {
+                next_Sign = 2;
+                Bundle data2 = new Bundle();
+                data2.putSerializable("next_Sign", next_Sign);
+                Intent intent2 = new Intent(getActivity(), TopIconActivity.class);
+                intent2.putExtras(data2);
+                startActivity(intent2);
             });
             view.findViewById(R.id.t9).setOnClickListener(e -> {
             });

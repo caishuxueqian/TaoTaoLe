@@ -170,7 +170,6 @@ public void showDetail(int c){
 
         }
         mAdapterorder.notifyDataSetChanged();
-
     }
 
     public void tv_delete() {
@@ -201,8 +200,6 @@ public void showDetail(int c){
         } else
             Toast.makeText(this, "尚无数据", Toast.LENGTH_SHORT).show();
     }
-
-
     private void initDatas() {
         Bean_order bean_order1 = new Bean_order(R.drawable.nai1, "12月豆本豆原味豆奶250ml*12瓶 早餐营养奶制品19年9月到期", "19.8", "1", false);
         Bean_order bean_order2 = new Bean_order(R.drawable.nai2, "蒙牛未来星儿童成长牛奶整箱营养佳智型12盒装早餐学生乳制品礼盒", "59", "2", false);

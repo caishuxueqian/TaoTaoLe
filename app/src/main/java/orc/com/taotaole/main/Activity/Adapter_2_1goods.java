@@ -15,10 +15,12 @@ import orc.com.taotaole.R;
 public class Adapter_2_1goods extends BaseAdapter {
     private Context context;
     private List<Bean_goods1> datas;
+
     public Adapter_2_1goods(Context context, List<Bean_goods1> datas) {
         this.context = context;
         this.datas = datas;
     }
+
     @Override
     public int getCount() {
         return datas.size();
@@ -55,7 +57,7 @@ public class Adapter_2_1goods extends BaseAdapter {
         viewHolder.GoodsDescrbe.setText(bean_goods1.getDescribe());
         viewHolder.GoodsMoney.setText(bean_goods1.getMoney());
         viewHolder.GoodsPerson.setText(bean_goods1.getPerson());
-            view.findViewById(R.id.fragment1_top).setVisibility(View.GONE);
+        view.findViewById(R.id.fragment1_top).setVisibility(View.GONE);
         return view;
 
     }

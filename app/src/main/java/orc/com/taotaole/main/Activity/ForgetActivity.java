@@ -49,7 +49,7 @@ public class ForgetActivity extends AppCompatActivity {
             phone = user_Phone.getText().toString();
             passWord_Reset = user_PassWord_Reset.getText().toString();
             code = user_Code.getText().toString();
-//            遍历map
+//            //遍历map
             Map<String, ?> allConent = mSharedPrefrences.getAll();
             String userName;
             if (phone.equals("") || passWord_Reset.equals("") || code.equals("")) {

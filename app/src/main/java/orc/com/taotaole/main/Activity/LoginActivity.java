@@ -17,9 +17,9 @@ public class LoginActivity extends AppCompatActivity {
     private SharedPreferences mSharedPrefrences;
     private SharedPreferences.Editor mEditor;
     private String right_passWord;
-
     private String right_userName;
     private MyFragmentPagerAdapter mAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,8 +34,8 @@ public class LoginActivity extends AppCompatActivity {
         findViewById(R.id.login_back).setOnClickListener(e -> {
             mEditor.putString("login_Sign", "false");
             mEditor.commit();
-             finish();
-            startActivity(new Intent(this,DrawActivity.class));
+            finish();
+            startActivity(new Intent(this, DrawActivity.class));
         });
         findViewById(R.id.tv_register).setOnClickListener(e -> {
             startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
@@ -47,9 +47,14 @@ public class LoginActivity extends AppCompatActivity {
             userName = user_name.getText().toString();
             passWord = pass_word.getText().toString();
             if (!userName.equals("") && !passWord.equals("") && userName.equals(mSharedPrefrences.getString(userName, "")) && passWord.equals(mSharedPrefrences.getString((userName + "_PassWord"), ""))) {
+                mEditor.putString("login_Sign", "true");
+                mEditor.commit();
                 startActivity(new Intent(LoginActivity.this, DrawActivity.class));
                 Toast.makeText(this, "登录成功！", Toast.LENGTH_SHORT).show();
-            } else if (userName.equals("") && !passWord.equals("")) {
+            } else if(userName.equals("")&&passWord.equals("")){
+                Toast.makeText(this, "请输入", Toast.LENGTH_SHORT).show();
+            }
+            else if (userName.equals("") && !passWord.equals("")) {
                 Toast.makeText(this, "用户名不能为空！", Toast.LENGTH_SHORT).show();
             } else if (passWord.equals("") && !userName.equals("")) {
                 Toast.makeText(this, "密码不能为空！", Toast.LENGTH_SHORT).show();
@@ -58,18 +63,19 @@ public class LoginActivity extends AppCompatActivity {
             } else if (!passWord.matches(right_passWord)) {
                 Toast.makeText(this, "请输入正确的密码!", Toast.LENGTH_SHORT).show();
             }
-            //测试使用//测试使用//测试使用//测试使用//测试使用,不输入即可登录
-            if (userName.equals("")) {
-                mEditor.putString("login_Sign", "true");
-                mEditor.commit();
-                startActivity(new Intent(LoginActivity.this, DrawActivity.class));
-                Toast.makeText(this, "登录成功！", Toast.LENGTH_SHORT).show();
-            } else {
+            //测试使用-----------------------------------------不输入即可登录
+//            if (userName.equals("")) {
+//                mEditor.putString("login_Sign", "true");
+//                mEditor.commit();
+//                startActivity(new Intent(LoginActivity.this, DrawActivity.class));
+//                Toast.makeText(this, "登录成功！", Toast.LENGTH_SHORT).show();
+//            }
+            //测试使用---------------------------------------------不输入即可登录
+            else {
                 Toast.makeText(this, "用户名或者密码错误！", Toast.LENGTH_SHORT).show();
             }
         });
     }
-
 
 
 }

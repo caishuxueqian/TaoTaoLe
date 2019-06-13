@@ -23,6 +23,7 @@ public class DetailActivity extends AppCompatActivity {
     private TextView describe;
     private TextView number;
     private int the_Sign;
+    private static int next_Sign;
     private ImageView dia_img;
     private TextView dia_money;
     private TextView dia_number;
@@ -37,42 +38,54 @@ public class DetailActivity extends AppCompatActivity {
         initView();
         the_Sign=(int)getIntent().getSerializableExtra("next_Sign");
         if(the_Sign==0){
+            next_Sign=new view_Mes0().view_img;
             img.setImageResource(new view_Mes0().view_img);
             money.setText(new view_Mes0().view_money);
             describe.setText(new view_Mes0().view_describe);
             number.setText(new view_Mes0().view_number);
         }
         if(the_Sign==1){
+            next_Sign=new view_Mes1().view_img;
             img.setImageResource(new view_Mes1().view_img);
             money.setText(new view_Mes1().view_money);
             describe.setText(new view_Mes1().view_describe);
             number.setText(new view_Mes1().view_number);
         }
         if(the_Sign==2){
+            next_Sign=new view_Mes2().view_img;
             img.setImageResource(new view_Mes2().view_img);
             money.setText(new view_Mes2().view_money);
             describe.setText(new view_Mes2().view_describe);
             number.setText(new view_Mes2().view_number);
         }
         if(the_Sign==3){
+            next_Sign=new view_Mes3().view_img;
             img.setImageResource(new view_Mes3().view_img);
             money.setText(new view_Mes3().view_money);
             describe.setText(new view_Mes3().view_describe);
             number.setText(new view_Mes3().view_number);
         }
         if(the_Sign==4){
+            next_Sign=new view_Mes4().view_img;
             img.setImageResource(new view_Mes4().view_img);
             money.setText(new view_Mes4().view_money);
             describe.setText(new view_Mes4().view_describe);
             number.setText(new view_Mes4().view_number);
         }
         if(the_Sign==5){
+            next_Sign=new view_Mes5().view_img;
             img.setImageResource(new view_Mes5().view_img);
             money.setText(new view_Mes5().view_money);
             describe.setText(new view_Mes5().view_describe);
             number.setText(new view_Mes5().view_number);
         }
-        findViewById(R.id.detail_img).setOnClickListener(e -> startActivity(new Intent(this, ShowImageActivity.class)));
+        findViewById(R.id.detail_img).setOnClickListener(e -> {
+            Bundle data = new Bundle();
+            data.putSerializable("next_Sign", next_Sign);
+            Intent intent = new Intent(this, ShowImageActivity.class);
+            intent.putExtras(data);
+            startActivity(intent);
+        });
         findViewById(R.id.detail_bt_back).setOnClickListener(e -> {
             finish();
         });

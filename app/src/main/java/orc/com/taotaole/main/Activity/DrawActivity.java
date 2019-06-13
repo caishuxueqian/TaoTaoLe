@@ -77,6 +77,7 @@ public class DrawActivity extends AppCompatActivity
         mSharedPrefrences = getSharedPreferences("userinfo", MODE_PRIVATE);
         mEditor = mSharedPrefrences.edit();
         login_Sign = mSharedPrefrences.getString("login_Sign", "false");
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -137,7 +138,7 @@ public class DrawActivity extends AppCompatActivity
 //        }else if (id == R.id.nav_tools)  {
 
         } else if (id == R.id.nav_send) {
-            if("false".equals(mSharedPrefrences.getString("login_Sign","")))
+            if("false".equals(mSharedPrefrences.getString("login_Sign","false")))
                 startActivity(new Intent(this,LoginActivity.class));
             else
             showDialog();
@@ -194,7 +195,7 @@ public class DrawActivity extends AppCompatActivity
             }
             break;
             case R.id.rb_better:
-                if ("false".equals(mSharedPrefrences.getString("login_Sign",""))) {
+                if ("false".equals(mSharedPrefrences.getString("login_Sign","false"))) {
                     startActivity(new Intent(this, LoginActivity.class));
                 } else {
                     vpager.setCurrentItem(PAGE_THREE);
@@ -202,7 +203,7 @@ public class DrawActivity extends AppCompatActivity
 
                 break;
             case R.id.rb_setting:
-                if ("false".equals(mSharedPrefrences.getString("login_Sign",""))) {
+                if ("false".equals(mSharedPrefrences.getString("login_Sign","false"))) {
                     startActivity(new Intent(this, LoginActivity.class));
                 } else {
                     vpager.setCurrentItem(PAGE_FOUR);

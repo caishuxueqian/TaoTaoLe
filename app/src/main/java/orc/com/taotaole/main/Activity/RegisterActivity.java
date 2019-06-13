@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Map;
+
 import orc.com.taotaole.R;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -37,15 +39,15 @@ public class RegisterActivity extends AppCompatActivity {
         user_Code = findViewById(R.id.et_code);
         mSharedPrefrences = getSharedPreferences("userinfo", MODE_PRIVATE);
         mEditor = mSharedPrefrences.edit();
-        right_phone="^((13[0-9])|(14[579])|(15([0-3,5-9]))|(16[6])|(17[0135678])|(18[0-9]|19[89]))\\d{8}$";
-        right_passWord="^([0-9]|[a-z]|[A-Z]){6}$";
-        right_userName="^([0-9]|[a-z]|[A-Z]){4}$";
+        right_phone = "^((13[0-9])|(14[579])|(15([0-3,5-9]))|(16[6])|(17[0135678])|(18[0-9]|19[89]))\\d{8}$";
+        right_passWord = "^([0-9]|[a-z]|[A-Z]){6}$";
+        right_userName = "^([0-9]|[a-z]|[A-Z]){4}$";
         findViewById(R.id.tv_getCode).setOnClickListener(e -> {
             String user_Code;
             user_Code = String.valueOf((int) (Math.random() * 8000) + 1000);
             mEditor.putString("user_Code", user_Code);
             mEditor.commit();
-            Toast.makeText(this, "验证码："+user_Code, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "验证码：" + user_Code, Toast.LENGTH_SHORT).show();
         });
         findViewById(R.id.btn_register).setOnClickListener(e -> {
             userName = user_Name.getText().toString();
@@ -53,33 +55,35 @@ public class RegisterActivity extends AppCompatActivity {
             phone = user_Phone.getText().toString();
             passWord_Againt = user_PassWord_Againt.getText().toString();
             Code = user_Code.getText().toString();
+            Map<String, ?> allConent = mSharedPrefrences.getAll();
             if (userName.equals("") || phone.equals("") || passWord.equals("") || passWord_Againt.equals("") || Code.equals("")) {
                 Toast.makeText(this, "信息填写不完整!", Toast.LENGTH_SHORT).show();
-            }  else if(!userName.matches(right_userName)){
+            } else if (!userName.matches(right_userName)) {
                 Toast.makeText(this, "请输入正确的账号!", Toast.LENGTH_SHORT).show();
-            }
-            else if(!phone.matches(right_phone)){
+            } else if (!phone.matches(right_phone)) {
                 Toast.makeText(this, "请输入正确的手机号!", Toast.LENGTH_SHORT).show();
-            }
-            else if(!passWord.matches(right_passWord)){
+            } else if (!passWord.matches(right_passWord)) {
                 Toast.makeText(this, "请输入正确的密码!", Toast.LENGTH_SHORT).show();
-            }
-            else if (!mSharedPrefrences.getString(userName, "").isEmpty()) {
+            } else if (!mSharedPrefrences.getString(userName, "").isEmpty()) {
                 Toast.makeText(this, "该用户已存在!", Toast.LENGTH_SHORT).show();
-            }else if (!mSharedPrefrences.getString(userName + "_Phone", "").isEmpty()) {
-                Toast.makeText(this, "此手机号已绑定其他账号!", Toast.LENGTH_SHORT).show();
-            }else if (!passWord.equals(passWord_Againt)) {
+            } else if (!passWord.equals(passWord_Againt)) {
                 Toast.makeText(this, "两次密码不一致!", Toast.LENGTH_SHORT).show();
-            }  else if (!mSharedPrefrences.getString("user_Code","").equals(Code)) {
+            } else if (!mSharedPrefrences.getString("user_Code", "").equals(Code)) {
                 Toast.makeText(this, "验证码输入错误！", Toast.LENGTH_SHORT).show();
-            }else {
-                mEditor.putString(userName, userName);
-                mEditor.putString(userName + "_PassWord",passWord);
-                mEditor.putString(userName + "_Phone", phone);
-                mEditor.commit();
-
-                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-                Toast.makeText(this, "注册成功!", Toast.LENGTH_SHORT).show();
+            } else if (true) {
+                for (Map.Entry<String, ?> entry : allConent.entrySet()) {
+                    if (phone.equals(entry.getValue())) {
+                        Toast.makeText(this, "该手机号已绑定其他账号！", Toast.LENGTH_SHORT).show();
+                        break;
+                    } else {
+                        mEditor.putString(userName, userName);
+                        mEditor.putString(userName + "_PassWord", passWord);
+                        mEditor.putString(userName + "_Phone", phone);
+                        mEditor.commit();
+                        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                        Toast.makeText(this, "注册成功!", Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         });
     }

@@ -19,8 +19,6 @@ public class Adapter_2goods extends BaseAdapter {
         this.context = context;
         this.datas = datas;
     }
-
-
     @Override
     public int getCount() {
         return datas.size();
