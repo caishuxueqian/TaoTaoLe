@@ -2,11 +2,9 @@ package orc.com.taotaole.main.Activity;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Layout;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageView;
@@ -159,12 +157,12 @@ public class HistoryActivity extends AppCompatActivity {
 
 
     private void initDatas() {
-        Bean_history bean_history1 = new Bean_history(R.drawable.nai1, "跳楼甩卖，桂林小栽种", "10", false);
-        Bean_history bean_history2 = new Bean_history(R.drawable.nai2, "跳楼甩卖，桂林小栽种", "10", false);
-        Bean_history bean_history3 = new Bean_history(R.drawable.dianfanbao1, "跳楼甩卖，桂林小栽种", "10", false);
-        Bean_history bean_history4 = new Bean_history(R.drawable.dianfanbao2, "跳楼甩卖，桂林小栽种", "10", false);
-        Bean_history bean_history5 = new Bean_history(R.drawable.txu1, "跳楼甩卖，桂林小栽种", "10", false);
-        Bean_history bean_history6 = new Bean_history(R.drawable.txu2, "跳楼甩卖，桂林小栽种", "10", false);
+        Bean_history bean_history1 = new Bean_history(R.drawable.nai1, "12月豆本豆原味豆奶250ml*12瓶 早餐营养奶制品19年9月到期", "19.8", false);
+        Bean_history bean_history2 = new Bean_history(R.drawable.nai2, "蒙牛未来星儿童成长牛奶整箱营养佳智型12盒装早餐学生乳制品礼盒", "59", false);
+        Bean_history bean_history3 = new Bean_history(R.drawable.dianfanbao1, "电饭煲家用迷你小型2L3L学生宿舍老式电饭煲 蒸煮多功能1-2-3-4人", "89", false);
+        Bean_history bean_history4 = new Bean_history(R.drawable.dianfanbao2, "电饭煲家用迷你小型电饭煲 1-2-3-4人学生宿舍普通老式蒸煮多功能", "108", false);
+        Bean_history bean_history5 = new Bean_history(R.drawable.txu1, "南极人短袖T恤男潮流潮牌半袖加肥加大宽松大码男士夏季胖子衣服", "92", false);
+        Bean_history bean_history6 = new Bean_history(R.drawable.txu2, "短袖男夏装韩版潮流纯棉2019新款潮牌宽松青少年男孩初中生T恤", "98", false);
         mDatas.add(bean_history1);
         mDatas.add(bean_history2);
         mDatas.add(bean_history3);
