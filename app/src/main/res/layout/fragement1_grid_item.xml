@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:text="清仓大甩卖，清仓大甩卖清仓大甩卖清仓大甩卖"
-                android:textSize="17dp" />
+                android:textSize="13dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
