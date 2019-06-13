@@ -159,12 +159,12 @@ public class HistoryActivity extends AppCompatActivity {
 
 
     private void initDatas() {
-        Bean_history bean_history1 = new Bean_history(R.drawable.animal_1, "跳楼甩卖，桂林小栽种", "10", false);
-        Bean_history bean_history2 = new Bean_history(R.drawable.animal_5, "跳楼甩卖，桂林小栽种", "10", false);
-        Bean_history bean_history3 = new Bean_history(R.drawable.animal_4, "跳楼甩卖，桂林小栽种", "10", false);
-        Bean_history bean_history4 = new Bean_history(R.drawable.animal_2, "跳楼甩卖，桂林小栽种", "10", false);
-        Bean_history bean_history5 = new Bean_history(R.drawable.animal_3, "跳楼甩卖，桂林小栽种", "10", false);
-        Bean_history bean_history6 = new Bean_history(R.drawable.animal_6, "跳楼甩卖，桂林小栽种", "10", false);
+        Bean_history bean_history1 = new Bean_history(R.drawable.nai1, "跳楼甩卖，桂林小栽种", "10", false);
+        Bean_history bean_history2 = new Bean_history(R.drawable.nai2, "跳楼甩卖，桂林小栽种", "10", false);
+        Bean_history bean_history3 = new Bean_history(R.drawable.dianfanbao1, "跳楼甩卖，桂林小栽种", "10", false);
+        Bean_history bean_history4 = new Bean_history(R.drawable.dianfanbao2, "跳楼甩卖，桂林小栽种", "10", false);
+        Bean_history bean_history5 = new Bean_history(R.drawable.txu1, "跳楼甩卖，桂林小栽种", "10", false);
+        Bean_history bean_history6 = new Bean_history(R.drawable.txu2, "跳楼甩卖，桂林小栽种", "10", false);
         mDatas.add(bean_history1);
         mDatas.add(bean_history2);
         mDatas.add(bean_history3);

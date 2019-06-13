@@ -288,12 +288,12 @@ public class MyFragment3 extends Fragment {
 
     //初始化数据
     private void initDatas() {
-        Bean_cart bean_cart1 = new Bean_cart(R.drawable.animal_1, "跳楼甩卖，桂林小栽种", "1", false, 1);
-        Bean_cart bean_cart2 = new Bean_cart(R.drawable.animal_5, "跳楼甩卖，桂林小栽种", "2", false, 2);
-        Bean_cart bean_cart3 = new Bean_cart(R.drawable.animal_4, "跳楼甩卖，桂林小栽种", "3", false, 3);
-        Bean_cart bean_cart4 = new Bean_cart(R.drawable.animal_3, "跳楼甩卖，桂林小栽种", "4", false, 4);
-        Bean_cart bean_cart5 = new Bean_cart(R.drawable.animal_7, "跳楼甩卖，桂林小栽种", "5", false, 5);
-        Bean_cart bean_cart6 = new Bean_cart(R.drawable.animal_2, "跳楼甩卖，桂林小栽种", "6", false, 6);
+        Bean_cart bean_cart1 = new Bean_cart(R.drawable.nai1, "跳楼甩卖，桂林小栽种", "1", false, 1);
+        Bean_cart bean_cart2 = new Bean_cart(R.drawable.nai2, "跳楼甩卖，桂林小栽种", "2", false, 2);
+        Bean_cart bean_cart3 = new Bean_cart(R.drawable.dianfanbao1, "跳楼甩卖，桂林小栽种", "3", false, 3);
+        Bean_cart bean_cart4 = new Bean_cart(R.drawable.dianfanbao1, "跳楼甩卖，桂林小栽种", "4", false, 4);
+        Bean_cart bean_cart5 = new Bean_cart(R.drawable.txu1, "跳楼甩卖，桂林小栽种", "5", false, 5);
+        Bean_cart bean_cart6 = new Bean_cart(R.drawable.txu2, "跳楼甩卖，桂林小栽种", "6", false, 6);
         mDatas.add(bean_cart1);
         mDatas.add(bean_cart2);
         mDatas.add(bean_cart3);

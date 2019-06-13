@@ -26,8 +26,8 @@
 
         <ImageView
             android:id="@+id/saoyisao"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:background="@drawable/saoyisao"
             android:layout_gravity="center_vertical" />
     </LinearLayout>
@@ -35,7 +35,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     <GridView
-
         android:id="@+id/goods1_gv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -54,7 +53,6 @@
             android:numColumns="2"
             android:stretchMode="columnWidth"
             android:verticalSpacing="2dp"
-
             />
     </FrameLayout>
 </LinearLayout>

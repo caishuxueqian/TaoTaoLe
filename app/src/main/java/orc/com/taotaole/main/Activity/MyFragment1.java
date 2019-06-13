@@ -58,27 +58,28 @@ return  view;
     }
 
     private void initDatas() {
-        Bean_goods1 bean_goods1 = new Bean_goods1(R.drawable.animal_1, "跳楼甩卖，桂林小栽种", "10", "2");
-        Bean_goods1 bean_goods2 = new Bean_goods1(R.drawable.animal_5, "跳楼甩卖，桂林小栽种", "10", "2");
-        Bean_goods1 bean_goods3 = new Bean_goods1(R.drawable.animal_4, "跳楼甩卖，桂林小栽种", "10", "2");
+        Bean_goods1 bean_goods1 = new Bean_goods1(R.drawable.nai1, "跳楼甩卖，桂林小栽种", "10", "2");
+        Bean_goods1 bean_goods2 = new Bean_goods1(R.drawable.nai2, "跳楼甩卖，桂林小栽种", "10", "2");
+        Bean_goods1 bean_goods3 = new Bean_goods1(R.drawable.dianfanbao1, "跳楼甩卖，桂林小栽种", "10", "2");
+        Bean_goods1 bean_goods4 = new Bean_goods1(R.drawable.dianfanbao2, "跳楼甩卖，桂林小栽种", "10", "2");
+        Bean_goods1 bean_goods5 = new Bean_goods1(R.drawable.txu1, "跳楼甩卖，桂林小栽种", "10", "2");
+        Bean_goods1 bean_goods6 = new Bean_goods1(R.drawable.txu2, "跳楼甩卖，桂林小栽种", "10", "2");
         mDatas.add(bean_goods1);
         mDatas.add(bean_goods2);
         mDatas.add(bean_goods3);
+        mDatas.add(bean_goods5);
+        mDatas.add(bean_goods6);
         mDatas.add(bean_goods1);
         mDatas.add(bean_goods2);
         mDatas.add(bean_goods3);
+        mDatas.add(bean_goods5);
+        mDatas.add(bean_goods6);
         mDatas.add(bean_goods1);
         mDatas.add(bean_goods2);
         mDatas.add(bean_goods3);
-        mDatas.add(bean_goods1);
-        mDatas.add(bean_goods2);
-        mDatas.add(bean_goods3);
-        mDatas.add(bean_goods1);
-        mDatas.add(bean_goods2);
-        mDatas.add(bean_goods3);
-        mDatas.add(bean_goods1);
-        mDatas.add(bean_goods2);
-        mDatas.add(bean_goods3);
+        mDatas.add(bean_goods5);
+        mDatas.add(bean_goods6);
+
     }
 
 }

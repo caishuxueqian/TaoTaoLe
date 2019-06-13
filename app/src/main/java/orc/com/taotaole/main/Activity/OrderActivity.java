@@ -148,12 +148,12 @@ public class OrderActivity extends AppCompatActivity {
 
 
     private void initDatas() {
-        Bean_order bean_order1 = new Bean_order(R.drawable.animal_1, "跳楼甩卖，桂林小栽种", "1", "1", false);
-        Bean_order bean_order2 = new Bean_order(R.drawable.animal_5, "跳楼甩卖，桂林小栽种", "2", "2", false);
-        Bean_order bean_order3 = new Bean_order(R.drawable.animal_4, "跳楼甩卖，桂林小栽种", "3", "1", false);
-        Bean_order bean_order4 = new Bean_order(R.drawable.animal_6, "跳楼甩卖，桂林小栽种", "4", "1", false);
-        Bean_order bean_order5 = new Bean_order(R.drawable.animal_2, "跳楼甩卖，桂林小栽种", "5", "2", false);
-        Bean_order bean_order6 = new Bean_order(R.drawable.animal_3, "跳楼甩卖，桂林小栽种", "6", "1", false);
+        Bean_order bean_order1 = new Bean_order(R.drawable.nai1, "跳楼甩卖，桂林小栽种", "1", "1", false);
+        Bean_order bean_order2 = new Bean_order(R.drawable.nai2, "跳楼甩卖，桂林小栽种", "2", "2", false);
+        Bean_order bean_order3 = new Bean_order(R.drawable.dianfanbao1, "跳楼甩卖，桂林小栽种", "3", "1", false);
+        Bean_order bean_order4 = new Bean_order(R.drawable.dianfanbao2, "跳楼甩卖，桂林小栽种", "4", "1", false);
+        Bean_order bean_order5 = new Bean_order(R.drawable.txu1, "跳楼甩卖，桂林小栽种", "5", "2", false);
+        Bean_order bean_order6 = new Bean_order(R.drawable.txu2, "跳楼甩卖，桂林小栽种", "6", "1", false);
         mDatas.add(bean_order1);
         mDatas.add(bean_order2);
         mDatas.add(bean_order3);
