@@ -59,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
             if (userName.equals("") || phone.equals("") || passWord.equals("") || passWord_Againt.equals("") || Code.equals("")) {
                 Toast.makeText(this, "信息填写不完整!", Toast.LENGTH_SHORT).show();
             } else if (!userName.matches(right_userName)) {
-                Toast.makeText(this, "请输入正确的账号!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "该账号不符合要求!", Toast.LENGTH_SHORT).show();
             } else if (!phone.matches(right_phone)) {
                 Toast.makeText(this, "请输入正确的手机号!", Toast.LENGTH_SHORT).show();
             } else if (!passWord.matches(right_passWord)) {

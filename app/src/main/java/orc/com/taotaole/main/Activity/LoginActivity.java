@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this, DrawActivity.class));
                 Toast.makeText(this, "登录成功！", Toast.LENGTH_SHORT).show();
             } else if(userName.equals("")&&passWord.equals("")){
-                Toast.makeText(this, "请输入", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "账号密码不能全为空！", Toast.LENGTH_SHORT).show();
             }
             else if (userName.equals("") && !passWord.equals("")) {
                 Toast.makeText(this, "用户名不能为空！", Toast.LENGTH_SHORT).show();
