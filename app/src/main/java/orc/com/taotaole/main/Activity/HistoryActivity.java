@@ -30,6 +30,7 @@ public class HistoryActivity extends AppCompatActivity {
     private TextView describe;
     private ImageView goodsImg;
     private LinearLayout bottom;
+    private int next_Sign;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,14 +49,67 @@ public class HistoryActivity extends AppCompatActivity {
             checkBox(c);
             change_Allseclet();
 //            点击描述跳转
-            describe.setOnClickListener(e -> startActivity(new Intent(this, DetailActivity.class)));
+            describe.setOnClickListener(e ->showDetail(c));
 //            点击图片跳转
-            goodsImg.setOnClickListener(e -> startActivity(new Intent(this, DetailActivity.class)));
+            goodsImg.setOnClickListener(e ->showDetail(c));
             mAdapterhistory.notifyDataSetChanged();
         });
 
     }
-
+    public void showDetail(int c){
+        switch (c){
+            case 0:
+                next_Sign =0;
+                Bundle data0 = new Bundle();
+                data0.putSerializable("next_Sign", next_Sign);
+                Intent intent0 = new Intent(this, DetailActivity.class);
+                intent0.putExtras(data0);
+                startActivity(intent0);
+                break;
+            case 1:
+                next_Sign = 1;
+                Bundle data1 = new Bundle();
+                data1.putSerializable("next_Sign", next_Sign);
+                Intent intent1 = new Intent(this, DetailActivity.class);
+                intent1.putExtras(data1);
+                startActivity(intent1);
+                break;
+            case 2:
+                next_Sign =2;
+                Bundle data2 = new Bundle();
+                data2.putSerializable("next_Sign", next_Sign);
+                Intent intent2 = new Intent(this, DetailActivity.class);
+                intent2.putExtras(data2);
+                startActivity(intent2);
+                break;
+            case 3:
+                next_Sign = 3;
+                Bundle data3 = new Bundle();
+                data3.putSerializable("next_Sign", next_Sign);
+                Intent intent3 = new Intent(this, DetailActivity.class);
+                intent3.putExtras(data3);
+                startActivity(intent3);
+                break;
+            case 4:
+                next_Sign =4;
+                Bundle data4 = new Bundle();
+                data4.putSerializable("next_Sign", next_Sign);
+                Intent intent4 = new Intent(this, DetailActivity.class);
+                intent4.putExtras(data4);
+                startActivity(intent4);
+                break;
+            case 5:
+                next_Sign = 5;
+                Bundle data5 = new Bundle();
+                data5.putSerializable("next_Sign", next_Sign);
+                Intent intent5 = new Intent(this, DetailActivity.class);
+                intent5.putExtras(data5);
+                startActivity(intent5);
+                break;
+            default:
+                ;
+                break;
+        }}
     //    复选框
     public void checkBox(int postion) {
         if (checkBox.isChecked()) {
@@ -108,11 +162,7 @@ public class HistoryActivity extends AppCompatActivity {
         checkBox = v.findViewById(R.id.history_item_checkbox);
         describe = v.findViewById(R.id.history_item_describe);
         goodsImg = v.findViewById(R.id.history_item_img);
-
-
     }
-
-
     public void tv_delete() {
         if (!(mDatas.size() == 0)) {
             int checkedLength = 0;
@@ -155,7 +205,6 @@ public class HistoryActivity extends AppCompatActivity {
         }
     }
 
-
     private void initDatas() {
         Bean_history bean_history1 = new Bean_history(R.drawable.nai1, "12月豆本豆原味豆奶250ml*12瓶 早餐营养奶制品19年9月到期", "19.8", false);
         Bean_history bean_history2 = new Bean_history(R.drawable.nai2, "蒙牛未来星儿童成长牛奶整箱营养佳智型12盒装早餐学生乳制品礼盒", "59", false);
@@ -171,4 +220,5 @@ public class HistoryActivity extends AppCompatActivity {
         mDatas.add(bean_history6);
 
     }
+
 }

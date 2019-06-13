@@ -8,13 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import orc.com.taotaole.R;
 
-public class MyFragment1 extends Fragment  {
+public class MyFragment1 extends Fragment {
     private SharedPreferences mSharedPrefrences;
     private SharedPreferences.Editor mEditor;
     private GridView mGridView;
@@ -23,6 +24,7 @@ public class MyFragment1 extends Fragment  {
     private Adapter_2goods mAdapterGoods1;
     private List<Bean_goods1> mDatas = new ArrayList<Bean_goods1>();
     private List<Bean_goods2> mDatas1 = new ArrayList<Bean_goods2>();
+    private int next_Sign;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment1_layout, container, false);
@@ -36,25 +38,103 @@ public class MyFragment1 extends Fragment  {
 
         mGridView.setOnItemClickListener((parent, v, position, id) -> {
 //           // todo
-            view.findViewById(R.id.top_iv).setOnClickListener(e->{});
-            view.findViewById(R.id.t1).setOnClickListener(e->{});
-            view.findViewById(R.id.t2).setOnClickListener(e->{});
-            view.findViewById(R.id.t3).setOnClickListener(e->{});
-            view.findViewById(R.id.t4).setOnClickListener(e->{});
-            view.findViewById(R.id.t5).setOnClickListener(e->{});
-            view.findViewById(R.id.t6).setOnClickListener(e->{});
-            view.findViewById(R.id.t7).setOnClickListener(e->{});
-            view.findViewById(R.id.t8).setOnClickListener(e->{});
-            view.findViewById(R.id.t9).setOnClickListener(e->{});
-            view.findViewById(R.id.t10).setOnClickListener(e->{});
-            view.findViewById(R.id.goods1_iv).setOnClickListener(e->{});
-            view.findViewById(R.id.goods1_tv).setOnClickListener(e->{});
-            view.findViewById(R.id.goods1_tv1).setOnClickListener(e->{});
-            view.findViewById(R.id.goods1_tv2).setOnClickListener(e->{});
-            view.findViewById(R.id.goods1_tv3).setOnClickListener(e->{});
-            view.findViewById(R.id.top_tuijian).setOnClickListener(e->{});
+            view.findViewById(R.id.top_iv).setOnClickListener(e -> {
+            });
+            view.findViewById(R.id.t1).setOnClickListener(e -> {
+                next_Sign = 0;
+                Bundle data0 = new Bundle();
+                data0.putSerializable("next_Sign", next_Sign);
+                Intent intent0 = new Intent(getActivity(), TopIconActivity.class);
+                intent0.putExtras(data0);
+                startActivity(intent0);
+            });
+            view.findViewById(R.id.t2).setOnClickListener(e -> {
+                next_Sign = 1;
+                Bundle data1 = new Bundle();
+                data1.putSerializable("next_Sign", next_Sign);
+                Intent intent1 = new Intent(getActivity(), TopIconActivity.class);
+                intent1.putExtras(data1);
+                startActivity(intent1);
+            });
+            view.findViewById(R.id.t3).setOnClickListener(e -> {
+                next_Sign = 2;
+                Bundle data2 = new Bundle();
+                data2.putSerializable("next_Sign", next_Sign);
+                Intent intent2 = new Intent(getActivity(), TopIconActivity.class);
+                intent2.putExtras(data2);
+                startActivity(intent2);
+            });
+            view.findViewById(R.id.t4).setOnClickListener(e -> {
+            });
+            view.findViewById(R.id.t5).setOnClickListener(e -> {
+            });
+            view.findViewById(R.id.t6).setOnClickListener(e -> {
+            });
+            view.findViewById(R.id.t7).setOnClickListener(e -> {
+            });
+            view.findViewById(R.id.t8).setOnClickListener(e -> {
+            });
+            view.findViewById(R.id.t9).setOnClickListener(e -> {
+            });
+            view.findViewById(R.id.t10).setOnClickListener(e -> {
+            });
+            view.findViewById(R.id.top_tuijian).setOnClickListener(e -> {
+            });
+            switch (position) {
+                case 0:
+                    next_Sign = 0;
+                    Bundle data0 = new Bundle();
+                    data0.putSerializable("next_Sign", next_Sign);
+                    Intent intent0 = new Intent(getActivity(), DetailActivity.class);
+                    intent0.putExtras(data0);
+                    startActivity(intent0);
+                    break;
+                case 1:
+                    next_Sign = 1;
+                    Bundle data1 = new Bundle();
+                    data1.putSerializable("next_Sign", next_Sign);
+                    Intent intent1 = new Intent(getActivity(), DetailActivity.class);
+                    intent1.putExtras(data1);
+                    startActivity(intent1);
+                    break;
+                case 2:
+                    next_Sign = 2;
+                    Bundle data2 = new Bundle();
+                    data2.putSerializable("next_Sign", next_Sign);
+                    Intent intent2 = new Intent(getActivity(), DetailActivity.class);
+                    intent2.putExtras(data2);
+                    startActivity(intent2);
+                    break;
+                case 3:
+                    next_Sign = 3;
+                    Bundle data3 = new Bundle();
+                    data3.putSerializable("next_Sign", next_Sign);
+                    Intent intent3 = new Intent(getActivity(), DetailActivity.class);
+                    intent3.putExtras(data3);
+                    startActivity(intent3);
+                    break;
+                case 4:
+                    next_Sign = 4;
+                    Bundle data4 = new Bundle();
+                    data4.putSerializable("next_Sign", next_Sign);
+                    Intent intent4 = new Intent(getActivity(), DetailActivity.class);
+                    intent4.putExtras(data4);
+                    startActivity(intent4);
+                    break;
+                case 5:
+                    next_Sign = 5;
+                    Bundle data5 = new Bundle();
+                    data5.putSerializable("next_Sign", next_Sign);
+                    Intent intent5 = new Intent(getActivity(), DetailActivity.class);
+                    intent5.putExtras(data5);
+                    startActivity(intent5);
+                    break;
+                default:
+                    Toast.makeText(getActivity(), "1", Toast.LENGTH_SHORT).show();
+
+            }
         });
-return  view;
+        return view;
     }
 
     private void initDatas() {
@@ -67,16 +147,7 @@ return  view;
         mDatas.add(bean_goods1);
         mDatas.add(bean_goods2);
         mDatas.add(bean_goods3);
-        mDatas.add(bean_goods5);
-        mDatas.add(bean_goods6);
-        mDatas.add(bean_goods1);
-        mDatas.add(bean_goods2);
-        mDatas.add(bean_goods3);
-        mDatas.add(bean_goods5);
-        mDatas.add(bean_goods6);
-        mDatas.add(bean_goods1);
-        mDatas.add(bean_goods2);
-        mDatas.add(bean_goods3);
+        mDatas.add(bean_goods4);
         mDatas.add(bean_goods5);
         mDatas.add(bean_goods6);
 

@@ -49,6 +49,7 @@ public class MyFragment3 extends Fragment {
     private double sum;
     private TextView money;
     private TextView text_sum;
+    private int next_Sign;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -73,10 +74,10 @@ public class MyFragment3 extends Fragment {
             initViews_item(v);
             tv_sum_double = 0.0;
 //            点击描述跳转
-            describe.setOnClickListener(e -> startActivity(new Intent(getActivity(), DetailActivity.class)));
+            describe.setOnClickListener(e ->showDetail(postion));
 //            点击图片跳转
-            img.setOnClickListener(e -> startActivity(new Intent(getActivity(), DetailActivity.class)));
-//            点击数量
+            img.setOnClickListener(e ->showDetail(postion));
+
 //        加号
             add.setOnClickListener(e -> {
                 initViews_item(v);
@@ -128,7 +129,60 @@ public class MyFragment3 extends Fragment {
 
     //****************************************方法区**************************************************
 //    ****************************************************************************************
-
+    public void showDetail(int c){
+        switch (c){
+            case 0:
+                next_Sign =0;
+                Bundle data0 = new Bundle();
+                data0.putSerializable("next_Sign", next_Sign);
+                Intent intent0 = new Intent(getActivity(), DetailActivity.class);
+                intent0.putExtras(data0);
+                startActivity(intent0);
+                break;
+            case 1:
+                next_Sign = 1;
+                Bundle data1 = new Bundle();
+                data1.putSerializable("next_Sign", next_Sign);
+                Intent intent1 = new Intent(getActivity(), DetailActivity.class);
+                intent1.putExtras(data1);
+                startActivity(intent1);
+                break;
+            case 2:
+                next_Sign =2;
+                Bundle data2 = new Bundle();
+                data2.putSerializable("next_Sign", next_Sign);
+                Intent intent2 = new Intent(getActivity(), DetailActivity.class);
+                intent2.putExtras(data2);
+                startActivity(intent2);
+                break;
+            case 3:
+                next_Sign = 3;
+                Bundle data3 = new Bundle();
+                data3.putSerializable("next_Sign", next_Sign);
+                Intent intent3 = new Intent(getActivity(), DetailActivity.class);
+                intent3.putExtras(data3);
+                startActivity(intent3);
+                break;
+            case 4:
+                next_Sign =4;
+                Bundle data4 = new Bundle();
+                data4.putSerializable("next_Sign", next_Sign);
+                Intent intent4 = new Intent(getActivity(), DetailActivity.class);
+                intent4.putExtras(data4);
+                startActivity(intent4);
+                break;
+            case 5:
+                next_Sign = 5;
+                Bundle data5 = new Bundle();
+                data5.putSerializable("next_Sign", next_Sign);
+                Intent intent5 = new Intent(getActivity(), DetailActivity.class);
+                intent5.putExtras(data5);
+                startActivity(intent5);
+                break;
+            default:
+                ;
+                break;
+        }}
     //修改显示的总价
     public void changeTextSum() {
         tv_sum_double = 0.0;
@@ -288,12 +342,12 @@ public class MyFragment3 extends Fragment {
 
     //初始化数据
     private void initDatas() {
-        Bean_cart bean_cart1 = new Bean_cart(R.drawable.nai1, "12月豆本豆原味豆奶250ml*12瓶 早餐营养奶制品19年9月到期", "19.8", false, 1);
-        Bean_cart bean_cart2 = new Bean_cart(R.drawable.nai2, "蒙牛未来星儿童成长牛奶整箱营养佳智型12盒装早餐学生乳制品礼盒", "59", false, 2);
-        Bean_cart bean_cart3 = new Bean_cart(R.drawable.dianfanbao1, "电饭煲家用迷你小型2L3L学生宿舍老式电饭煲 蒸煮多功能1-2-3-4人", "59", false, 3);
-        Bean_cart bean_cart4 = new Bean_cart(R.drawable.dianfanbao1, "电饭煲家用迷你小型电饭煲 1-2-3-4人学生宿舍普通老式蒸煮多功能", "108", false, 4);
-        Bean_cart bean_cart5 = new Bean_cart(R.drawable.txu1, "南极人短袖T恤男潮流潮牌半袖加肥加大宽松大码男士夏季胖子衣服", "92", false, 5);
-        Bean_cart bean_cart6 = new Bean_cart(R.drawable.txu2, "短袖男夏装韩版潮流纯棉2019新款潮牌宽松青少年男孩初中生T恤", "98", false, 6);
+        Bean_cart bean_cart1 = new Bean_cart(R.drawable.nai1, "12月豆本豆原味豆奶250ml*12瓶 早餐营养奶制品19年9月到期", "19.8", false, 19.8);
+        Bean_cart bean_cart2 = new Bean_cart(R.drawable.nai2, "蒙牛未来星儿童成长牛奶整箱营养佳智型12盒装早餐学生乳制品礼盒", "59", false, 59);
+        Bean_cart bean_cart3 = new Bean_cart(R.drawable.dianfanbao1, "电饭煲家用迷你小型2L3L学生宿舍老式电饭煲 蒸煮多功能1-2-3-4人", "59", false, 59);
+        Bean_cart bean_cart4 = new Bean_cart(R.drawable.dianfanbao1, "电饭煲家用迷你小型电饭煲 1-2-3-4人学生宿舍普通老式蒸煮多功能", "108", false, 108);
+        Bean_cart bean_cart5 = new Bean_cart(R.drawable.txu1, "南极人短袖T恤男潮流潮牌半袖加肥加大宽松大码男士夏季胖子衣服", "92", false, 92);
+        Bean_cart bean_cart6 = new Bean_cart(R.drawable.txu2, "短袖男夏装韩版潮流纯棉2019新款潮牌宽松青少年男孩初中生T恤", "98", false, 98);
         mDatas.add(bean_cart1);
         mDatas.add(bean_cart2);
         mDatas.add(bean_cart3);

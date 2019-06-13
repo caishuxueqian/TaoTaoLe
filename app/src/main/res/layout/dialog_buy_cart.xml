@@ -8,7 +8,7 @@
 
         <ImageView
             android:layout_gravity="center"
-            android:id="@+id/detail_iv"
+            android:id="@+id/dialog_img"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:layout_marginTop="15dp"

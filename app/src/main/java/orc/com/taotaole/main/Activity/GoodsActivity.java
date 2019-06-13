@@ -35,6 +35,7 @@ public class GoodsActivity extends AppCompatActivity {
     private ImageView back;
     private ImageView sales1;
     private int the_Sign;
+    private int next_Sign;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,28 +48,29 @@ public class GoodsActivity extends AppCompatActivity {
         initDatas1_1();
         initDatas2_2();
         initDatas1_2();
-        the_Sign=(int)getIntent().getSerializableExtra("next_Sign");
-        if(the_Sign==0){
+        the_Sign = (int) getIntent().getSerializableExtra("next_Sign");
+        if (the_Sign == 0) {
             mAdapterGoods2 = new Adapter_2goods(this, mDatas2_0);
-        mAdapterGoods1 = new Adapter_2_1goods(this, mDatas1_0);}
-      else if(the_Sign==1){
+            mAdapterGoods1 = new Adapter_2_1goods(this, mDatas1_0);
+        } else if (the_Sign == 1) {
             mAdapterGoods2 = new Adapter_2goods(this, mDatas2_1);
-        mAdapterGoods1 = new Adapter_2_1goods(this, mDatas1_1);}
-      else if(the_Sign==2){
+            mAdapterGoods1 = new Adapter_2_1goods(this, mDatas1_1);
+        } else if (the_Sign == 2) {
             mAdapterGoods2 = new Adapter_2goods(this, mDatas2_2);
-        mAdapterGoods1 = new Adapter_2_1goods(this, mDatas1_2);}
+            mAdapterGoods1 = new Adapter_2_1goods(this, mDatas1_2);
+        }
         mGridView2.setAdapter(mAdapterGoods2);
         mGridView1.setAdapter(mAdapterGoods1);
         back.setOnClickListener(e -> {
             finish();
         });
-        rise.setOnClickListener(e->{
+        rise.setOnClickListener(e -> {
             rise.setVisibility(View.GONE);
             down.setVisibility(View.VISIBLE);
             sales.setVisibility(View.VISIBLE);
             sales1.setVisibility(View.GONE);
         });
-        down.setOnClickListener(e->{
+        down.setOnClickListener(e -> {
             rise.setVisibility(View.VISIBLE);
             down.setVisibility(View.GONE);
             sales.setVisibility(View.VISIBLE);
@@ -86,27 +88,98 @@ public class GoodsActivity extends AppCompatActivity {
             one.setVisibility(View.VISIBLE);
             two.setVisibility(View.GONE);
         });
-        sales.setOnClickListener(e->{
+        sales.setOnClickListener(e -> {
             sales.setVisibility(View.GONE);
             sales1.setVisibility(View.VISIBLE);
         });
-
         mGridView2.setOnItemClickListener((parent, v, position, id) -> {
-                    startActivity(new Intent(this, DetailActivity.class));
+                    if (the_Sign == 0) {
+                        switch (position) {
+                            case 0:
+                                next_Sign = 0;
+                                Bundle data0 = new Bundle();
+                                data0.putSerializable("next_Sign", next_Sign);
+                                Intent intent0 = new Intent(this, DetailActivity.class);
+                                intent0.putExtras(data0);
+                                startActivity(intent0);
+                                break;
+                            case 1:
+                                next_Sign = 1;
+                                Bundle data1 = new Bundle();
+                                data1.putSerializable("next_Sign", next_Sign);
+                                Intent intent1 = new Intent(this, DetailActivity.class);
+                                intent1.putExtras(data1);
+                                startActivity(intent1);
+                                break;
+                            default:
+                                ;
+                                break;
+                        }
+                    }
+                    if (the_Sign == 1) {
+                        switch (position) {
+                            case 0:
+                                next_Sign = 2;
+                                Bundle data0 = new Bundle();
+                                data0.putSerializable("next_Sign", next_Sign);
+                                Intent intent0 = new Intent(this, DetailActivity.class);
+                                intent0.putExtras(data0);
+                                startActivity(intent0);
+                                break;
+                            case 1:
+                                next_Sign = 3;
+                                Bundle data1 = new Bundle();
+                                data1.putSerializable("next_Sign", next_Sign);
+                                Intent intent1 = new Intent(this, DetailActivity.class);
+                                intent1.putExtras(data1);
+                                startActivity(intent1);
+                                break;
+                            default:
+                                ;
+                                break;
+                        }
+
+                    }
+                    if (the_Sign == 2) {
+                        switch (position) {
+                            case 0:
+                                next_Sign = 4;
+                                Bundle data0 = new Bundle();
+                                data0.putSerializable("next_Sign", next_Sign);
+                                Intent intent0 = new Intent(this, DetailActivity.class);
+                                intent0.putExtras(data0);
+                                startActivity(intent0);
+                                break;
+                            case 1:
+                                next_Sign = 5;
+                                Bundle data1 = new Bundle();
+                                data1.putSerializable("next_Sign", next_Sign);
+                                Intent intent1 = new Intent(this, DetailActivity.class);
+                                intent1.putExtras(data1);
+                                startActivity(intent1);
+                                break;
+                            default:
+                                ;
+                                break;
+                        }
+
+                    }
                 }
         );
     }
-public void initView(){
-    mGridView2 = findViewById(R.id.goods2_gv);
-    mGridView1 = findViewById(R.id.goods1_gv);
-    one = findViewById(R.id.one);
-    two = findViewById(R.id.two);
-    rise=findViewById(R.id.rise);
-    down=findViewById(R.id.down);
-    sales=findViewById(R.id.sales);
-    back=findViewById(R.id.goods_back);
-    sales1=findViewById(R.id.sales1);
-}
+
+    public void initView() {
+        mGridView2 = findViewById(R.id.goods2_gv);
+        mGridView1 = findViewById(R.id.goods1_gv);
+        one = findViewById(R.id.one);
+        two = findViewById(R.id.two);
+        rise = findViewById(R.id.rise);
+        down = findViewById(R.id.down);
+        sales = findViewById(R.id.sales);
+        back = findViewById(R.id.goods_back);
+        sales1 = findViewById(R.id.sales1);
+    }
+
     private void initDatas2_0() {
         Bean_goods2 bean_goods1 = new Bean_goods2(R.drawable.nai1, "12月豆本豆原味豆奶250ml*12瓶 早餐营养奶制品19年9月到期", "19.8", "3");
         Bean_goods2 bean_goods2 = new Bean_goods2(R.drawable.nai2, "蒙牛未来星儿童成长牛奶整箱营养佳智型12盒装早餐学生乳制品礼盒", "59", "50");
@@ -154,6 +227,7 @@ public void initView(){
         mDatas2_1.add(bean_goods5);
 
     }
+
     private void initDatas2_2() {
         Bean_goods2 bean_goods1 = new Bean_goods2(R.drawable.txu1, "南极人短袖T恤男潮流潮牌半袖加肥加大宽松大码男士夏季胖子衣服", "92", "36");
         Bean_goods2 bean_goods2 = new Bean_goods2(R.drawable.txu2, "短袖男夏装韩版潮流纯棉2019新款潮牌宽松青少年男孩初中生T恤", "98", "13");
@@ -175,7 +249,6 @@ public void initView(){
         mDatas2_2.add(bean_goods3);
         mDatas2_2.add(bean_goods4);
         mDatas2_2.add(bean_goods5);
-
 
 
     }
@@ -203,6 +276,7 @@ public void initView(){
         mDatas1_0.add(bean_goods5);
 
     }
+
     private void initDatas1_1() {
         Bean_goods1 bean_goods1 = new Bean_goods1(R.drawable.dianfanbao1, "电饭煲家用迷你小型2L3L学生宿舍老式电饭煲 蒸煮多功能1-2-3-4人", "89", "30");
         Bean_goods1 bean_goods2 = new Bean_goods1(R.drawable.dianfanbao2, "电饭煲家用迷你小型电饭煲 1-2-3-4人学生宿舍普通老式蒸煮多功能", "108", "34");
@@ -225,6 +299,7 @@ public void initView(){
         mDatas1_1.add(bean_goods4);
         mDatas1_1.add(bean_goods5);
     }
+
     private void initDatas1_2() {
         Bean_goods1 bean_goods1 = new Bean_goods1(R.drawable.txu1, "南极人短袖T恤男潮流潮牌半袖加肥加大宽松大码男士夏季胖子衣服", "92", "36");
         Bean_goods1 bean_goods2 = new Bean_goods1(R.drawable.txu2, "短袖男夏装韩版潮流纯棉2019新款潮牌宽松青少年男孩初中生T恤", "98", "13");
@@ -246,9 +321,6 @@ public void initView(){
         mDatas1_2.add(bean_goods3);
         mDatas1_2.add(bean_goods4);
         mDatas1_2.add(bean_goods5);
-
-
-
 
 
     }

@@ -30,6 +30,7 @@
         <activity android:name=".main.Activity.OrderActivity" />
         <activity android:name=".main.Activity.UserActivity" />
         <activity android:name=".main.Activity.ShowImageActivity" />
+        <activity android:name=".main.Activity.TopIconActivity" />
     </application>
 
 </manifest>
