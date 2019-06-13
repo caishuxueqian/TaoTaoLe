@@ -12,6 +12,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import orc.com.taotaole.R;
 
 public class DetailActivity extends AppCompatActivity {
@@ -199,8 +202,13 @@ public void initView_diaglog(View v){
         });
         buyView.findViewById(R.id.dialog_no).setOnClickListener(e -> dialog.dismiss());
         buyView.findViewById(R.id.dialog_yes).setOnClickListener(e -> {
-            Toast.makeText(this, "稍后重试", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "稍后重试", Toast.LENGTH_SHORT).show();
             dialog.dismiss();
+            new AlertDialog.Builder(this).setTitle(" ").setMessage("确认支付？").setPositiveButton("确定", (dialog12, which) -> {
+                Toast.makeText(this, "购买成功！消费:" + Double.parseDouble(dia_money.getText().toString())*Double.parseDouble(dia_acount.getText().toString()) + "元", Toast.LENGTH_SHORT).show();
+            }).setNegativeButton("取消", (dialog2, which) -> {
+            }).create().show();
+
         });
         dialog = builder.create();
         dialog.show();
@@ -252,7 +260,7 @@ public void initView_diaglog(View v){
         });
         buyView.findViewById(R.id.dialog_no).setOnClickListener(e -> dialog.dismiss());
         buyView.findViewById(R.id.dialog_yes).setOnClickListener(e -> {
-            Toast.makeText(this, "收藏成功", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "加入成功", Toast.LENGTH_SHORT).show();
             dialog.dismiss();
         });
         dialog = builder.create();

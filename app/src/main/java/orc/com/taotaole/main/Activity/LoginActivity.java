@@ -59,9 +59,9 @@ public class LoginActivity extends AppCompatActivity {
             } else if (passWord.equals("") && !userName.equals("")) {
                 Toast.makeText(this, "密码不能为空！", Toast.LENGTH_SHORT).show();
             } else if (!userName.matches(right_userName)) {
-                Toast.makeText(this, "请输入正确的用户名!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "用户名格式错误!（4位字母/数字的组合）", Toast.LENGTH_LONG).show();
             } else if (!passWord.matches(right_passWord)) {
-                Toast.makeText(this, "请输入正确的密码!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "密码格式错误!（6位字母/数字的组合）", Toast.LENGTH_SHORT).show();
             }
             //测试使用-----------------------------------------不输入即可登录
 //            if (userName.equals("")) {
