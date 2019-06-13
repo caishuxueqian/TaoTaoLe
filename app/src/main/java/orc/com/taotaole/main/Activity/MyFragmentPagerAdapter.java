@@ -22,17 +22,25 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
         myFragment4 = new MyFragment4();
     }
 
-
+    /*
+    * getCount()方法获取viewpage中有多少个view
+    */
     @Override
     public int getCount() {
         return PAGER_COUNT;
     }
-
+    /*
+     * instantiateItem()方法：将给定位置的view添加到ViewGroup（容器）中，创建并显示出来；
+     * 返回一个代表新增页面的Object（key），直接返回view本身
+     */
     @Override
     public Object instantiateItem(ViewGroup vg, int position) {
         return super.instantiateItem(vg, position);
     }
-
+    /*
+    * destroyItem()方法：移除一个给定位置的页面，适配器从容器中删除这个视图
+    * 确保在finshUpdate(viewGroup)返回时视图被删除
+    **/
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         System.out.println("position Destory" + position);

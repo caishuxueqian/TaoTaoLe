@@ -164,19 +164,16 @@ public class DrawActivity extends AppCompatActivity
 
     //    ---------------------------------------------------------------------------------
     //    MainActivity
-    //    MainActivity
-    //    MainActivity
-    //    MainActivity
     private void bindViews() {
 //        txt_topbar = (TextView) findViewById(R.id.txt_topbar);
-        rg_tab_bar = (RadioGroup) findViewById(R.id.rg_tab_bar);
-        rb_channel = (RadioButton) findViewById(R.id.rb_channel);
-        rb_message = (RadioButton) findViewById(R.id.rb_message);
-        rb_better = (RadioButton) findViewById(R.id.rb_better);
-        rb_setting = (RadioButton) findViewById(R.id.rb_setting);
+        rg_tab_bar = findViewById(R.id.rg_tab_bar);
+        rb_channel = findViewById(R.id.rb_channel);
+        rb_message = findViewById(R.id.rb_message);
+        rb_better = findViewById(R.id.rb_better);
+        rb_setting = findViewById(R.id.rb_setting);
         rg_tab_bar.setOnCheckedChangeListener(this);
 
-        vpager = (ViewPager) findViewById(R.id.vpager);
+        vpager = findViewById(R.id.vpager);
         vpager.setAdapter(mAdapter);
         vpager.setCurrentItem(0);
         vpager.addOnPageChangeListener(this);
