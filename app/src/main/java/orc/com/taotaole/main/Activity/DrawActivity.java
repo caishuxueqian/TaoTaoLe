@@ -129,7 +129,7 @@ public class DrawActivity extends AppCompatActivity
 
         if (id == R.id.nav_share) {
 
-//        } else if (id == R.id.nav_gallery) {
+//    ////    } else if (id == R.id.nav_gallery) {
 //
 //        } else if (id == R.id.nav_slideshow) {
 //
